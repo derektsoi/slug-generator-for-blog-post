@@ -39,6 +39,11 @@ AI-powered blog post slug generator that:
 
 **Environment Setup:**
 ```bash
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Mac/Linux
+# On Windows: venv\Scripts\activate
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -46,6 +51,8 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env and add your OPENAI_API_KEY
 ```
+
+**Note:** Always use a virtual environment to avoid dependency conflicts. The venv should be activated before running any Python commands or installing packages.
 
 ## Testing
 
