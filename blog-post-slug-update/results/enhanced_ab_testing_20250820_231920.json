@@ -1,0 +1,250 @@
+{
+  "timestamp": "2025-08-20T23:19:20.729111",
+  "config": {
+    "metrics": [
+      "theme_coverage",
+      "success_rate",
+      "duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.8,
+    "include_detailed_results": true,
+    "verbose_output": true,
+    "randomize_urls": true,
+    "url_count": 5,
+    "random_seed": 42
+  },
+  "results": {
+    "current": {
+      "avg_theme_coverage": 0.125,
+      "success_rate": 0.8,
+      "avg_duration": 3.3732396793365482,
+      "detailed_url_results": [
+        {
+          "url_index": 0,
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+          "generated_slug": "rhythm-fan-review",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.560241222381592,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 1,
+          "title": "Buy&Ship 運費折扣五大主要獲得方法，積分、優惠碼你要知！",
+          "generated_slug": "buyandship-shipping-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.967435121536255,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 2,
+          "title": "HK$38 買 Ralph Lauren Tee！",
+          "generated_slug": "ralph-lauren-tee-hongkong-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.147202968597412,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 3,
+          "title": "麵包超人童裝低至半價優惠！",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "kids",
+            "baby",
+            "clothes"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "unknown",
+          "error": "No valid slugs generated"
+        },
+        {
+          "url_index": 4,
+          "title": "日本 Onspotz 靚帽網店特價低至七折",
+          "generated_slug": "onspotz-hats-japan-shopping",
+          "expected_themes": [
+            "japanese",
+            "japan"
+          ],
+          "coverage": 0.5,
+          "duration": 4.0913190841674805,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        }
+      ],
+      "version": "current",
+      "test_time": "2025-08-20T23:18:59.164579",
+      "total_test_cases": 5
+    },
+    "v7": {
+      "avg_theme_coverage": 0.16666666666666666,
+      "success_rate": 1.0,
+      "avg_duration": 4.312254619598389,
+      "detailed_url_results": [
+        {
+          "url_index": 0,
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+          "generated_slug": "rhythm-fans-review",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.905255079269409,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 1,
+          "title": "Buy&Ship 運費折扣五大主要獲得方法，積分、優惠碼你要知！",
+          "generated_slug": "buyandship-shipping-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.134752035140991,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 2,
+          "title": "HK$38 買 Ralph Lauren Tee！",
+          "generated_slug": "ralph-lauren-tee-hongkong-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 6.594727993011475,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 3,
+          "title": "麵包超人童裝低至半價優惠！",
+          "generated_slug": "mianbao-superman-kids-clothing-sale",
+          "expected_themes": [
+            "kids",
+            "baby",
+            "clothes"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 3.1339361667633057,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 4,
+          "title": "日本 Onspotz 靚帽網店特價低至七折",
+          "generated_slug": "onspotz-hats-japan-shopping",
+          "expected_themes": [
+            "japanese",
+            "japan"
+          ],
+          "coverage": 0.5,
+          "duration": 3.7926018238067627,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        }
+      ],
+      "version": "v7",
+      "test_time": "2025-08-20T23:19:20.726196",
+      "total_test_cases": 5
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 2,
+      "successful_versions": 2,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "v7",
+        "value": 0.16666666666666666
+      },
+      "worst_avg_theme_coverage": {
+        "version": "current",
+        "value": 0.125
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.14583333333333331,
+        "min": 0.125,
+        "max": 0.16666666666666666,
+        "range": 0.04166666666666666,
+        "std_dev": 0.029462782549439473,
+        "coefficient_of_variation": 0.20203050891044214
+      },
+      "success_rate": {
+        "mean": 0.9,
+        "min": 0.8,
+        "max": 1.0,
+        "range": 0.19999999999999996,
+        "std_dev": 0.14142135623730948,
+        "coefficient_of_variation": 0.1571348402636772
+      },
+      "avg_duration": {
+        "mean": 3.8427471494674688,
+        "min": 3.3732396793365482,
+        "max": 4.312254619598389,
+        "range": 0.9390149402618406,
+        "std_dev": 0.6639838318946283,
+        "coefficient_of_variation": 0.17278884247865325
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 0,
+        "low_performers": 2,
+        "performance_consistency": "medium"
+      }
+    },
+    "recommendations": [
+      "🔄 All versions below 60% coverage - fundamental prompt redesign needed",
+      "⚠️ Some versions have reliability issues - prioritize error handling",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "v7",
+        "baseline_version": "current",
+        "improvement": 0.04166666666666666,
+        "improvement_percentage": 33.33333333333333,
+        "relative_improvement": 1.3333333333333333
+      },
+      "effect_size": "small"
+    },
+    "optimization_summary": {
+      "best_version": "v7",
+      "total_versions_tested": 2,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "v7",
+        "current"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "v7",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Investigate why improvements are minimal",
+        "Consider testing more diverse prompt variations",
+        "Analyze failed test cases for insights"
+      ]
+    }
+  }
+}

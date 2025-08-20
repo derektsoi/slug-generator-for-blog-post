@@ -1,0 +1,915 @@
+{
+  "timestamp": "2025-08-20T23:24:07.549066",
+  "config": {
+    "metrics": [
+      "theme_coverage",
+      "success_rate",
+      "duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.8,
+    "include_detailed_results": true,
+    "verbose_output": true,
+    "randomize_urls": true,
+    "url_count": 30,
+    "random_seed": 42
+  },
+  "results": {
+    "current": {
+      "avg_theme_coverage": 0.19576719576719576,
+      "success_rate": 0.9,
+      "avg_duration": 4.123074652353922,
+      "detailed_url_results": [
+        {
+          "url_index": 0,
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+          "generated_slug": "rhythm-fan-review",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.38755202293396,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 1,
+          "title": "Buy&Ship 運費折扣五大主要獲得方法，積分、優惠碼你要知！",
+          "generated_slug": "buyandship-shipping-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.3633651733398438,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 2,
+          "title": "HK$38 買 Ralph Lauren Tee！",
+          "generated_slug": "ralph-lauren-tee-hongkong-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.4286956787109375,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 3,
+          "title": "麵包超人童裝低至半價優惠！",
+          "generated_slug": "mianbao-superman-kids-clothing-discount-guide",
+          "expected_themes": [
+            "clothes",
+            "baby",
+            "kids"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 5.207413196563721,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 4,
+          "title": "日本 Onspotz 靚帽網店特價低至七折",
+          "generated_slug": "onspotz-hats-japan-shopping",
+          "expected_themes": [
+            "japan",
+            "japanese"
+          ],
+          "coverage": 0.5,
+          "duration": 3.7524781227111816,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 5,
+          "title": "自提點服務：農曆新年假期安排",
+          "generated_slug": "self-pickup-chinese-new-year-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.2692980766296387,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 6,
+          "title": "露營愛好者必備 -- 本地買不到的百年經典品牌 Coleman 露營用品推介～",
+          "generated_slug": "coleman-camping-gear-guide",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 0.0,
+          "duration": 4.064587116241455,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 7,
+          "title": "【小編實測】運動服飾中的名牌 Lululemon VS 韓國超親民品牌 XEXYMIX！ 究竟該入手高價或低價運動裝？",
+          "generated_slug": "lululemon-vs-xexymix-sportswear-comparison",
+          "expected_themes": [
+            "korean",
+            "korea"
+          ],
+          "coverage": 0.0,
+          "duration": 3.378628969192505,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 8,
+          "title": "2017 美國 Presidents Day 網店折扣大集合",
+          "generated_slug": "us-presidents-day-discount-guide",
+          "expected_themes": [
+            "us",
+            "america"
+          ],
+          "coverage": 0.5,
+          "duration": 4.813716888427734,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 9,
+          "title": "Casio高CP值手錶推薦！$8X起入手實用平價經典電子錶、學生手錶等日常百搭款",
+          "generated_slug": "casio-watches-guide",
+          "expected_themes": [
+            "electronics",
+            "tech"
+          ],
+          "coverage": 0.0,
+          "duration": 7.380338907241821,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 10,
+          "title": "日本超人氣保溫飯壺及燜燒罐品牌推介，Thermos、象印等低至本地41折，上班族、學生都適用！",
+          "generated_slug": "thermos-zojirushi-japan-insulated-bottle-guide",
+          "expected_themes": [
+            "japan",
+            "japanese",
+            "recommendation"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 5.728644132614136,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 11,
+          "title": "地表最具收藏價值的皮鞋之一！Dr. Martens英國製造「神鞋」、潮人必買！",
+          "generated_slug": "dr-martens-footwear-uk-guide",
+          "expected_themes": [
+            "uk",
+            "britain"
+          ],
+          "coverage": 0.5,
+          "duration": 6.35004997253418,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 12,
+          "title": "唔洗等 Surprise Sale！Tory Burch 低至 47 折優惠",
+          "generated_slug": "tory-burch-sale",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.500669956207275,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 13,
+          "title": "Superdry T-Shirt 低至＄76 一件",
+          "generated_slug": "superdry-tshirt-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.7376649379730225,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 14,
+          "title": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "unknown",
+          "error": "No valid slugs generated"
+        },
+        {
+          "url_index": 15,
+          "title": "極搶手！第二擊新色加推！本年度最受注目嘅日牌聯乘網購波鞋Nike X sacai LD Waffle！",
+          "generated_slug": "nike-sacai-sneakers-online-shopping-guide",
+          "expected_themes": [
+            "shopping",
+            "online"
+          ],
+          "coverage": 1.0,
+          "duration": 4.1363348960876465,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 16,
+          "title": "Power Up 3.0 藍芽遙控紙飛機",
+          "generated_slug": "power-up-remote-controlled-aircraft-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.767358779907227,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 17,
+          "title": "The Cambridge Satchel 手工劍橋袋低至七五折",
+          "generated_slug": "the-cambridge-satchel-bags-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.890547037124634,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 18,
+          "title": "ABC Mart 限定 Disney x Vans 聯乘產品",
+          "generated_slug": "abc-mart-disney-vans-collaboration-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.156031131744385,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 19,
+          "title": "滑板代步 Penny Skateboards",
+          "generated_slug": "penny-skateboards-skateboard-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.72891902923584,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 20,
+          "title": "日本樂天母親節精選優惠！獨家券滿額最多減JPY1000，仲有高達50%代購折扣",
+          "generated_slug": "rakuten-discount-japan-proxy-shopping",
+          "expected_themes": [
+            "proxy-shopping",
+            "japanese",
+            "japan",
+            "buying"
+          ],
+          "coverage": 0.5,
+          "duration": 4.3481550216674805,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 21,
+          "title": "【小編實測】$98入手earth music & ecology高質連衣裙！內附日本樂天網購教學",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "japanese",
+            "online",
+            "japan",
+            "shopping",
+            "guide"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "unknown",
+          "error": "No valid slugs generated"
+        },
+        {
+          "url_index": 22,
+          "title": "月經！Amazon 購買 $50 Gift Card 額外送 $10",
+          "generated_slug": "amazon-gift-card-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.1657862663269043,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 23,
+          "title": "Campsaver Outlet 貨品額外再八折！",
+          "generated_slug": "campsaver-outlet-discount-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.713176250457764,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 24,
+          "title": "GAP 全店 45% Off！減價貨品都有得折！",
+          "generated_slug": "gap-discount-shopping",
+          "expected_themes": [
+            "us",
+            "gap",
+            "fashion"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 6.50314998626709,
+          "success": true,
+          "category": "fashion-brands",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 25,
+          "title": "（02/11 更新）Buyandship 增設荃灣自提點",
+          "generated_slug": "buyandship-hongkong-shipping-announcement",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.519505023956299,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 26,
+          "title": "15/4 小編推介：Sennheiser 耳機／復仇者聯盟 Tsum Tsum／小朋友動物造型頭墊",
+          "generated_slug": "sennheiser-tsum-tsum-recommendations",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 1.0,
+          "duration": 4.09640097618103,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 27,
+          "title": "自己買平更多！Sealy 記憶枕只需 US$29.99！",
+          "generated_slug": "sealy-memory-pillow-us-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.120014190673828,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 28,
+          "title": "環保袋唔再老土～日本 Shupatto 時尚折疊「秒收袋」一拉一捲輕鬆收納，內附詳細網購教學",
+          "generated_slug": "shupatto-foldable-bag-japan-shopping",
+          "expected_themes": [
+            "japanese",
+            "online",
+            "japan",
+            "fashion",
+            "shopping",
+            "guide",
+            "style"
+          ],
+          "coverage": 0.2857142857142857,
+          "duration": 3.8837578296661377,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 29,
+          "title": "孩子爸媽看這邊！英國必買童裝JoJo Maman Bébé限時7折優惠、折後價超親民～內附詳細網購教學",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "britain",
+            "uk",
+            "clothes",
+            "jojo-maman-bebe",
+            "kids",
+            "online",
+            "shopping",
+            "guide",
+            "baby"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "brand-product-association",
+          "error": "No valid slugs generated"
+        }
+      ],
+      "version": "current",
+      "test_time": "2025-08-20T23:21:49.098696",
+      "total_test_cases": 30
+    },
+    "v7": {
+      "avg_theme_coverage": 0.18253968253968256,
+      "success_rate": 0.9,
+      "avg_duration": 4.131876875559488,
+      "detailed_url_results": [
+        {
+          "url_index": 0,
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+          "generated_slug": "rhythm-fans-review",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.162178039550781,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 1,
+          "title": "Buy&Ship 運費折扣五大主要獲得方法，積分、優惠碼你要知！",
+          "generated_slug": "buyandship-shipping-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.845651149749756,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 2,
+          "title": "HK$38 買 Ralph Lauren Tee！",
+          "generated_slug": "ralph-lauren-tee-hongkong-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.3989577293396,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 3,
+          "title": "麵包超人童裝低至半價優惠！",
+          "generated_slug": "mianbao-superman-kids-clothing-sale",
+          "expected_themes": [
+            "clothes",
+            "baby",
+            "kids"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 3.5088558197021484,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 4,
+          "title": "日本 Onspotz 靚帽網店特價低至七折",
+          "generated_slug": "onspotz-hats-japan-shopping",
+          "expected_themes": [
+            "japan",
+            "japanese"
+          ],
+          "coverage": 0.5,
+          "duration": 3.718078851699829,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 5,
+          "title": "自提點服務：農曆新年假期安排",
+          "generated_slug": "self-pickup-chinese-new-year-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.1267666816711426,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 6,
+          "title": "露營愛好者必備 -- 本地買不到的百年經典品牌 Coleman 露營用品推介～",
+          "generated_slug": "coleman-camping-gear-guide",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 0.0,
+          "duration": 4.5224809646606445,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 7,
+          "title": "【小編實測】運動服飾中的名牌 Lululemon VS 韓國超親民品牌 XEXYMIX！ 究竟該入手高價或低價運動裝？",
+          "generated_slug": "lululemon-vs-xexymix-sportswear-comparison",
+          "expected_themes": [
+            "korean",
+            "korea"
+          ],
+          "coverage": 0.0,
+          "duration": 5.513296127319336,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 8,
+          "title": "2017 美國 Presidents Day 網店折扣大集合",
+          "generated_slug": "us-presidents-day-discount-guide",
+          "expected_themes": [
+            "us",
+            "america"
+          ],
+          "coverage": 0.5,
+          "duration": 6.956448078155518,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 9,
+          "title": "Casio高CP值手錶推薦！$8X起入手實用平價經典電子錶、學生手錶等日常百搭款",
+          "generated_slug": "casio-watches-guide",
+          "expected_themes": [
+            "electronics",
+            "tech"
+          ],
+          "coverage": 0.0,
+          "duration": 4.752922058105469,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 10,
+          "title": "日本超人氣保溫飯壺及燜燒罐品牌推介，Thermos、象印等低至本地41折，上班族、學生都適用！",
+          "generated_slug": "thermos-zojirushi-japan-thermal-guide",
+          "expected_themes": [
+            "japan",
+            "japanese",
+            "recommendation"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 4.488281011581421,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 11,
+          "title": "地表最具收藏價值的皮鞋之一！Dr. Martens英國製造「神鞋」、潮人必買！",
+          "generated_slug": "dr-martens-footwear-uk-guide",
+          "expected_themes": [
+            "uk",
+            "britain"
+          ],
+          "coverage": 0.5,
+          "duration": 4.1998701095581055,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 12,
+          "title": "唔洗等 Surprise Sale！Tory Burch 低至 47 折優惠",
+          "generated_slug": "tory-burch-sale-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 7.16643214225769,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 13,
+          "title": "Superdry T-Shirt 低至＄76 一件",
+          "generated_slug": "superdry-t-shirt-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.7394087314605713,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 14,
+          "title": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "unknown",
+          "error": "No valid slugs generated"
+        },
+        {
+          "url_index": 15,
+          "title": "極搶手！第二擊新色加推！本年度最受注目嘅日牌聯乘網購波鞋Nike X sacai LD Waffle！",
+          "generated_slug": "nike-sacai-sneakers-japan-shopping",
+          "expected_themes": [
+            "shopping",
+            "online"
+          ],
+          "coverage": 0.5,
+          "duration": 3.7683331966400146,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 16,
+          "title": "Power Up 3.0 藍芽遙控紙飛機",
+          "generated_slug": "power-up-remote-control-toy-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.532366991043091,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 17,
+          "title": "The Cambridge Satchel 手工劍橋袋低至七五折",
+          "generated_slug": "the-cambridge-satchel-bags-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.471868991851807,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 18,
+          "title": "ABC Mart 限定 Disney x Vans 聯乘產品",
+          "generated_slug": "abc-mart-disney-vans-collaboration-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.642530918121338,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 19,
+          "title": "滑板代步 Penny Skateboards",
+          "generated_slug": "penny-skateboards-skateboards-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.9931819438934326,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 20,
+          "title": "日本樂天母親節精選優惠！獨家券滿額最多減JPY1000，仲有高達50%代購折扣",
+          "generated_slug": "rakuten-mother-day-japan-proxy-guide",
+          "expected_themes": [
+            "proxy-shopping",
+            "japanese",
+            "japan",
+            "buying"
+          ],
+          "coverage": 0.5,
+          "duration": 5.530567169189453,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 21,
+          "title": "【小編實測】$98入手earth music & ecology高質連衣裙！內附日本樂天網購教學",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "japanese",
+            "online",
+            "japan",
+            "shopping",
+            "guide"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "unknown",
+          "error": "No valid slugs generated"
+        },
+        {
+          "url_index": 22,
+          "title": "月經！Amazon 購買 $50 Gift Card 額外送 $10",
+          "generated_slug": "amazon-gift-card-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.119656801223755,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 23,
+          "title": "Campsaver Outlet 貨品額外再八折！",
+          "generated_slug": "campsaver-outlet-discount-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 5.24720573425293,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 24,
+          "title": "GAP 全店 45% Off！減價貨品都有得折！",
+          "generated_slug": "gap-clothing-discount-guide",
+          "expected_themes": [
+            "us",
+            "gap",
+            "fashion"
+          ],
+          "coverage": 0.3333333333333333,
+          "duration": 3.1392500400543213,
+          "success": true,
+          "category": "fashion-brands",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 25,
+          "title": "（02/11 更新）Buyandship 增設荃灣自提點",
+          "generated_slug": "buyandship-hongkong-shipping-announcement",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 4.336977243423462,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 26,
+          "title": "15/4 小編推介：Sennheiser 耳機／復仇者聯盟 Tsum Tsum／小朋友動物造型頭墊",
+          "generated_slug": "sennheiser-headphones-tsum-tsum-recommendations",
+          "expected_themes": [
+            "recommendation"
+          ],
+          "coverage": 1.0,
+          "duration": 4.625766754150391,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 27,
+          "title": "自己買平更多！Sealy 記憶枕只需 US$29.99！",
+          "generated_slug": "sealy-memory-foam-pillow-us-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.9512009620666504,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 28,
+          "title": "環保袋唔再老土～日本 Shupatto 時尚折疊「秒收袋」一拉一捲輕鬆收納，內附詳細網購教學",
+          "generated_slug": "shupatto-foldable-bag-japan-shopping-guide",
+          "expected_themes": [
+            "japanese",
+            "online",
+            "japan",
+            "fashion",
+            "shopping",
+            "guide",
+            "style"
+          ],
+          "coverage": 0.42857142857142855,
+          "duration": 4.197772026062012,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 29,
+          "title": "孩子爸媽看這邊！英國必買童裝JoJo Maman Bébé限時7折優惠、折後價超親民～內附詳細網購教學",
+          "generated_slug": "FAILED",
+          "expected_themes": [
+            "britain",
+            "uk",
+            "clothes",
+            "jojo-maman-bebe",
+            "kids",
+            "online",
+            "shopping",
+            "guide",
+            "baby"
+          ],
+          "coverage": 0.0,
+          "duration": 0.0,
+          "success": false,
+          "category": "brand-product-association",
+          "error": "No valid slugs generated"
+        }
+      ],
+      "version": "v7",
+      "test_time": "2025-08-20T23:24:07.544046",
+      "total_test_cases": 30
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 2,
+      "successful_versions": 2,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "current",
+        "value": 0.19576719576719576
+      },
+      "worst_avg_theme_coverage": {
+        "version": "v7",
+        "value": 0.18253968253968256
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.18915343915343916,
+        "min": 0.18253968253968256,
+        "max": 0.19576719576719576,
+        "range": 0.013227513227513199,
+        "std_dev": 0.009353264301409338,
+        "coefficient_of_variation": 0.049448026656401814
+      },
+      "success_rate": {
+        "mean": 0.9,
+        "min": 0.9,
+        "max": 0.9,
+        "range": 0.0,
+        "std_dev": 0.0,
+        "coefficient_of_variation": 0.0
+      },
+      "avg_duration": {
+        "mean": 4.127475763956705,
+        "min": 4.123074652353922,
+        "max": 4.131876875559488,
+        "range": 0.008802223205566229,
+        "std_dev": 0.00622411171817347,
+        "coefficient_of_variation": 0.0015079705064595889
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 0,
+        "low_performers": 2,
+        "performance_consistency": "high"
+      }
+    },
+    "recommendations": [
+      "🔄 All versions below 60% coverage - fundamental prompt redesign needed",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "current",
+        "baseline_version": "v7",
+        "improvement": 0.013227513227513199,
+        "improvement_percentage": 7.246376811594186,
+        "relative_improvement": 1.072463768115942
+      },
+      "effect_size": "small"
+    },
+    "optimization_summary": {
+      "best_version": "current",
+      "total_versions_tested": 2,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "current",
+        "v7"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "current",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Investigate why improvements are minimal",
+        "Consider testing more diverse prompt variations",
+        "Analyze failed test cases for insights"
+      ]
+    }
+  }
+}

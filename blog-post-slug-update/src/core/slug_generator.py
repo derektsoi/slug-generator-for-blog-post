@@ -26,7 +26,7 @@ class SlugGenerator:
     """
     
     def __init__(self, api_key: Optional[str] = None, config: SlugGeneratorConfig = None, 
-                 max_retries: int = None, retry_delay: float = None):
+                 max_retries: int = None, retry_delay: float = None, prompt_version: str = None):
         """
         Initialize the SlugGenerator with centralized configuration.
         
@@ -35,6 +35,7 @@ class SlugGenerator:
             config: Configuration object. If None, uses default configuration.
             max_retries: Maximum retry attempts (backward compatibility)
             retry_delay: Base retry delay (backward compatibility)
+            prompt_version: Prompt version to use (e.g., 'v7', 'current') 
         """
         self.config = config or SlugGeneratorConfig()
         
@@ -43,6 +44,9 @@ class SlugGenerator:
             self.config.MAX_RETRIES = max_retries
         if retry_delay is not None:
             self.config.RETRY_BASE_DELAY = retry_delay
+        
+        # Store prompt version for use in _load_prompt
+        self.prompt_version = prompt_version
             
         self.api_key = api_key or self.config.get_api_key()
         
@@ -193,8 +197,8 @@ class SlugGenerator:
         """
         Create a well-structured prompt for OpenAI slug generation using external template.
         """
-        # Load base prompt template
-        base_prompt = self._load_prompt()
+        # Load base prompt template with version support
+        base_prompt = self._load_prompt(self.prompt_version)
         
         # Prepare content with configured preview limit
         content_preview = content[:self.config.PROMPT_PREVIEW_LIMIT] if content else ""
