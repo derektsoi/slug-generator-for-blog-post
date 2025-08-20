@@ -7,12 +7,160 @@ of different LLM prompt versions to identify optimal configurations.
 
 import time
 import json
+import random
+import os
+from pathlib import Path
 from typing import Dict, List, Callable, Any, Optional
 from datetime import datetime
 
 from .test_runner import TestRunner
 from .metrics_calculator import MetricsCalculator
 from .comparator import Comparator
+
+
+def load_sample_urls() -> List[Dict[str, Any]]:
+    """
+    Load sample URLs from the test fixtures dataset.
+    
+    Returns:
+        List of URL dictionaries with 'title' and 'url' keys
+    """
+    # Find the sample dataset file
+    current_dir = Path(__file__).parent
+    project_root = current_dir.parent.parent
+    sample_urls_path = project_root / 'tests' / 'fixtures' / 'sample_blog_urls.json'
+    
+    if not sample_urls_path.exists():
+        raise FileNotFoundError(f"Sample URLs dataset not found at: {sample_urls_path}")
+    
+    with open(sample_urls_path, 'r', encoding='utf-8') as f:
+        urls = json.load(f)
+    
+    return urls
+
+
+def generate_expected_themes(title: str) -> List[str]:
+    """
+    Generate expected themes from a blog post title.
+    
+    Args:
+        title: Blog post title
+        
+    Returns:
+        List of expected theme keywords
+    """
+    # Simple theme extraction logic
+    themes = []
+    title_lower = title.lower()
+    
+    # Brand detection patterns
+    brand_patterns = {
+        'agete': ['agete', 'nojess'],
+        'jojo': ['jojo-maman-bebe', 'baby', 'uk'],
+        'gap': ['gap', 'us', 'fashion'],
+        'kindle': ['kindle', 'amazon', 'ereader'],
+        'rakuten': ['rakuten', 'japan'],
+        'verish': ['verish', 'lingerie'],
+        'taylor': ['taylor-swift', 'music']
+    }
+    
+    # Category patterns
+    category_patterns = {
+        '珠寶': ['jewelry', 'accessories'],
+        '童裝': ['baby', 'clothes', 'kids'],
+        '內衣': ['lingerie', 'underwear'],
+        '時尚': ['fashion', 'style'],
+        '電子': ['electronics', 'tech'],
+        '書': ['books', 'reading'],
+        '美妝': ['beauty', 'cosmetics'],
+        '集運': ['shipping', 'logistics'],
+        '代購': ['proxy-shopping', 'buying'],
+        '網購': ['shopping', 'online']
+    }
+    
+    # Geographic patterns
+    geo_patterns = {
+        '英國': ['uk', 'britain'],
+        '美國': ['us', 'america'],
+        '日本': ['japan', 'japanese'],
+        '韓國': ['korea', 'korean'],
+        '香港': ['hongkong', 'hk']
+    }
+    
+    # Apply pattern matching
+    for pattern, theme_list in {**brand_patterns, **category_patterns, **geo_patterns}.items():
+        if pattern in title_lower:
+            themes.extend(theme_list)
+    
+    # Add common themes
+    if '教學' in title or 'guide' in title_lower:
+        themes.append('guide')
+    if '推介' in title or 'recommendation' in title_lower:
+        themes.append('recommendation')
+    if '比較' in title or 'comparison' in title_lower:
+        themes.append('comparison')
+    
+    # Remove duplicates and return
+    return list(set(themes))
+
+
+def create_randomized_test_cases(sample_urls: List[Dict], count: int = 10, 
+                                random_seed: Optional[int] = None,
+                                expected_themes_generator: Optional[Callable] = None) -> List[Dict]:
+    """
+    Create randomized test cases from URL dataset.
+    
+    Args:
+        sample_urls: List of URL dictionaries
+        count: Number of test cases to generate
+        random_seed: Seed for reproducible randomization
+        expected_themes_generator: Function to generate expected themes
+        
+    Returns:
+        List of test case dictionaries
+    """
+    if random_seed is not None:
+        random.seed(random_seed)
+    
+    # Select random URLs
+    selected_urls = random.sample(sample_urls, min(count, len(sample_urls)))
+    
+    test_cases = []
+    for i, url_data in enumerate(selected_urls):
+        title = url_data['title']
+        
+        # Generate expected themes
+        if expected_themes_generator:
+            expected_themes = expected_themes_generator(title)
+        else:
+            expected_themes = generate_expected_themes(title)
+        
+        # Determine category from title content
+        category = 'unknown'
+        if any(brand in title.lower() for brand in ['agete', 'nojess', 'jewelry']):
+            category = 'jewelry-brands'
+        elif any(brand in title.lower() for brand in ['jojo', 'baby', 'children']):
+            category = 'brand-product-association'
+        elif any(word in title.lower() for word in ['gap', 'fashion', 'clothes']):
+            category = 'fashion-brands'
+        elif any(word in title.lower() for word in ['kindle', 'electronics', 'tech']):
+            category = 'technology'
+        elif any(word in title.lower() for word in ['food', 'snack', '零食']):
+            category = 'food'
+        
+        test_case = {
+            'input': {
+                'title': title,
+                'content': title  # Use title as content for testing
+            },
+            'expected': expected_themes,
+            'url_index': i,
+            'category': category,
+            'original_url': url_data.get('url', '')
+        }
+        test_cases.append(test_case)
+    
+    return test_cases
 
 
 class LLMOptimizer:
@@ -41,7 +189,15 @@ class LLMOptimizer:
         self.test_function = config.get('test_function')
         self.metrics = config.get('metrics', ['theme_coverage', 'success_rate', 'duration'])
         self.confidence_threshold = config.get('confidence_threshold', 0.8)
-        self.primary_metric = config.get('primary_metric', 'theme_coverage')
+        self.primary_metric = config.get('primary_metric', 'avg_theme_coverage')
+        
+        # NEW: Enhanced A/B testing configuration
+        self.include_detailed_results = config.get('include_detailed_results', False)
+        self.verbose_output = config.get('verbose_output', False)
+        self.randomize_urls = config.get('randomize_urls', False)
+        self.url_count = config.get('url_count', 10)
+        self.random_seed = config.get('random_seed', None)
+        
         self.results = {}
         
         # Initialize components
@@ -64,6 +220,20 @@ class LLMOptimizer:
                 'v2': {'coverage': 0.75, 'success_rate': 1.0, 'duration': 4.5}
             }
         """
+        # NEW: Handle URL randomization if enabled
+        if self.randomize_urls:
+            try:
+                sample_urls = load_sample_urls()
+                test_cases = create_randomized_test_cases(
+                    sample_urls, 
+                    count=self.url_count, 
+                    random_seed=self.random_seed
+                )
+                print(f"🎲 Using {len(test_cases)} randomized URLs from dataset")
+            except Exception as e:
+                print(f"⚠️  URL randomization failed: {e}")
+                print("Proceeding with provided test cases...")
+        
         print("🔬 RUNNING LLM OPTIMIZATION A/B TESTING")
         print("=" * 60)
         print(f"Testing {len(prompt_versions)} versions across {len(test_cases)} test cases")
@@ -96,6 +266,10 @@ class LLMOptimizer:
                 }
                 
                 print(f"   Results: {key_metrics}")
+                
+                # NEW: Enhanced console output with per-URL details
+                if self.verbose_output and 'detailed_url_results' in version_results:
+                    self._display_detailed_url_results(version, version_results['detailed_url_results'])
                 
             except Exception as e:
                 print(f"   ❌ Error: {str(e)}")
@@ -237,6 +411,46 @@ class LLMOptimizer:
             
         return steps
     
+    def _display_detailed_url_results(self, version: str, detailed_results: List[Dict]) -> None:
+        """
+        Display detailed per-URL results in console.
+        
+        Args:
+            version: Version identifier
+            detailed_results: List of detailed URL results
+        """
+        print(f"\n   🔍 DETAILED URL RESULTS FOR {version.upper()}:")
+        print(f"   {'='*(len(version)+28)}")
+        
+        for i, url_result in enumerate(detailed_results):
+            title = url_result.get('title', 'Unknown Title')
+            generated_slug = url_result.get('generated_slug', 'no-slug')
+            coverage = url_result.get('coverage', 0)
+            duration = url_result.get('duration', 0)
+            success = url_result.get('success', False)
+            expected_themes = url_result.get('expected_themes', [])
+            
+            # Truncate title for display
+            display_title = title[:60] + '...' if len(title) > 60 else title
+            
+            # Status indicator
+            status_icon = '✅' if success else '❌'
+            
+            print(f"   URL {i}: \"{display_title}\"")
+            print(f"     Generated: {generated_slug}")
+            print(f"     Expected: {expected_themes}")
+            print(f"     Coverage: {coverage:.0%} {status_icon} ({duration:.1f}s)")
+            print()
+        
+        # Summary
+        if detailed_results:
+            avg_coverage = sum(r.get('coverage', 0) for r in detailed_results) / len(detailed_results)
+            success_count = sum(1 for r in detailed_results if r.get('success', False))
+            success_rate = success_count / len(detailed_results)
+            avg_duration = sum(r.get('duration', 0) for r in detailed_results) / len(detailed_results)
+            
+            print(f"   📊 SUMMARY: {avg_coverage:.0%} avg coverage, {success_rate:.0%} success rate, {avg_duration:.1f}s avg duration")
+    
     def export_results(self, filepath: str) -> None:
         """
         Export optimization results to JSON file.
@@ -249,7 +463,13 @@ class LLMOptimizer:
             'config': {
                 'metrics': self.metrics,
                 'primary_metric': self.primary_metric,
-                'confidence_threshold': self.confidence_threshold
+                'confidence_threshold': self.confidence_threshold,
+                # NEW: Enhanced configuration
+                'include_detailed_results': self.include_detailed_results,
+                'verbose_output': self.verbose_output,
+                'randomize_urls': self.randomize_urls,
+                'url_count': self.url_count,
+                'random_seed': self.random_seed
             },
             'results': self.results,
             'insights': self.generate_insights()

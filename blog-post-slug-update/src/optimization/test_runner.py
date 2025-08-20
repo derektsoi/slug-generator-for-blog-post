@@ -119,6 +119,25 @@ class TestRunner:
         durations = [r['duration'] for r in successful_tests]
         confidences = [r.get('confidence', 0) for r in successful_tests]
         
+        # Create detailed individual results with enhanced metadata
+        detailed_individual_results = []
+        for i, result in enumerate(individual_results):
+            test_case = self.test_cases[i] if i < len(self.test_cases) else {}
+            
+            detailed_result = {
+                'url_index': test_case.get('url_index', i),
+                'original_title': test_case.get('input', {}).get('title', 'Unknown Title'),
+                'category': test_case.get('category', 'unknown'),
+                'generated_slug': self._extract_primary_slug(result.get('result')),
+                'theme_coverage': result.get('theme_coverage', 0),
+                'duration': result['duration'],
+                'success': result['success'],
+                'confidence': result.get('confidence', 0),
+                'expected_themes': result.get('expected', []),
+                'error': result.get('error')
+            }
+            detailed_individual_results.append(detailed_result)
+        
         aggregated = {
             'success_rate': len(successful_tests) / total_tests,
             'total_tests': total_tests,
@@ -127,7 +146,8 @@ class TestRunner:
             'total_duration': sum(durations),
             'min_duration': min(durations) if durations else 0,
             'max_duration': max(durations) if durations else 0,
-            'individual_results': individual_results
+            'individual_results': individual_results,
+            'detailed_individual_results': detailed_individual_results  # NEW: Enhanced detailed results
         }
         
         # Add theme coverage metrics if available
@@ -175,6 +195,35 @@ class TestRunner:
             return result
         else:
             return str(result)
+    
+    def _extract_primary_slug(self, result: Any) -> str:
+        """
+        Extract primary slug from test function result.
+        
+        Args:
+            result: Result from test function
+            
+        Returns:
+            Primary slug string for display
+        """
+        if isinstance(result, dict):
+            # Handle SlugGenerator structured results
+            if 'primary' in result:
+                return result['primary']
+            elif 'slug' in result:
+                return result['slug']
+            elif 'output' in result:
+                return str(result['output'])
+            else:
+                # Return first string value found
+                for value in result.values():
+                    if isinstance(value, str) and value:
+                        return value
+                return 'unknown-slug'
+        elif isinstance(result, str):
+            return result
+        else:
+            return str(result) if result else 'unknown-slug'
     
     def get_failed_tests(self) -> List[Dict]:
         """
