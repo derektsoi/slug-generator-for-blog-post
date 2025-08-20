@@ -1,0 +1,248 @@
+{
+  "timestamp": "2025-08-20T09:48:13.793393",
+  "config": {
+    "metrics": [
+      "avg_theme_coverage",
+      "success_rate",
+      "avg_duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.7
+  },
+  "results": {
+    "v1": {
+      "avg_theme_coverage": 0.3625,
+      "success_rate": 0.8,
+      "avg_duration": 5.2908565402030945,
+      "total_tests": 5,
+      "successful_tests": 4,
+      "individual_results": [
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/%e6%97%a5%e6%9c%ac%e8%bc%95%e7%8f%a0%e5%af%b6%e5%93%81%e7%89%8c%e5%90%88%e9%9b%86/",
+          "primary_slug": "japanese-jewelry-brands-guide",
+          "alternatives": [
+            "buy-japanese-jewelry-hong-kong"
+          ],
+          "theme_coverage": 1.0,
+          "matched_themes": [
+            "japanese",
+            "jewelry",
+            "brands",
+            "guide"
+          ],
+          "expected_themes": [
+            "japanese",
+            "jewelry",
+            "brands",
+            "guide"
+          ],
+          "duration": 6.030661106109619,
+          "success": true
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/: No valid slugs generated",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/verish%e9%9f%93%e5%83%b9%e5%b7%ae%e5%a4%a7%e6%af%94%e6%8b%bc/",
+          "primary_slug": "buy-verish-bra-hong-kong-guide",
+          "alternatives": [],
+          "theme_coverage": 0.25,
+          "matched_themes": [
+            "hong-kong"
+          ],
+          "expected_themes": [
+            "korean",
+            "underwear",
+            "comparison",
+            "hong-kong"
+          ],
+          "duration": 5.225843191146851,
+          "success": true
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/17/kindle-amazon%e9%9b%bb%e5%ad%90%e6%9b%b8%e5%85%a8%e6%94%bb%e7%95%a5/",
+          "primary_slug": "buy-ship-hong-kong-guide",
+          "alternatives": [
+            "hong-kong-ecommerce-tips"
+          ],
+          "theme_coverage": 0.2,
+          "matched_themes": [
+            "guide"
+          ],
+          "expected_themes": [
+            "kindle",
+            "ereader",
+            "amazon",
+            "comparison",
+            "guide"
+          ],
+          "duration": 5.0121238231658936,
+          "success": true
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/17/%e9%96%8b%e5%ad%b8%e5%ad%a3%e4%bb%a3%e8%b3%bc%e5%bf%85%e8%b2%b7%e6%b8%85%e5%96%ae/",
+          "primary_slug": "buy-ship-hong-kong-guide",
+          "alternatives": [
+            "hong-kong-ecommerce-tips"
+          ],
+          "theme_coverage": 0.0,
+          "matched_themes": [],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags",
+            "sale"
+          ],
+          "duration": 4.894798040390015,
+          "success": true
+        }
+      ],
+      "version": "v1",
+      "test_time": "2025-08-20T09:47:54.180598",
+      "total_test_cases": 5
+    },
+    "v2": {
+      "avg_theme_coverage": 0.0,
+      "success_rate": 0.0,
+      "avg_duration": 0.0,
+      "total_tests": 5,
+      "successful_tests": 0,
+      "individual_results": [
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/%e6%97%a5%e6%9c%ac%e8%bc%95%e7%8f%a0%e5%af%b6%e5%93%81%e7%89%8c%e5%90%88%e9%9b%86/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/18/%e6%97%a5%e6%9c%ac%e8%bc%95%e7%8f%a0%e5%af%b6%e5%93%81%e7%89%8c%e5%90%88%e9%9b%86/: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/18/verish%e9%9f%93%e5%83%b9%e5%b7%ae%e5%a4%a7%e6%af%94%e6%8b%bc/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/18/verish%e9%9f%93%e5%83%b9%e5%b7%ae%e5%a4%a7%e6%af%94%e6%8b%bc/: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/17/kindle-amazon%e9%9b%bb%e5%ad%90%e6%9b%b8%e5%85%a8%e6%94%bb%e7%95%a5/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/17/kindle-amazon%e9%9b%bb%e5%ad%90%e6%9b%b8%e5%85%a8%e6%94%bb%e7%95%a5/: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "url": "https://www.buyandship.today/blog/2025/08/17/%e9%96%8b%e5%ad%b8%e5%ad%a3%e4%bb%a3%e8%b3%bc%e5%bf%85%e8%b2%b7%e6%b8%85%e5%96%ae/",
+          "error": "Error generating slug for URL https://www.buyandship.today/blog/2025/08/17/%e9%96%8b%e5%ad%b8%e5%ad%a3%e4%bb%a3%e8%b3%bc%e5%bf%85%e8%b2%b7%e6%b8%85%e5%96%ae/: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        }
+      ],
+      "version": "v2",
+      "test_time": "2025-08-20T09:48:13.792608",
+      "total_test_cases": 5
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 2,
+      "successful_versions": 2,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_tests",
+        "successful_tests",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "v1",
+        "value": 0.3625
+      },
+      "worst_avg_theme_coverage": {
+        "version": "v2",
+        "value": 0.0
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.18125,
+        "min": 0.0,
+        "max": 0.3625,
+        "range": 0.3625,
+        "std_dev": 0.25632620818012347,
+        "coefficient_of_variation": 1.4142135623730951
+      },
+      "success_rate": {
+        "mean": 0.4,
+        "min": 0.0,
+        "max": 0.8,
+        "range": 0.8,
+        "std_dev": 0.565685424949238,
+        "coefficient_of_variation": 1.414213562373095
+      },
+      "avg_duration": {
+        "mean": 2.6454282701015472,
+        "min": 0.0,
+        "max": 5.2908565402030945,
+        "range": 5.2908565402030945,
+        "std_dev": 3.7412005378628033,
+        "coefficient_of_variation": 1.414213562373095
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 0,
+        "low_performers": 2,
+        "performance_consistency": "low"
+      }
+    },
+    "recommendations": [
+      "🔄 All versions below 60% coverage - fundamental prompt redesign needed",
+      "📊 High performance variance - analyze what makes top versions effective",
+      "⚠️ Some versions have reliability issues - prioritize error handling",
+      "🔧 Large performance variance - investigate optimization opportunities",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "v1",
+        "baseline_version": "v2",
+        "improvement": 0.3625,
+        "improvement_percentage": 0,
+        "relative_improvement": Infinity
+      },
+      "effect_size": "large"
+    },
+    "optimization_summary": {
+      "best_version": "v1",
+      "total_versions_tested": 2,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "v1",
+        "v2"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "v1",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Deploy v1 to production (significant improvement)",
+        "Monitor production performance for 1 week",
+        "Consider A/B testing with real users"
+      ]
+    }
+  }
+}

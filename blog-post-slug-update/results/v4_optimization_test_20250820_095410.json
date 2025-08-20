@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-08-20T09:54:10.189323",
+  "config": {
+    "metrics": [
+      "avg_theme_coverage",
+      "success_rate",
+      "avg_duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.7
+  },
+  "results": {
+    "v2_fixed": {
+      "avg_theme_coverage": 0.0,
+      "success_rate": 0.0,
+      "avg_duration": 0.0,
+      "total_tests": 7,
+      "successful_tests": 0,
+      "individual_results": [
+        {
+          "title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "日本樂天時尚特價1折怎麼買？NB、BEAMS等男女、童裝優惠合集及集運教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "8大日牌輕珠寶品牌一次睇！Agete、nojess及Star Jewelry等日劇女主御用明星珠寶",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v2.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        }
+      ],
+      "version": "v2_fixed",
+      "test_time": "2025-08-20T09:53:49.118093",
+      "total_test_cases": 7
+    },
+    "v4_optimized": {
+      "avg_theme_coverage": 0.0,
+      "success_rate": 0.0,
+      "avg_duration": 0.0,
+      "total_tests": 7,
+      "successful_tests": 0,
+      "individual_results": [
+        {
+          "title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "日本樂天時尚特價1折怎麼買？NB、BEAMS等男女、童裝優惠合集及集運教學",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        },
+        {
+          "title": "8大日牌輕珠寶品牌一次睇！Agete、nojess及Star Jewelry等日劇女主御用明星珠寶",
+          "error": "Error generating slug from content: Failed to generate slug after 2 retry attempts: [Errno 2] No such file or directory: '/Users/derektsoi/claude-project/config/prompts/slug_generation_v4.txt'",
+          "theme_coverage": 0.0,
+          "duration": 0.0,
+          "success": false
+        }
+      ],
+      "version": "v4_optimized",
+      "test_time": "2025-08-20T09:54:10.188479",
+      "total_test_cases": 7
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 2,
+      "successful_versions": 2,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_tests",
+        "successful_tests",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "v2_fixed",
+        "value": 0.0
+      },
+      "worst_avg_theme_coverage": {
+        "version": "v2_fixed",
+        "value": 0.0
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "std_dev": 0.0,
+        "coefficient_of_variation": 0
+      },
+      "success_rate": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "std_dev": 0.0,
+        "coefficient_of_variation": 0
+      },
+      "avg_duration": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "std_dev": 0.0,
+        "coefficient_of_variation": 0
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 0,
+        "low_performers": 2,
+        "performance_consistency": "high"
+      }
+    },
+    "recommendations": [
+      "🔄 All versions below 60% coverage - fundamental prompt redesign needed",
+      "⚠️ Some versions have reliability issues - prioritize error handling",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "v2_fixed",
+        "baseline_version": "v4_optimized",
+        "improvement": 0.0,
+        "improvement_percentage": 0,
+        "relative_improvement": Infinity
+      },
+      "effect_size": "small"
+    },
+    "optimization_summary": {
+      "best_version": "v2_fixed",
+      "total_versions_tested": 2,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "v2_fixed",
+        "v4_optimized"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "v2_fixed",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Investigate why improvements are minimal",
+        "Consider testing more diverse prompt variations",
+        "Analyze failed test cases for insights"
+      ]
+    }
+  }
+}
