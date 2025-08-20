@@ -32,21 +32,22 @@ class SlugGenerator:
         
         Args:
             api_key: OpenAI API key. If None, will try to load from environment.
-            config: Configuration object. If None, uses default configuration.
+            config: Configuration object. If None, uses version-aware configuration.
             max_retries: Maximum retry attempts (backward compatibility)
             retry_delay: Base retry delay (backward compatibility)
-            prompt_version: Prompt version to use (e.g., 'v7', 'current') 
+            prompt_version: Prompt version to use (e.g., 'v7', 'current', 'v8') 
         """
-        self.config = config or SlugGeneratorConfig()
+        # Store prompt version for use throughout the class
+        self.prompt_version = prompt_version
+        
+        # Use version-aware configuration if no config provided
+        self.config = config or SlugGeneratorConfig.for_version(prompt_version)
         
         # Override config with backward compatibility parameters
         if max_retries is not None:
             self.config.MAX_RETRIES = max_retries
         if retry_delay is not None:
             self.config.RETRY_BASE_DELAY = retry_delay
-        
-        # Store prompt version for use in _load_prompt
-        self.prompt_version = prompt_version
             
         self.api_key = api_key or self.config.get_api_key()
         

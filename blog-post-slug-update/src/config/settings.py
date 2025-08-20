@@ -29,13 +29,22 @@ class SlugGeneratorConfig:
     CONFIDENCE_THRESHOLD = 0.5
     MAX_TAGS_PER_CATEGORY = 5
     
-    # SEO Optimization Settings
+    # SEO Optimization Settings (version-aware)
     MAX_WORDS = 6
     MAX_CHARS = 60
     MIN_WORDS = 3
     
     # Prompt Configuration
     DEFAULT_PROMPT_VERSION = "v5"  # Current production version
+    
+    # Version-specific settings
+    VERSION_SETTINGS = {
+        'v8': {
+            'MAX_WORDS': 8,      # Relaxed from 6 to 8 for complex multi-brand
+            'MAX_CHARS': 70,     # Relaxed from 60 to 70 for longer descriptive slugs
+            'CONFIDENCE_THRESHOLD': 0.75,  # Higher threshold for V8's enhanced complexity
+        }
+    }
     
     @classmethod
     def get_api_key(cls) -> str:
@@ -59,6 +68,20 @@ class SlugGeneratorConfig:
         
         config_dir = os.path.dirname(__file__)
         return os.path.join(config_dir, 'prompts', filename)
+    
+    def apply_version_settings(self, version: str = None) -> 'SlugGeneratorConfig':
+        """Apply version-specific settings and return configured instance"""
+        if version and version in self.VERSION_SETTINGS:
+            settings = self.VERSION_SETTINGS[version]
+            for key, value in settings.items():
+                setattr(self, key, value)
+        return self
+    
+    @classmethod
+    def for_version(cls, version: str = None) -> 'SlugGeneratorConfig':
+        """Create a configuration instance with version-specific settings applied"""
+        config = cls()
+        return config.apply_version_settings(version)
     
     @classmethod
     def to_dict(cls) -> Dict[str, Any]:
