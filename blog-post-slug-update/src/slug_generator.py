@@ -6,6 +6,8 @@ Generates SEO-friendly slugs from blog post URLs using AI
 
 import os
 import re
+import json
+import time
 from typing import Dict, List, Optional
 from dotenv import load_dotenv
 import openai
@@ -21,12 +23,14 @@ class SlugGenerator:
     AI-powered blog post slug generator using OpenAI.
     """
     
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, max_retries: int = 3, retry_delay: float = 1.0):
         """
         Initialize the SlugGenerator.
         
         Args:
             api_key: OpenAI API key. If None, will try to load from environment.
+            max_retries: Maximum number of retry attempts for LLM calls.
+            retry_delay: Base delay in seconds for exponential backoff.
         """
         self.api_key = api_key or os.getenv('OPENAI_API_KEY')
         
@@ -39,16 +43,21 @@ class SlugGenerator:
         # Initialize OpenAI client
         self.client = openai.OpenAI(api_key=self.api_key)
         
+        # Retry configuration
+        self.max_retries = max_retries
+        self.retry_delay = retry_delay
+        
+        # Content limits (improved from content-analyzer)
+        self.api_content_limit = 3000  # Increased from 2000
+        self.prompt_preview_limit = 1500  # Increased from 500
+        
+        # LLM settings
+        self.confidence_threshold = 0.5
+        self.max_tags_per_category = 5
+        
         # SEO optimization settings
         self.max_words = 6
         self.max_chars = 60
-        self.stop_words = {
-            'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
-            'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
-            'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
-            'should', 'may', 'might', 'must', 'can', 'this', 'that', 'these',
-            'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they'
-        }
     
     def generate_slug(self, url: str, count: int = 1) -> Dict:
         """
@@ -68,23 +77,18 @@ class SlugGenerator:
             # Extract title and content from URL
             title, content = extract_title_and_content(url)
             
-            # Generate slug using OpenAI
-            slug_suggestions = self._generate_with_openai(title, content, count)
+            # Generate slug using OpenAI with retry logic
+            slug_data = self._generate_with_openai_retry(title, content, count)
             
             # Validate and clean suggestions
             cleaned_suggestions = []
-            for suggestion in slug_suggestions:
-                cleaned = clean_slug(suggestion)
+            for slug_info in slug_data:
+                cleaned = clean_slug(slug_info['slug'])
                 if cleaned and self.is_valid_slug(cleaned):
                     cleaned_suggestions.append(cleaned)
             
             if not cleaned_suggestions:
-                # Fallback to basic generation if OpenAI fails
-                fallback_slug = self._generate_fallback_slug(title, content)
-                cleaned_suggestions = [fallback_slug] if fallback_slug else []
-            
-            if not cleaned_suggestions:
-                raise Exception("Unable to generate valid slug from content")
+                raise Exception("No valid slugs generated")
             
             result = {
                 'primary': cleaned_suggestions[0],
@@ -101,123 +105,154 @@ class SlugGenerator:
             else:
                 raise Exception(f"Error generating slug for URL {url}: {str(e)}")
     
-    def _generate_with_openai(self, title: str, content: str, count: int = 1) -> List[str]:
+    def _generate_with_openai_retry(self, title: str, content: str, count: int = 1) -> List[Dict]:
+        """
+        Use OpenAI to generate intelligent slug suggestions with retry logic.
+        """
+        for attempt in range(self.max_retries + 1):
+            try:
+                return self._generate_with_openai(title, content, count)
+            except Exception as e:
+                if attempt == self.max_retries:
+                    raise Exception(f"Failed to generate slug after {self.max_retries} retry attempts: {str(e)}")
+                
+                # Calculate exponential backoff delay
+                delay = self.retry_delay * (2 ** attempt)
+                
+                # Handle different error types
+                if "rate limit" in str(e).lower():
+                    # Longer delay for rate limits
+                    delay = delay * 2
+                
+                time.sleep(delay)
+                continue
+    
+    def _generate_with_openai(self, title: str, content: str, count: int = 1) -> List[Dict]:
         """
         Use OpenAI to generate intelligent slug suggestions.
         """
-        # Prepare content for analysis (limit length to avoid token limits)
-        analysis_content = content[:2000] if content else ""
+        # Prepare content for analysis with improved limits
+        analysis_content = content[:self.api_content_limit] if content else ""
         
         # Create prompt for OpenAI
         prompt = self._create_slug_prompt(title, analysis_content, count)
         
+        response = self.client.chat.completions.create(
+            model="gpt-4o-mini",  # Upgraded model
+            messages=[
+                {"role": "system", "content": "You are an SEO expert specializing in creating URL-friendly blog post slugs for cross-border e-commerce content."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=500,  # Increased for JSON response
+            temperature=0.3,
+            response_format={"type": "json_object"}  # Force JSON response
+        )
+        
+        # Parse JSON response
+        response_text = response.choices[0].message.content.strip()
+        
         try:
-            response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are an SEO expert specializing in creating URL-friendly blog post slugs."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=200,
-                temperature=0.3
-            )
+            slug_data = json.loads(response_text)
             
-            # Parse response
-            suggestions_text = response.choices[0].message.content.strip()
+            if "slugs" not in slug_data:
+                raise Exception("Response missing 'slugs' key")
             
-            # Extract individual suggestions (assuming they're separated by newlines or commas)
-            suggestions = []
-            for line in suggestions_text.split('\n'):
-                line = line.strip()
-                if line and not line.startswith('#') and not line.startswith('-'):
-                    # Remove any numbering or bullets
-                    line = re.sub(r'^\d+[\.\)]\s*', '', line)
-                    line = re.sub(r'^[\-\*]\s*', '', line)
-                    suggestions.append(line.strip())
+            # Filter by confidence threshold
+            filtered_slugs = [
+                slug_info for slug_info in slug_data["slugs"]
+                if isinstance(slug_info, dict) and 
+                   slug_info.get("confidence", 0) >= self.confidence_threshold
+            ]
             
-            # If no newlines, try comma separation
-            if len(suggestions) <= 1 and ',' in suggestions_text:
-                suggestions = [s.strip() for s in suggestions_text.split(',')]
+            # If no slugs meet threshold, lower it or take best available
+            if not filtered_slugs and slug_data["slugs"]:
+                # Take the highest confidence slug even if below threshold
+                filtered_slugs = sorted(
+                    slug_data["slugs"], 
+                    key=lambda x: x.get("confidence", 0), 
+                    reverse=True
+                )[:count]
             
-            return suggestions[:count] if suggestions else [suggestions_text]
+            if not filtered_slugs:
+                raise Exception("No slugs in response")
             
+            return filtered_slugs[:count]
+            
+        except json.JSONDecodeError as e:
+            raise Exception(f"Failed to parse OpenAI response as JSON: {e}")
         except Exception as e:
             if "rate limit" in str(e).lower():
-                raise Exception("OpenAI rate limit exceeded. Please try again later.")
+                raise Exception("OpenAI rate limit exceeded")
             else:
                 raise Exception(f"OpenAI API request failed: {str(e)}")
     
+    def _load_prompt(self, prompt_name: str) -> str:
+        """
+        Load prompt from external template file.
+        """
+        prompt_path = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)), 
+            'config', 'prompts', f'{prompt_name}.txt'
+        )
+        
+        try:
+            with open(prompt_path, 'r', encoding='utf-8') as f:
+                return f.read().strip()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Prompt file not found: {prompt_path}")
+    
     def _create_slug_prompt(self, title: str, content: str, count: int) -> str:
         """
-        Create a well-structured prompt for OpenAI slug generation.
+        Create a well-structured prompt for OpenAI slug generation using external template.
         """
-        prompt = f"""
-Generate {count} SEO-friendly URL slug{'s' if count > 1 else ''} for this blog post.
-
-REQUIREMENTS:
-- 3-6 words maximum
-- Lowercase with hyphens (e.g., "best-react-hooks-guide")
-- Under 60 characters total
-- Descriptive and keyword-rich
-- No stop words like "the", "a", "and", "of", "in"
-- Focus on the main topic/value proposition
+        # Load base prompt template
+        base_prompt = self._load_prompt('slug_generation')
+        
+        # Prepare content with improved preview limit
+        content_preview = content[:self.prompt_preview_limit] if content else ""
+        
+        # Build the complete prompt
+        prompt = f"""{base_prompt}
 
 BLOG POST INFORMATION:
 Title: {title}
-Content Preview: {content[:500]}...
+Content: {content_preview}
 
-{"Please provide " + str(count) + " different slug options, one per line:" if count > 1 else "Provide the best slug:"}
+Generate {count} different slug options with confidence scores and reasoning.
 """
         return prompt.strip()
     
-    def _generate_fallback_slug(self, title: str, content: str) -> Optional[str]:
+    def generate_slug_from_content(self, title: str, content: str, count: int = 1) -> Dict:
         """
-        Fallback slug generation without OpenAI (enhanced keyword extraction).
+        Generate slug directly from title and content (for testing).
         """
-        # Combine title and some content for better keyword extraction
-        combined_text = title
-        if content:
-            combined_text += " " + content[:300]
-        
-        if not combined_text:
-            return None
-        
-        # Enhanced keyword extraction that handles mixed languages
-        # Extract English words (3+ letters) and brand names
-        english_words = re.findall(r'\b[a-zA-Z]{3,}\b', combined_text)
-        
-        # Also extract common brand patterns and important terms
-        brand_patterns = re.findall(r'\b(?:jojo|maman|bebe|kindle|amazon|uk|japan|korea)\b', combined_text.lower())
-        
-        # Combine and clean
-        all_words = [w.lower() for w in english_words] + brand_patterns
-        
-        # Filter out stop words and duplicates
-        keywords = []
-        seen = set()
-        for word in all_words:
-            if word not in self.stop_words and word not in seen and len(word) >= 3:
-                keywords.append(word)
-                seen.add(word)
-        
-        # Prioritize brand names and important terms
-        priority_terms = ['jojo', 'maman', 'bebe', 'kindle', 'amazon', 'uk', 'japan', 'guide', 'shopping']
-        priority_keywords = [k for k in keywords if k in priority_terms]
-        other_keywords = [k for k in keywords if k not in priority_terms]
-        
-        # Combine with priority terms first
-        selected_keywords = priority_keywords[:4] + other_keywords[:2]
-        
-        # Ensure we have at least 3 words
-        if len(selected_keywords) < 3:
-            selected_keywords = keywords[:5]  # Take more if needed
-        
-        if not selected_keywords:
-            return None
-        
-        # Create and clean slug
-        slug = '-'.join(selected_keywords[:6])  # Max 6 words
-        return clean_slug(slug)
+        try:
+            # Generate slug using OpenAI with retry logic
+            slug_data = self._generate_with_openai_retry(title, content, count)
+            
+            # Validate and clean suggestions
+            cleaned_suggestions = []
+            for slug_info in slug_data:
+                cleaned = clean_slug(slug_info['slug'])
+                if cleaned and self.is_valid_slug(cleaned):
+                    cleaned_suggestions.append(cleaned)
+            
+            if not cleaned_suggestions:
+                raise Exception("No valid slugs generated")
+            
+            result = {
+                'primary': cleaned_suggestions[0],
+                'alternatives': cleaned_suggestions[1:] if len(cleaned_suggestions) > 1 else [],
+                'title': title
+            }
+            
+            return result
+            
+        except Exception as e:
+            if "No valid slugs" in str(e):
+                raise e  # Re-raise with original message
+            else:
+                raise Exception(f"Error generating slug from content: {str(e)}")
     
     def is_valid_slug(self, slug: str) -> bool:
         """
