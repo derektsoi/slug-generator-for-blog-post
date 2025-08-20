@@ -1,0 +1,191 @@
+{
+  "timestamp": "2025-08-19T23:56:18.714484",
+  "sample_size": 20,
+  "region": "Hong Kong",
+  "processing_time": 0.0011739730834960938,
+  "estimated_cost": 0.0024,
+  "evaluation": {
+    "total_entries": 20,
+    "successful_entries": 20,
+    "quality_scores": {
+      "slugs": {
+        "valid": 20,
+        "length_ok": 20,
+        "contains_region": 20
+      },
+      "titles": {
+        "valid": 20,
+        "length_ok": 20,
+        "contains_region": 20
+      },
+      "meta_descriptions": {
+        "valid": 20,
+        "length_ok": 20,
+        "compelling": 20
+      }
+    },
+    "issues": []
+  },
+  "results": [
+    {
+      "original_title": "8大日牌輕珠寶品牌一次睇！Agete、nojess及Star Jewelry等日劇女主御用明星珠寶",
+      "original_url": "https://www.buyandship.today/blog/2025/08/18/%e6%97%a5%e6%9c%ac%e8%bc%95%e7%8f%a0%e5%af%b6%e5%93%81%e7%89%8c%e5%90%88%e9%9b%86/",
+      "region": "Hong Kong",
+      "slug": "japanese-jewelry-brands-guide-hong-kong",
+      "title": "Japanese Jewelry Brands Guide | Hong Kong",
+      "meta_description": "Discover popular Japanese jewelry brands like Agete, Star Jewelry, nojess. Find exclusive deals with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "Verish內衣品牌港韓價差大比拼！人氣Cool-Fit無鋼圈、運動系列必買推介",
+      "original_url": "https://www.buyandship.today/blog/2025/08/18/verish%e9%9f%93%e5%83%b9%e5%b7%ae%e5%a4%a7%e6%af%94%e6%8b%bc/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "jojo-maman-bebe-uk-baby-clothes-guide-hong-kong",
+      "title": "JoJo Maman Bébé UK Baby Clothes Guide | Hong Kong",
+      "meta_description": "Shop JoJo Maman Bébé UK baby clothes with exclusive discounts. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "如何代購 3COINS 日本限定及網絡限定商品？Pokemon周邊、相機及扭蛋收納神器推薦",
+      "original_url": "https://www.buyandship.today/blog/2025/08/15/3coins%e6%97%a5%e6%9c%ac%e9%99%90%e5%ae%9a%e4%bb%a3%e8%b3%bc/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "日本樂天時尚特價1折怎麼買？NB、BEAMS等男女、童裝優惠合集及集運教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/14/rakuten-fashion-clearance-must-buy-brands/",
+      "region": "Hong Kong",
+      "slug": "clothes-guide-hong-kong",
+      "title": "Baby Fashion Shopping Guide | Hong Kong",
+      "meta_description": "Find the best baby fashion and clothing deals. Find exclusive deals with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/13/%e6%97%a5%e6%9c%ac%e6%a8%82%e5%a4%a9%e9%9b%a8%e5%82%98%e7%b6%b2%e8%b3%bc%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "公仔衫、娃衣配件哪裡買？日本3COINS、Sanrio及手工製平台必買推介",
+      "original_url": "https://www.buyandship.today/blog/2025/08/13/%e5%a8%83%e8%a1%a3%e5%93%aa%e8%a3%a1%e8%b2%b7/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/13/kindle%e7%b6%b2%e8%b3%bc%e6%94%bb%e7%95%a5/",
+      "region": "Hong Kong",
+      "slug": "kindle-guide-hong-kong",
+      "title": "Kindle E-Reader Guide & Comparison | Hong Kong",
+      "meta_description": "Compare Kindle e-reader models and find the best deals. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+      "original_url": "https://www.buyandship.today/blog/2025/08/13/gap%e9%9b%86%e5%9c%98%e7%be%8e%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "GAP Group US Online Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+      "original_url": "https://www.buyandship.today/blog/2025/08/12/%e9%96%8b%e5%ad%b8%e5%ad%a3%e4%bb%a3%e8%b3%bc%e5%bf%85%e8%b2%b7%e6%b8%85%e5%96%ae/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "2025年12大必買日本手信零食，唔使出國親身排隊都輕鬆買到！",
+      "original_url": "https://www.buyandship.today/blog/2025/08/12/%e5%bf%85%e8%b2%b7%e6%97%a5%e6%9c%ac%e6%89%8b%e4%bf%a1/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "Taylor Swift最新錄音室專輯預購中！紀念Tee、卡式帶等官方週邊美國購買集運教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/12/taylorswift%e7%be%8e%e5%9c%8b%e5%ae%98%e7%b6%b2%e7%b6%b2%e8%b3%bc%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "地雷系、量產型日系穿搭是什麼？日本入手Rojita等5大必買女裝品牌推介及集運全教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/11/%e5%9c%b0%e9%9b%b7%e7%b3%bb%e9%87%8f%e7%94%a2%e5%9e%8b%e7%a9%bf%e6%90%ad%e7%b6%b2%e8%b3%bc%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "大國藥妝香港開店定價無優勢！學識日本轉運平價入手化妝品、日用品等必買推介",
+      "original_url": "https://www.buyandship.today/blog/2025/08/11/%e5%a4%a7%e5%9c%8b%e8%97%a5%e5%a6%9d%e6%97%a5%e6%9c%ac%e8%bd%89%e9%81%8b%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong. Shop now!"
+    },
+    {
+      "original_title": "吐槽系萌物Joke Bear自嘲熊週邊商品低至本地5折！附nagano market日本官網網購教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/10/joke-bear%e8%87%aa%e5%98%b2%e7%86%8a%e6%97%a5%e6%9c%acnagano-market%e7%b6%b2%e8%b3%bc%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "韓國必逛7大百貨公司一次睇！內附TNF、KANGOL等必買推介及集運教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/08/%e9%9f%93%e5%9c%8b%e5%bf%85%e9%80%9b7%e5%a4%a7%e7%99%be%e8%b2%a8%e5%85%ac%e5%8f%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Find exclusive deals with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "Chiikawa吉伊卡哇角色介紹及日本官網網購教學！原價搶購官方正版新款、福袋及一番賞",
+      "original_url": "https://www.buyandship.today/blog/2025/08/07/chiikawa-japan-shopping-guide/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "日本迪士尼Disney Store網購集運教學，平價入手正版周邊精品",
+      "original_url": "https://www.buyandship.today/blog/2025/08/06/%e6%97%a5%e6%9c%ac%e8%bf%aa%e5%a3%ab%e5%b0%bcshopdisneystore%e7%b6%b2%e8%b3%bc%e9%9b%86%e9%81%8b%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "DR.WU台灣買最平！杏仁酸/A醇/玻尿酸保濕等明星產品買一送一，內附網購集運教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/06/dr-wu%e5%8f%b0%e7%81%a3%e8%b2%b7%e6%9c%80%e5%b9%b3%e7%94%a2%e5%93%81%e6%8e%a8%e4%bb%8b/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    },
+    {
+      "original_title": "被譽為收藏家的社交天堂，Whatnot 到底是什麼？內附註冊、網購集運全教學",
+      "original_url": "https://www.buyandship.today/blog/2025/08/05/whatnot%e7%b6%b2%e8%b3%bc%e9%9b%86%e9%81%8b%e6%95%99%e5%ad%b8/",
+      "region": "Hong Kong",
+      "slug": "guide-hong-kong",
+      "title": "Shopping Guide | Hong Kong",
+      "meta_description": "Discover the best shopping deals and guides. Get authentic products with BuyandShip Hong Kong shipping service."
+    }
+  ]
+}
