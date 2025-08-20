@@ -2,6 +2,7 @@
 
 from optimization.optimizer import LLMOptimizer
 from optimization.metrics_calculator import MetricsCalculator  
-from optimization.comparator import ResultComparator
+from optimization.comparator import Comparator
+from optimization.test_runner import TestRunner
 
-__all__ = ['LLMOptimizer', 'MetricsCalculator', 'ResultComparator']
+__all__ = ['LLMOptimizer', 'MetricsCalculator', 'Comparator', 'TestRunner']
