@@ -1,0 +1,177 @@
+{
+  "timestamp": "2025-08-20T09:42:54.008354",
+  "config": {
+    "metrics": [
+      "avg_theme_coverage",
+      "success_rate",
+      "avg_duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.8
+  },
+  "results": {
+    "v1": {
+      "avg_theme_coverage": 0.586,
+      "success_rate": 1.0,
+      "avg_duration": 5.2,
+      "individual_results": [
+        {
+          "theme_coverage": 0.6,
+          "success": true,
+          "duration": 5.1
+        },
+        {
+          "theme_coverage": 0.5,
+          "success": true,
+          "duration": 5.3
+        },
+        {
+          "theme_coverage": 0.65,
+          "success": true,
+          "duration": 5.2
+        }
+      ],
+      "version": "v1",
+      "test_time": "2025-08-20T09:42:54.007934",
+      "total_test_cases": 3
+    },
+    "v2": {
+      "avg_theme_coverage": 0.729,
+      "success_rate": 1.0,
+      "avg_duration": 4.8,
+      "individual_results": [
+        {
+          "theme_coverage": 0.75,
+          "success": true,
+          "duration": 4.9
+        },
+        {
+          "theme_coverage": 0.7,
+          "success": true,
+          "duration": 4.7
+        },
+        {
+          "theme_coverage": 0.73,
+          "success": true,
+          "duration": 4.8
+        }
+      ],
+      "version": "v2",
+      "test_time": "2025-08-20T09:42:54.007950",
+      "total_test_cases": 3
+    },
+    "v3": {
+      "avg_theme_coverage": 0.607,
+      "success_rate": 0.86,
+      "avg_duration": 6.1,
+      "individual_results": [
+        {
+          "theme_coverage": 0.9,
+          "success": true,
+          "duration": 5.8
+        },
+        {
+          "theme_coverage": 0.0,
+          "success": false,
+          "duration": 0.0,
+          "error": "JSON parsing error"
+        },
+        {
+          "theme_coverage": 0.65,
+          "success": true,
+          "duration": 6.4
+        }
+      ],
+      "version": "v3",
+      "test_time": "2025-08-20T09:42:54.007957",
+      "total_test_cases": 3
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 3,
+      "successful_versions": 3,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "v2",
+        "value": 0.729
+      },
+      "worst_avg_theme_coverage": {
+        "version": "v1",
+        "value": 0.586
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.6406666666666666,
+        "min": 0.586,
+        "max": 0.729,
+        "range": 0.14300000000000002,
+        "std_dev": 0.07721614684334704,
+        "coefficient_of_variation": 0.1205246828980443
+      },
+      "success_rate": {
+        "mean": 0.9533333333333334,
+        "min": 0.86,
+        "max": 1.0,
+        "range": 0.14,
+        "std_dev": 0.08082903768654762,
+        "coefficient_of_variation": 0.08478570386700798
+      },
+      "avg_duration": {
+        "mean": 5.366666666666666,
+        "min": 4.8,
+        "max": 6.1,
+        "range": 1.2999999999999998,
+        "std_dev": 0.6658328118479392,
+        "coefficient_of_variation": 0.12406822581017501
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 3,
+        "low_performers": 0,
+        "performance_consistency": "medium"
+      }
+    },
+    "recommendations": [
+      "⚠️ Best version achieves 72.9% coverage - consider further optimization",
+      "⚠️ Some versions have reliability issues - prioritize error handling"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "v2",
+        "baseline_version": "v1",
+        "improvement": 0.14300000000000002,
+        "improvement_percentage": 24.402730375426625,
+        "relative_improvement": 1.2440273037542662
+      },
+      "effect_size": "medium"
+    },
+    "optimization_summary": {
+      "best_version": "v2",
+      "total_versions_tested": 3,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "v2",
+        "v3",
+        "v1"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "v2",
+      "confidence_level": "high",
+      "next_steps": [
+        "Deploy v2 to production (significant improvement)",
+        "Monitor production performance for 1 week",
+        "Consider A/B testing with real users"
+      ]
+    }
+  }
+}
