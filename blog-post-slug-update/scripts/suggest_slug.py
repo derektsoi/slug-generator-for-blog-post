@@ -12,8 +12,7 @@ import time
 # Add src directory to Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from slug_generator import SlugGenerator
-from utils import is_url
+from core import SlugGenerator, is_url
 
 
 def main():
