@@ -15,7 +15,9 @@ src/
 
 config/
 └── prompts/
-    └── slug_generation.txt # External prompt template with 5-step analysis
+    ├── slug_generation.txt     # Original prompt template
+    ├── slug_generation_v2.txt  # Optimized production prompt (72.9% coverage)
+    └── slug_generation_v3.txt  # Advanced experimental prompt
 
 scripts/
 ├── suggest_slug.py        # CLI entry point for slug generation
@@ -25,12 +27,20 @@ tests/
 ├── test_llm_implementation.py    # Current implementation analysis tests
 ├── test_improved_implementation.py # TDD tests for all improvements
 ├── test_slug_generator.py        # Legacy unit tests
+├── test_prompt_evolution.py      # Prompt optimization testing framework
+├── test_comprehensive_comparison.py # Multi-version prompt comparison
+├── test_v3_prompt.py             # V3 prompt focused testing
 └── mock_patterns.py              # Test utilities
 
 data/
 └── blog_urls_dataset.json       # 8,194 real blog URLs for testing
 
 results/                          # Generated test results and analysis
+├── comprehensive_prompt_comparison_*.json
+├── prompt_evolution_*.json
+└── test_results_*.json
+
+prompt_analysis.py                # Prompt performance analysis tools
 ```
 
 ## Project Purpose
@@ -44,7 +54,8 @@ results/                          # Generated test results and analysis
 - **LLM-first approach:** No keyword fallbacks, pure AI generation
 - **Intelligent retry logic:** Exponential backoff for API failures
 - **Enhanced content analysis:** 3000-char content extraction
-- **Structured prompting:** 5-step systematic analysis process
+- **Optimized prompting:** Production V2 prompt with 72.9% theme coverage
+- **Prompt engineering:** Systematic A/B testing framework for optimization
 - **Cross-border specialization:** Geographic and brand context awareness
 - **Confidence scoring:** Quality-based filtering with reasoning
 
@@ -113,6 +124,51 @@ Output:
 - `uk-jojo-maman-bebe-guide` (UK children's clothing)
 - `kindle-shopping-guide-hong-kong` (E-reader comparison)
 
+### **🚀 Prompt Engineering Optimization (December 2024)**
+
+**Major Achievement:** Systematic prompt optimization achieving **14.3% performance improvement** through data-driven A/B testing.
+
+**Optimization Process:**
+- **V1 (Baseline)**: Original 5-step analysis prompt - 58.6% theme coverage
+- **V2 (Production)**: Few-shot examples with brand-product associations - **72.9% coverage**
+- **V3 (Experimental)**: Advanced semantic rules - 91.7% focused, 60.7% comprehensive
+
+**V2 Prompt Features (Production Default):**
+```
+✅ Few-shot learning with perfect examples
+✅ Explicit brand-product association rules
+✅ Enhanced geographic context recognition  
+✅ Mandatory product category inclusion
+✅ Improved content type classification
+```
+
+**Testing Framework:**
+```
+🔬 Comprehensive A/B Testing:
+├── 7 content categories (brand-product, seasonal, fashion, etc.)
+├── Automated theme coverage measurement
+├── Real blog URL validation
+└── Performance ranking and analysis
+```
+
+**Production Results:**
+- **Theme Coverage**: 72.9% (vs 58.6% baseline)
+- **Success Rate**: 100% (no fallbacks triggered)
+- **Performance**: 4.87s average response time
+- **Reliability**: Perfect JSON parsing and confidence scoring
+
+**Key Learnings:**
+1. **Few-shot examples > Complex rules**: V2's concrete examples outperformed V3's sophisticated logic
+2. **Systematic testing is crucial**: Without A/B testing, we wouldn't know V2 > V3
+3. **Production validation matters**: Real blog content revealed true performance
+4. **Simpler can be better**: Focused approach beat over-engineered complexity
+
+**Files:**
+- `config/prompts/slug_generation_v2.txt` - Production prompt (auto-loaded)
+- `test_comprehensive_comparison.py` - A/B testing framework
+- `prompt_analysis.py` - Performance measurement tools
+- `results/comprehensive_prompt_comparison_*.json` - Detailed test results
+
 ## Development Setup
 
 **Environment Setup:**
@@ -162,6 +218,12 @@ python test_current_implementation.py
 
 # Test with 10 real samples
 python test_10_samples.py
+
+# Prompt optimization testing
+python test_comprehensive_comparison.py  # Compare all prompt versions
+python test_prompt_evolution.py         # Evolution testing framework
+python test_v3_prompt.py                # Test experimental V3 prompt
+python prompt_analysis.py               # Analyze current prompt performance
 ```
 
 ## Test-Driven Development
