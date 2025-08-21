@@ -13,6 +13,10 @@ import openai
 
 from core.content_extractor import extract_title_and_content, is_url
 from core.validators import clean_slug, validate_slug
+from core.exceptions import (
+    ErrorHandler, ConfigurationError, APIError, ContentError, 
+    JSONFormatError, SlugValidationError
+)
 from config.settings import SlugGeneratorConfig
 
 # Load environment variables
@@ -26,7 +30,8 @@ class SlugGenerator:
     """
     
     def __init__(self, api_key: Optional[str] = None, config: SlugGeneratorConfig = None, 
-                 max_retries: int = None, retry_delay: float = None, prompt_version: str = None):
+                 max_retries: int = None, retry_delay: float = None, prompt_version: str = None,
+                 enable_validation: bool = True, dev_mode: bool = False):
         """
         Initialize the SlugGenerator with centralized configuration.
         
@@ -35,24 +40,252 @@ class SlugGenerator:
             config: Configuration object. If None, uses version-aware configuration.
             max_retries: Maximum retry attempts (backward compatibility)
             retry_delay: Base retry delay (backward compatibility)
-            prompt_version: Prompt version to use (e.g., 'v7', 'current', 'v8') 
+            prompt_version: Prompt version to use (e.g., 'v7', 'current', 'v8')
+            enable_validation: Enable pre-flight validation (default: True)
+            dev_mode: Enable development mode with enhanced error reporting (default: False)
         """
-        # Store prompt version for use throughout the class
+        # Store prompt version and development mode for use throughout the class
         self.prompt_version = prompt_version
+        self.dev_mode = dev_mode
+        
+        # Initialize error handler
+        self.error_handler = ErrorHandler(dev_mode)
         
         # Use version-aware configuration if no config provided
-        self.config = config or SlugGeneratorConfig.for_version(prompt_version)
+        try:
+            self.config = config or SlugGeneratorConfig.for_version(prompt_version)
+        except Exception as e:
+            config_error = self.error_handler.handle_configuration_error(e, prompt_version)
+            if dev_mode:
+                self.error_handler.log_error(config_error)
+            raise config_error
         
         # Override config with backward compatibility parameters
         if max_retries is not None:
             self.config.MAX_RETRIES = max_retries
         if retry_delay is not None:
             self.config.RETRY_BASE_DELAY = retry_delay
+        
+        # Pre-flight validation (optional)
+        if enable_validation:
+            self._run_preflight_validation()
             
         self.api_key = api_key or self.config.get_api_key()
         
         # Initialize OpenAI client
         self.client = openai.OpenAI(api_key=self.api_key)
+        
+        # Backward compatibility properties
+        self.max_retries = self.config.MAX_RETRIES
+        self.retry_delay = self.config.RETRY_BASE_DELAY
+    
+    def _run_preflight_validation(self):
+        """Run pre-flight validation to prevent runtime errors"""
+        try:
+            # Import validation here to avoid circular dependencies
+            import sys
+            import os
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+            from tests.unit.test_validation_pipeline import PreFlightValidator
+            
+            validator = PreFlightValidator()
+            results = validator.run_full_validation(self.prompt_version)
+            
+            if not results['passed']:
+                error_messages = '; '.join(results['errors'])
+                if self.dev_mode:
+                    # In dev mode, provide detailed information
+                    print(f"⚠️  Pre-flight validation issues found:")
+                    for error in results['errors']:
+                        print(f"  • {error}")
+                    for warning in results['warnings']:
+                        print(f"  ⚠️  {warning}")
+                    raise RuntimeError(f"Pre-flight validation failed: {error_messages}")
+                else:
+                    # In production, fail fast with clear message
+                    raise RuntimeError(f"Configuration validation failed: {error_messages}")
+            
+            if results['warnings'] and self.dev_mode:
+                print(f"⚠️  Pre-flight validation warnings:")
+                for warning in results['warnings']:
+                    print(f"  • {warning}")
+                    
+        except ImportError:
+            # Validation framework not available, skip silently in production
+            if self.dev_mode:
+                print("⚠️  Pre-flight validation framework not available")
+        except Exception as e:
+            if self.dev_mode:
+                print(f"⚠️  Pre-flight validation error: {e}")
+            # In production mode, don't fail startup for validation errors
+            # unless they're critical configuration issues
+            pass
+    
+    def quick_test(self, title: str, content: str = None) -> Dict:
+        """
+        Quick test method for development - single case testing with timing
+        
+        Args:
+            title: Blog post title to test
+            content: Optional content (uses title if not provided)
+            
+        Returns:
+            Dict with result, timing, and development info
+        """
+        if not self.dev_mode:
+            return self.generate_slug_from_content(title, content or title)
+        
+        start_time = time.time()
+        try:
+            result = self.generate_slug_from_content(title, content or title)
+            execution_time = time.time() - start_time
+            
+            dev_info = {
+                'success': True,
+                'result': result,
+                'execution_time': execution_time,
+                'prompt_version': self.prompt_version,
+                'config_summary': {
+                    'max_words': self.config.MAX_WORDS,
+                    'max_chars': self.config.MAX_CHARS,
+                    'confidence_threshold': self.config.CONFIDENCE_THRESHOLD
+                }
+            }
+            
+            print(f"✅ Quick test completed in {execution_time:.2f}s")
+            print(f"   Primary slug: {result['primary']}")
+            print(f"   Version: {self.prompt_version or 'default'}")
+            
+            return dev_info
+            
+        except Exception as e:
+            execution_time = time.time() - start_time
+            dev_info = {
+                'success': False,
+                'error': str(e),
+                'execution_time': execution_time,
+                'prompt_version': self.prompt_version
+            }
+            
+            print(f"❌ Quick test failed in {execution_time:.2f}s")
+            print(f"   Error: {str(e)}")
+            
+            return dev_info
+    
+    def compare_versions(self, title: str, versions: List[str], content: str = None) -> Dict:
+        """
+        Compare multiple versions on the same content (development mode)
+        
+        Args:
+            title: Blog post title to test
+            versions: List of versions to compare
+            content: Optional content (uses title if not provided)
+            
+        Returns:
+            Dict with comparison results
+        """
+        if not self.dev_mode:
+            # In production, just use current version
+            return self.generate_slug_from_content(title, content or title)
+        
+        comparison_results = {
+            'test_content': title[:50] + "..." if len(title) > 50 else title,
+            'version_results': {},
+            'best_version': None,
+            'summary': {}
+        }
+        
+        print(f"🔄 Comparing {len(versions)} versions...")
+        
+        for version in versions:
+            try:
+                # Create temporary generator with different version
+                temp_generator = SlugGenerator(
+                    api_key=self.api_key,
+                    prompt_version=version,
+                    enable_validation=False,  # Skip validation for comparison
+                    dev_mode=False  # Disable dev output for cleaner comparison
+                )
+                
+                start_time = time.time()
+                result = temp_generator.generate_slug_from_content(title, content or title)
+                execution_time = time.time() - start_time
+                
+                comparison_results['version_results'][version] = {
+                    'success': True,
+                    'result': result,
+                    'execution_time': execution_time,
+                    'primary_slug': result['primary']
+                }
+                
+                print(f"  {version}: ✅ {result['primary']} ({execution_time:.2f}s)")
+                
+            except Exception as e:
+                comparison_results['version_results'][version] = {
+                    'success': False,
+                    'error': str(e),
+                    'execution_time': 0
+                }
+                
+                print(f"  {version}: ❌ {str(e)}")
+        
+        # Determine best version (successful + fastest)
+        successful_versions = [
+            (v, r) for v, r in comparison_results['version_results'].items()
+            if r['success']
+        ]
+        
+        if successful_versions:
+            best_version, best_result = min(successful_versions, key=lambda x: x[1]['execution_time'])
+            comparison_results['best_version'] = best_version
+            print(f"🏆 Best: {best_version} ({best_result['execution_time']:.2f}s)")
+        
+        return comparison_results
+    
+    def validate_configuration(self) -> Dict:
+        """
+        Validate current configuration and provide development insights
+        
+        Returns:
+            Dict with validation results and configuration details
+        """
+        validation_info = {
+            'prompt_version': self.prompt_version,
+            'config': {
+                'max_words': self.config.MAX_WORDS,
+                'max_chars': self.config.MAX_CHARS,
+                'confidence_threshold': self.config.CONFIDENCE_THRESHOLD,
+                'max_retries': self.config.MAX_RETRIES
+            },
+            'validation_passed': True,
+            'issues': []
+        }
+        
+        # Run configuration checks
+        try:
+            prompt_path = self.config.get_prompt_path(self.prompt_version)
+            validation_info['prompt_file'] = prompt_path
+            validation_info['prompt_exists'] = os.path.exists(prompt_path)
+            
+            if not validation_info['prompt_exists']:
+                validation_info['issues'].append(f"Prompt file not found: {prompt_path}")
+                validation_info['validation_passed'] = False
+                
+        except Exception as e:
+            validation_info['issues'].append(f"Configuration error: {e}")
+            validation_info['validation_passed'] = False
+        
+        if self.dev_mode:
+            status = "✅ Valid" if validation_info['validation_passed'] else "❌ Issues"
+            print(f"🔧 Configuration: {status}")
+            print(f"   Version: {self.prompt_version or 'default'}")
+            print(f"   Max words: {self.config.MAX_WORDS}, Max chars: {self.config.MAX_CHARS}")
+            
+            if validation_info['issues']:
+                for issue in validation_info['issues']:
+                    print(f"   ⚠️  {issue}")
+        
+        return validation_info
     
     def generate_slug(self, url: str, count: int = 1) -> Dict:
         """

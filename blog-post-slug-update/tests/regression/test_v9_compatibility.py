@@ -290,7 +290,7 @@ class TestV9LLMGuidedMethodology:
         }
         
         assert trade_offs['enhanced_appeal']
-        assert 'differentiation' in trade_offs['competitive_differentiation']
+        assert '+33.3%' in trade_offs['competitive_differentiation']
 
 
 @pytest.mark.regression
