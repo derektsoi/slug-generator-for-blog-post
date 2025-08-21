@@ -2,10 +2,12 @@ import asyncio
 import logging
 from datetime import datetime
 from typing import List, Dict, Any, Tuple
-from content_analyzer import ContentAnalyzer
-from seo_generator import SEOGenerator
-from region_manager import RegionManager
-from output_manager import OutputManager
+
+# Use actual available imports from the refactored codebase
+from core.slug_generator import SlugGenerator
+from core.content_extractor import ContentExtractor
+from core.validators import SlugValidator
+from utils.retry_logic import exponential_backoff
 
 logger = logging.getLogger(__name__)
 
@@ -13,13 +15,15 @@ logger = logging.getLogger(__name__)
 class BatchProcessor:
     """Production-scale batch processing of SEO packages"""
     
-    def __init__(self, batch_size: int = 8, max_retries: int = 3):
+    def __init__(self, batch_size: int = 8, max_retries: int = 3, prompt_version: str = "v10"):
         self.batch_size = batch_size
         self.max_retries = max_retries
-        self.content_analyzer = ContentAnalyzer()
-        self.seo_generator = SEOGenerator()
-        self.region_manager = RegionManager()
-        self.output_manager = OutputManager()
+        self.prompt_version = prompt_version
+        
+        # Initialize core components
+        self.slug_generator = SlugGenerator(prompt_version=prompt_version)
+        self.content_extractor = ContentExtractor()
+        self.validator = SlugValidator()
     
     def process_region_batch(self, entries: List[Dict[str, str]], region: str) -> List[Dict[str, Any]]:
         """Process batch for single region"""
@@ -58,26 +62,46 @@ class BatchProcessor:
             
         return all_results
     
-    def process_single_entry(self, entry: Dict[str, str], region: str) -> Dict[str, Any]:
+    def process_single_entry(self, entry: Dict[str, str], region: str = None) -> Dict[str, Any]:
         """Process single entry for given region"""
-        title = entry['title']
-        url = entry['url']
+        title = entry.get('title', '')
+        url = entry.get('url', '')
         
-        # Step 1: Content analysis
-        content_analysis = self.content_analyzer.analyze_complete(title, url)
-        
-        # Step 2: SEO package generation
-        seo_package = self.seo_generator.generate_seo_package(content_analysis, region)
-        
-        # Combine results
-        result = {
-            'original_title': title,
-            'original_url': url,
-            'region': region,
-            **seo_package  # slug, title, meta_description
-        }
-        
-        return result
+        try:
+            # Step 1: Content extraction if URL provided
+            if url:
+                extracted_content = self.content_extractor.extract_content(url)
+                content = extracted_content.get('content', title)
+            else:
+                content = title
+            
+            # Step 2: Generate slug using V10 prompt
+            result = self.slug_generator.generate_slug_from_content(title, content)
+            
+            # Step 3: Validate result
+            primary_slug = result.get('primary', '')
+            if self.validator.is_valid_slug(primary_slug):
+                # Add metadata
+                result.update({
+                    'original_title': title,
+                    'original_url': url,
+                    'region': region,
+                    'processing_status': 'success'
+                })
+            else:
+                result['processing_status'] = 'validation_failed'
+                
+            return result
+            
+        except Exception as e:
+            logger.error(f"Failed to process entry {title}: {e}")
+            return {
+                'original_title': title,
+                'original_url': url,
+                'region': region,
+                'processing_status': 'failed',
+                'error': str(e)
+            }
     
     async def process_single_entry_async(self, entry: Dict[str, str], region: str) -> Dict[str, Any]:
         """Async version of single entry processing"""
@@ -122,20 +146,35 @@ class BatchProcessor:
         return results, failed_entries
     
     def process_llm_batch(self, entries: List[Dict[str, str]], region: str = None) -> List[Dict[str, Any]]:
-        """Process entries in LLM-optimized batches"""
-        # For testing purposes, this should be called with reasonable batch sizes
+        """Process entries in LLM-optimized batches with proper error handling"""
         if len(entries) > 10:
-            raise ValueError("Batch size too large for LLM processing")
+            raise ValueError(f"Batch size {len(entries)} exceeds maximum of 10 for LLM processing")
             
-        # Process each entry individually but return structured results
         results = []
-        for entry in entries:
+        successful_count = 0
+        failed_count = 0
+        
+        for i, entry in enumerate(entries):
             try:
                 result = self.process_single_entry(entry, region)
                 results.append(result)
+                
+                if result.get('processing_status') == 'success':
+                    successful_count += 1
+                else:
+                    failed_count += 1
+                    
             except Exception as e:
-                logger.error(f"Failed to process entry in batch: {e}")
-                # Continue with other entries
-                continue
-            
+                logger.error(f"Failed to process entry {i+1}/{len(entries)} in batch: {e}")
+                failed_result = {
+                    'original_title': entry.get('title', ''),
+                    'original_url': entry.get('url', ''),
+                    'region': region,
+                    'processing_status': 'error',
+                    'error': str(e)
+                }
+                results.append(failed_result)
+                failed_count += 1
+                
+        logger.info(f"Batch processing complete: {successful_count} successful, {failed_count} failed")
         return results

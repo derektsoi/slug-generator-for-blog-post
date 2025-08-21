@@ -130,15 +130,18 @@ class ProductionBatchProcessor:
                 else:
                     error_msg = result_or_error
                     
-                    # Check for rate limit
+                    # Check for rate limit with specific error handling
                     if "rate limit" in error_msg.lower():
                         rate_limit_reached = True
-                        # Save checkpoint and break
+                        logger.warning(f"Rate limit reached at URL {i+1}/{len(urls)}. Saving checkpoint.")
+                        
+                        # Save detailed checkpoint
                         checkpoint_data = {
                             'processed_count': len(successful_results),
                             'resume_index': i,
                             'failed_urls': failed_urls,
-                            'current_cost': self.cost_tracker.current_cost
+                            'current_cost': self.cost_tracker.current_cost,
+                            'rate_limit_timestamp': time.time()
                         }
                         self.checkpoint_manager.save_checkpoint(checkpoint_data)
                         break
