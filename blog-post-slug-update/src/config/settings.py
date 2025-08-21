@@ -40,8 +40,8 @@ class SlugGeneratorConfig:
     MAX_CHARS = 60
     MIN_WORDS = 3
     
-    # Prompt Configuration
-    DEFAULT_PROMPT_VERSION = "v6"  # V6 Cultural Enhanced - stable production version
+    # Prompt Configuration  
+    DEFAULT_PROMPT_VERSION = "v10"  # V10 Competitive Enhanced - production version (0.990 avg, +8.2% vs V8)
     
     # Version-specific settings (constraints must be within system bounds)
     VERSION_SETTINGS = {
