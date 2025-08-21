@@ -1,0 +1,109 @@
+{
+  "timestamp": "2025-08-20T18:59:08.609808",
+  "config": {
+    "metrics": [
+      "theme_coverage",
+      "success_rate",
+      "duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.8,
+    "include_detailed_results": true,
+    "verbose_output": true,
+    "randomize_urls": true,
+    "url_count": 3,
+    "random_seed": 42
+  },
+  "results": {
+    "current": {
+      "avg_theme_coverage": 0.0,
+      "success_rate": 1.0,
+      "avg_duration": 3.0166563987731934,
+      "detailed_url_results": [
+        {
+          "url_index": 0,
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+          "generated_slug": "rhythm-fan-review",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 2.854907751083374,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 1,
+          "title": "Buy&Ship 運費折扣五大主要獲得方法，積分、優惠碼你要知！",
+          "generated_slug": "buyandship-shipping-discount-guide",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 2.6740562915802,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        },
+        {
+          "url_index": 2,
+          "title": "HK$38 買 Ralph Lauren Tee！",
+          "generated_slug": "ralph-lauren-apparel-hongkong-shopping",
+          "expected_themes": [],
+          "coverage": 0.0,
+          "duration": 3.521005153656006,
+          "success": true,
+          "category": "unknown",
+          "confidence": 0.8
+        }
+      ],
+      "version": "current",
+      "test_time": "2025-08-20T18:59:08.607155",
+      "total_test_cases": 3
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 1,
+      "successful_versions": 1,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "current",
+        "value": 0.0
+      },
+      "worst_avg_theme_coverage": {
+        "version": "current",
+        "value": 0.0
+      }
+    },
+    "performance_analysis": {
+      "insufficient_data": true
+    },
+    "recommendations": [
+      "🔄 All versions below 60% coverage - fundamental prompt redesign needed",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "insufficient_data": true
+    },
+    "optimization_summary": {
+      "best_version": "current",
+      "total_versions_tested": 1,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "current"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "current",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Run more prompt versions for better comparison"
+      ]
+    }
+  }
+}

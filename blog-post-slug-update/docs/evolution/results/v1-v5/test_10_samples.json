@@ -1,0 +1,253 @@
+{
+  "timestamp": "20250820_090316",
+  "total_samples": 10,
+  "successful": 10,
+  "failed": 0,
+  "total_duration": 50.86644887924194,
+  "average_duration": 5.086644887924194,
+  "generator_config": {
+    "api_content_limit": 3000,
+    "prompt_preview_limit": 1500,
+    "confidence_threshold": 0.5,
+    "max_retries": 2
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "title": "8大日牌輕珠寶品牌一次睇！Agete、nojess及Star Jewelry等日劇女主御用明星珠寶",
+      "url": "https://www.buyandship.today/blog/2025/08/18/%e6%97%a5%e6%9c%ac%e8%bc%95%e7%8f%a0%e5%af%b6%e5%93%81%e7%89%8c%e5%90%88%e9%9b%86/",
+      "primary_slug": "japan-light-jewelry-brands",
+      "alternatives": [
+        "top-japanese-jewelry-brands",
+        "buy-japanese-jewelry-online"
+      ],
+      "expected_themes": [
+        "japanese",
+        "jewelry",
+        "brands",
+        "guide"
+      ],
+      "theme_matches": [
+        "japanese",
+        "jewelry",
+        "brands"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 6.262812852859497,
+      "success": true
+    },
+    {
+      "sample_id": 2,
+      "title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+      "url": "https://www.buyandship.today/blog/2025/08/18/jojo-maman-bebe%e8%8b%b1%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%8a%98%e6%89%a3%e5%8f%8a%e8%b3%bc%e8%b2%b7%e6%95%99%e5%ad%b8/",
+      "primary_slug": "uk-jojo-maman-bebe-guide",
+      "alternatives": [
+        "buy-jojo-kids-clothing-uk",
+        "jojo-maman-bebe-shopping-tips"
+      ],
+      "expected_themes": [
+        "uk",
+        "baby",
+        "clothes",
+        "shopping",
+        "guide"
+      ],
+      "theme_matches": [
+        "uk",
+        "shopping",
+        "guide"
+      ],
+      "theme_coverage": 0.6,
+      "duration": 5.315179109573364,
+      "success": true
+    },
+    {
+      "sample_id": 3,
+      "title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+      "url": "https://www.buyandship.today/blog/2025/08/13/kindle%e7%b6%b2%e8%b3%bc%e6%94%bb%e7%95%a5/",
+      "primary_slug": "kindle-shopping-guide-hong-kong",
+      "alternatives": [
+        "buy-kindle-us-hong-kong",
+        "kindle-price-comparison-hong-kong"
+      ],
+      "expected_themes": [
+        "kindle",
+        "ereader",
+        "comparison",
+        "guide"
+      ],
+      "theme_matches": [
+        "kindle",
+        "comparison",
+        "guide"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 5.514537811279297,
+      "success": true
+    },
+    {
+      "sample_id": 4,
+      "title": "日本樂天時尚特價1折怎麼買？NB、BEAMS等男女、童裝優惠合集及集運教學",
+      "url": "https://www.buyandship.today/blog/2025/08/14/rakuten-fashion-clearance-must-buy-brands/",
+      "primary_slug": "rakuten-fashion-japan-guide",
+      "alternatives": [
+        "buying-japan-fashion-rakuten",
+        "japan-fashion-discounts-guide"
+      ],
+      "expected_themes": [
+        "japan",
+        "rakuten",
+        "fashion",
+        "sale"
+      ],
+      "theme_matches": [
+        "japan",
+        "rakuten",
+        "fashion"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 6.848710775375366,
+      "success": true
+    },
+    {
+      "sample_id": 5,
+      "title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+      "url": "https://www.buyandship.today/blog/2025/08/13/gap%e9%9b%86%e5%9c%98%e7%be%8e%e5%9c%8b%e5%ae%98%e7%b6%b2%e6%95%99%e5%ad%b8/",
+      "primary_slug": "gap-us-online-shopping-guide",
+      "alternatives": [
+        "buy-gap-clothing-hong-kong",
+        "old-navy-bananas-republic-guide"
+      ],
+      "expected_themes": [
+        "gap",
+        "us",
+        "fashion",
+        "brands"
+      ],
+      "theme_matches": [
+        "gap",
+        "us"
+      ],
+      "theme_coverage": 0.5,
+      "duration": 4.48919415473938,
+      "success": true
+    },
+    {
+      "sample_id": 6,
+      "title": "如何代購 3COINS 日本限定及網絡限定商品？Pokemon周邊、相機及扭蛋收納神器推薦",
+      "url": "https://www.buyandship.today/blog/2025/08/15/3coins%e6%97%a5%e6%9c%ac%e9%99%90%e5%ae%9a%e4%bb%a3%e8%b3%bc/",
+      "primary_slug": "3coins-japan-shopping-guide",
+      "alternatives": [
+        "buy-3coins-japan-products",
+        "japan-exclusive-3coins-items"
+      ],
+      "expected_themes": [
+        "3coins",
+        "japan",
+        "pokemon",
+        "guide"
+      ],
+      "theme_matches": [
+        "3coins",
+        "japan",
+        "guide"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 5.217597007751465,
+      "success": true
+    },
+    {
+      "sample_id": 7,
+      "title": "Verish內衣品牌港韓價差大比拼！人氣Cool-Fit無鋼圈、運動系列必買推介",
+      "url": "https://www.buyandship.today/blog/2025/08/18/verish%e9%9f%93%e5%83%b9%e5%b7%ae%e5%a4%a7%e6%af%94%e6%8b%bc/",
+      "primary_slug": "verish-cool-fit-guide-hk",
+      "alternatives": [
+        "buy-verish-hk-korea-price",
+        "hk-verish-lingerie-comparison"
+      ],
+      "expected_themes": [
+        "verish",
+        "korea",
+        "comparison",
+        "sports"
+      ],
+      "theme_matches": [
+        "verish",
+        "korea",
+        "comparison"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 4.330824136734009,
+      "success": true
+    },
+    {
+      "sample_id": 8,
+      "title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+      "url": "https://www.buyandship.today/blog/2025/08/13/%e6%97%a5%e6%9c%ac%e6%a8%82%e5%a4%a9%e9%9b%a8%e5%82%98%e7%b6%b2%e8%b3%bc%e6%95%99%e5%ad%b8/",
+      "primary_slug": "japan-umbrella-shopping-guide",
+      "alternatives": [
+        "best-japanese-umbrellas-buying-tips",
+        "cross-border-umbrella-shopping-japan"
+      ],
+      "expected_themes": [
+        "umbrella",
+        "japan",
+        "rakuten",
+        "weather"
+      ],
+      "theme_matches": [
+        "umbrella",
+        "japan"
+      ],
+      "theme_coverage": 0.5,
+      "duration": 3.6788599491119385,
+      "success": true
+    },
+    {
+      "sample_id": 9,
+      "title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+      "url": "https://www.buyandship.today/blog/2025/08/12/%e9%96%8b%e5%ad%b8%e5%ad%a3%e4%bb%a3%e8%b3%bc%e5%bf%85%e8%b2%b7%e6%b8%85%e5%96%ae/",
+      "primary_slug": "back-to-school-shopping-guide-hk",
+      "alternatives": [
+        "ifme-gregory-back-to-school-hk",
+        "cross-border-back-to-school-hk"
+      ],
+      "expected_themes": [
+        "school",
+        "season",
+        "shoes",
+        "bags"
+      ],
+      "theme_matches": [
+        "school"
+      ],
+      "theme_coverage": 0.25,
+      "duration": 4.316460847854614,
+      "success": true
+    },
+    {
+      "sample_id": 10,
+      "title": "2025年12大必買日本手信零食，唔使出國親身排隊都輕鬆買到！",
+      "url": "https://www.buyandship.today/blog/2025/08/12/%e5%bf%85%e8%b2%b7%e6%97%a5%e6%9c%ac%e6%89%8b%e4%bf%a1/",
+      "primary_slug": "buy-japanese-snacks-hong-kong",
+      "alternatives": [
+        "top-japanese-gifts-2025",
+        "japan-snack-shopping-guide"
+      ],
+      "expected_themes": [
+        "japan",
+        "snacks",
+        "souvenirs",
+        "2025"
+      ],
+      "theme_matches": [
+        "japan",
+        "snacks",
+        "2025"
+      ],
+      "theme_coverage": 0.75,
+      "duration": 4.891814231872559,
+      "success": true
+    }
+  ]
+}

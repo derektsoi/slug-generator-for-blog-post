@@ -30,6 +30,12 @@ class SlugGeneratorConfig:
     MAX_TAGS_PER_CATEGORY = 5
     
     # SEO Optimization Settings (version-aware)
+    # System-wide limits - prompts can tune within these bounds
+    SYSTEM_MAX_WORDS = 20      # Higher constraint for complex multi-brand scenarios
+    SYSTEM_MAX_CHARS = 300     # Flexible upper bound for descriptive content
+    SYSTEM_MIN_WORDS = 1       # Minimum viable slug length
+    
+    # Default prompt constraints (V6 stable defaults)
     MAX_WORDS = 6
     MAX_CHARS = 60
     MIN_WORDS = 3
@@ -37,10 +43,10 @@ class SlugGeneratorConfig:
     # Prompt Configuration
     DEFAULT_PROMPT_VERSION = "v6"  # V6 Cultural Enhanced - stable production version
     
-    # Version-specific settings
+    # Version-specific settings (constraints must be within system bounds)
     VERSION_SETTINGS = {
         'v8': {
-            'MAX_WORDS': 8,      # Relaxed from 6 to 8 for complex multi-brand
+            'MAX_WORDS': 8,      # Relaxed from 6 to 8 for complex multi-brand (BREAKTHROUGH)
             'MAX_CHARS': 70,     # Relaxed from 60 to 70 for longer descriptive slugs
             'CONFIDENCE_THRESHOLD': 0.75,  # Higher threshold for V8's enhanced complexity
         },
@@ -48,6 +54,13 @@ class SlugGeneratorConfig:
             'MAX_WORDS': 8,      # Maintain V8's flexibility
             'MAX_CHARS': 70,     # Maintain V8's character limits
             'CONFIDENCE_THRESHOLD': 0.7,   # LLM-guided improvements should meet high standards
+        },
+        # Future versions can experiment within system bounds (1-20 words, 1-300 chars)
+        'experimental': {
+            'MAX_WORDS': 12,     # Example: More flexible for complex content
+            'MAX_CHARS': 120,    # Example: Longer for detailed descriptions
+            'MIN_WORDS': 2,      # Example: Slightly relaxed minimum
+            'CONFIDENCE_THRESHOLD': 0.6,
         }
     }
     
@@ -60,6 +73,22 @@ class SlugGeneratorConfig:
                 "OpenAI API key is required. Set OPENAI_API_KEY environment variable."
             )
         return api_key
+    
+    @classmethod
+    def validate_constraints(cls, max_words: int = None, max_chars: int = None, min_words: int = None) -> bool:
+        """Validate that constraints are within system bounds"""
+        if max_words is not None and (max_words < 1 or max_words > cls.SYSTEM_MAX_WORDS):
+            return False
+        if max_chars is not None and (max_chars < 1 or max_chars > cls.SYSTEM_MAX_CHARS):
+            return False
+        if min_words is not None and (min_words < cls.SYSTEM_MIN_WORDS or min_words > cls.SYSTEM_MAX_WORDS):
+            return False
+        
+        # Logical constraint validation
+        if max_words is not None and min_words is not None and min_words > max_words:
+            return False
+        
+        return True
     
     @classmethod
     def validate_version(cls, version: str = None) -> bool:
@@ -119,7 +148,14 @@ class SlugGeneratorConfig:
             raise ValueError(f"Invalid or unsupported version: {version}")
         
         config = cls()
-        return config.apply_version_settings(version)
+        config = config.apply_version_settings(version)
+        
+        # Validate version-specific constraints are within system bounds
+        if not cls.validate_constraints(config.MAX_WORDS, config.MAX_CHARS, config.MIN_WORDS):
+            raise ValueError(f"Version {version} constraints exceed system bounds "
+                           f"(words: 1-{cls.SYSTEM_MAX_WORDS}, chars: 1-{cls.SYSTEM_MAX_CHARS})")
+        
+        return config
     
     @classmethod
     def to_dict(cls) -> Dict[str, Any]:
@@ -136,5 +172,29 @@ class SlugGeneratorConfig:
             'max_words': cls.MAX_WORDS,
             'max_chars': cls.MAX_CHARS,
             'min_words': cls.MIN_WORDS,
-            'default_prompt_version': cls.DEFAULT_PROMPT_VERSION
+            'default_prompt_version': cls.DEFAULT_PROMPT_VERSION,
+            # System bounds
+            'system_max_words': cls.SYSTEM_MAX_WORDS,
+            'system_max_chars': cls.SYSTEM_MAX_CHARS,
+            'system_min_words': cls.SYSTEM_MIN_WORDS
+        }
+    
+    @classmethod
+    def get_constraint_info(cls, version: str = None) -> Dict[str, Any]:
+        """Get detailed constraint information for a version"""
+        config = cls.for_version(version) if version else cls()
+        return {
+            'version': version or cls.DEFAULT_PROMPT_VERSION,
+            'constraints': {
+                'words': {'min': config.MIN_WORDS, 'max': config.MAX_WORDS},
+                'chars': {'max': config.MAX_CHARS}
+            },
+            'system_bounds': {
+                'words': {'min': cls.SYSTEM_MIN_WORDS, 'max': cls.SYSTEM_MAX_WORDS},
+                'chars': {'max': cls.SYSTEM_MAX_CHARS}
+            },
+            'constraint_reasoning': {
+                'v8_breakthrough': 'V8 relaxed from 3-6 to 3-8 words and 60 to 70 chars to solve multi-brand failures',
+                'system_bounds': 'Up to 20 words and 300 chars allows prompt experimentation for complex content'
+            }
         }

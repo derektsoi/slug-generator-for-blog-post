@@ -1,0 +1,277 @@
+{
+  "timestamp": "20250820_091031",
+  "test_samples": 5,
+  "versions_tested": [
+    "v1",
+    "v2"
+  ],
+  "results": {
+    "v1": {
+      "version": "v1",
+      "total_samples": 5,
+      "successful": 5,
+      "failed": 0,
+      "avg_theme_coverage": 0.8,
+      "avg_duration": 2.9794533252716064,
+      "total_duration": 14.8992600440979,
+      "results": [
+        {
+          "sample_id": 1,
+          "title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+          "focus": "Brand-product association (JoJo Maman Bébé = baby clothes)",
+          "primary_slug": "uk-baby-clothes-guide",
+          "alternatives": [
+            "jojo-maman-bebe-shopping",
+            "uk-baby-fashion-tips"
+          ],
+          "expected_themes": [
+            "clothes",
+            "guide",
+            "shopping",
+            "uk",
+            "baby"
+          ],
+          "matched_themes": [
+            "clothes",
+            "guide",
+            "shopping",
+            "uk",
+            "baby"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 4.876560926437378,
+          "success": true
+        },
+        {
+          "sample_id": 2,
+          "title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+          "focus": "Product category recognition (Kindle = ereader)",
+          "primary_slug": "kindle-ereader-buying-guide",
+          "alternatives": [
+            "kindle-paperwhite-comparison",
+            "kindle-shopping-tutorial"
+          ],
+          "expected_themes": [
+            "ereader",
+            "kindle",
+            "guide",
+            "comparison"
+          ],
+          "matched_themes": [
+            "ereader",
+            "kindle",
+            "guide",
+            "comparison"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 3.0563101768493652,
+          "success": true
+        },
+        {
+          "sample_id": 3,
+          "title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+          "focus": "Seasonal content and multiple products",
+          "primary_slug": "back-to-school-shopping-guide",
+          "alternatives": [
+            "ifme-gregory-back-to-school",
+            "seasonal-buying-guide-2023"
+          ],
+          "expected_themes": [
+            "bags",
+            "season",
+            "school",
+            "shoes"
+          ],
+          "matched_themes": [
+            "season",
+            "school"
+          ],
+          "theme_coverage": 0.5,
+          "duration": 1.9252088069915771,
+          "success": true
+        },
+        {
+          "sample_id": 4,
+          "title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+          "focus": "Fashion brand group recognition",
+          "primary_slug": "gap-us-shopping-guide",
+          "alternatives": [
+            "old-navy-banana-republic-guide",
+            "gap-fashion-brands-overview"
+          ],
+          "expected_themes": [
+            "brands",
+            "gap",
+            "us",
+            "fashion"
+          ],
+          "matched_themes": [
+            "brands",
+            "gap",
+            "us",
+            "fashion"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 2.5813307762145996,
+          "success": true
+        },
+        {
+          "sample_id": 5,
+          "title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+          "focus": "Product + platform + weather context",
+          "primary_slug": "cross-border-umbrella-guide",
+          "alternatives": [
+            "protect-u-floatus-umbrellas",
+            "weatherproof-umbrellas-shopping"
+          ],
+          "expected_themes": [
+            "rakuten",
+            "japan",
+            "umbrella",
+            "weather"
+          ],
+          "matched_themes": [
+            "umbrella",
+            "weather"
+          ],
+          "theme_coverage": 0.5,
+          "duration": 2.4578559398651123,
+          "success": true
+        }
+      ]
+    },
+    "v2": {
+      "version": "v2",
+      "total_samples": 5,
+      "successful": 5,
+      "failed": 0,
+      "avg_theme_coverage": 0.8,
+      "avg_duration": 5.745570278167724,
+      "total_duration": 28.72804880142212,
+      "results": [
+        {
+          "sample_id": 1,
+          "title": "英國必買童裝 JoJo Maman Bébé官網 3 折起入手網購教學",
+          "focus": "Brand-product association (JoJo Maman Bébé = baby clothes)",
+          "primary_slug": "uk-jojo-baby-clothes-shopping-guide",
+          "alternatives": [
+            "jojo-maman-bebe-baby-clothes-guide"
+          ],
+          "expected_themes": [
+            "clothes",
+            "guide",
+            "shopping",
+            "uk",
+            "baby"
+          ],
+          "matched_themes": [
+            "clothes",
+            "guide",
+            "shopping",
+            "uk",
+            "baby"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 6.004225015640259,
+          "success": true
+        },
+        {
+          "sample_id": 2,
+          "title": "Kindle電子書閱讀器最強攻略：Paper White、Colorsoft等型號分別、價格比較及網購集運教學",
+          "focus": "Product category recognition (Kindle = ereader)",
+          "primary_slug": "kindle-ereader-buying-guide",
+          "alternatives": [
+            "kindle-ereader-price-comparison",
+            "kindle-ereader-shopping-tips"
+          ],
+          "expected_themes": [
+            "ereader",
+            "kindle",
+            "guide",
+            "comparison"
+          ],
+          "matched_themes": [
+            "ereader",
+            "kindle",
+            "guide",
+            "comparison"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 7.288072347640991,
+          "success": true
+        },
+        {
+          "sample_id": 3,
+          "title": "開學季代購必買清單！IFME返學鞋、Gregory背囊及電子文具產品低至3折",
+          "focus": "Seasonal content and multiple products",
+          "primary_slug": "back-to-school-ifme-gregory-guide",
+          "alternatives": [
+            "ifme-gregory-back-to-school-guide",
+            "back-to-school-electronic-supplies-guide"
+          ],
+          "expected_themes": [
+            "bags",
+            "season",
+            "school",
+            "shoes"
+          ],
+          "matched_themes": [
+            "school"
+          ],
+          "theme_coverage": 0.25,
+          "duration": 5.821832180023193,
+          "success": true
+        },
+        {
+          "sample_id": 4,
+          "title": "GAP集團美國官網網購教學，附Old Navy、Banana Republic及Athleta等副牌全面介紹",
+          "focus": "Fashion brand group recognition",
+          "primary_slug": "gap-fashion-us-shopping-guide",
+          "alternatives": [
+            "old-navy-fashion-us-guide",
+            "gap-fashion-brands-overview"
+          ],
+          "expected_themes": [
+            "brands",
+            "gap",
+            "us",
+            "fashion"
+          ],
+          "matched_themes": [
+            "brands",
+            "gap",
+            "us",
+            "fashion"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 5.171432971954346,
+          "success": true
+        },
+        {
+          "sample_id": 5,
+          "title": "打風落雨必備！PROTECT U、Floatus及Wpc.等超強防風/跣水/降溫雨傘樂天網購教學",
+          "focus": "Product + platform + weather context",
+          "primary_slug": "rakuten-umbrellas-guide",
+          "alternatives": [
+            "japan-umbrellas-shopping-guide",
+            "protect-u-umbrellas-review"
+          ],
+          "expected_themes": [
+            "rakuten",
+            "japan",
+            "umbrella",
+            "weather"
+          ],
+          "matched_themes": [
+            "rakuten",
+            "japan",
+            "umbrella"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 4.442288875579834,
+          "success": true
+        }
+      ]
+    }
+  }
+}

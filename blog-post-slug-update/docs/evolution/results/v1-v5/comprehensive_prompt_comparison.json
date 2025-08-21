@@ -1,0 +1,453 @@
+{
+  "timestamp": "20250820_091743",
+  "test_cases": 7,
+  "versions_tested": [
+    "v1",
+    "v2",
+    "v3"
+  ],
+  "results": {
+    "v1": {
+      "avg_coverage": 0.5857142857142856,
+      "successful": 7,
+      "total": 7,
+      "results": [
+        {
+          "case_id": 1,
+          "category": "brand-product-association",
+          "primary_slug": "uk-kids-fashion-jojo-maman",
+          "alternatives": [
+            "jojo-maman-bebe-shopping-guide"
+          ],
+          "expected_themes": [
+            "clothes",
+            "uk",
+            "guide",
+            "baby",
+            "shopping"
+          ],
+          "matched_themes": [
+            "guide",
+            "shopping",
+            "uk"
+          ],
+          "theme_coverage": 0.6,
+          "duration": 3.1432151794433594
+        },
+        {
+          "case_id": 2,
+          "category": "product-recognition",
+          "primary_slug": "kindle-shopping-guide-taiwan",
+          "alternatives": [
+            "kindle-model-comparison-taiwan"
+          ],
+          "expected_themes": [
+            "kindle",
+            "comparison",
+            "guide",
+            "ereader"
+          ],
+          "matched_themes": [
+            "kindle",
+            "comparison",
+            "guide"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.7183139324188232
+        },
+        {
+          "case_id": 3,
+          "category": "seasonal-content",
+          "primary_slug": "back-to-school-shopping-guide",
+          "alternatives": [
+            "ifme-gregory-back-to-school"
+          ],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags"
+          ],
+          "matched_themes": [
+            "school"
+          ],
+          "theme_coverage": 0.25,
+          "duration": 2.054548978805542
+        },
+        {
+          "case_id": 4,
+          "category": "fashion-brands",
+          "primary_slug": "gap-us-shopping-guide",
+          "alternatives": [
+            "old-navy-banana-republic-guide"
+          ],
+          "expected_themes": [
+            "fashion",
+            "us",
+            "brands",
+            "gap"
+          ],
+          "matched_themes": [
+            "us",
+            "gap"
+          ],
+          "theme_coverage": 0.5,
+          "duration": 2.148555040359497
+        },
+        {
+          "case_id": 5,
+          "category": "platform-product",
+          "primary_slug": "japan-umbrella-shopping-guide",
+          "alternatives": [
+            "protect-floatus-wpc-umbrellas"
+          ],
+          "expected_themes": [
+            "umbrella",
+            "japan",
+            "rakuten",
+            "weather"
+          ],
+          "matched_themes": [
+            "umbrella",
+            "japan"
+          ],
+          "theme_coverage": 0.5,
+          "duration": 2.2511627674102783
+        },
+        {
+          "case_id": 6,
+          "category": "marketplace-fashion",
+          "primary_slug": "japan-rakuten-fashion-guide",
+          "alternatives": [
+            "rakuten-fashion-discounts-japan"
+          ],
+          "expected_themes": [
+            "rakuten",
+            "fashion",
+            "japan",
+            "sale"
+          ],
+          "matched_themes": [
+            "rakuten",
+            "fashion",
+            "japan"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.0038328170776367
+        },
+        {
+          "case_id": 7,
+          "category": "luxury-brands",
+          "primary_slug": "japanese-luxury-jewelry-brands",
+          "alternatives": [
+            "top-japanese-jewelry-brands"
+          ],
+          "expected_themes": [
+            "jewelry",
+            "guide",
+            "japanese",
+            "brands"
+          ],
+          "matched_themes": [
+            "jewelry",
+            "japanese",
+            "brands"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.549724817276001
+        }
+      ]
+    },
+    "v2": {
+      "avg_coverage": 0.7285714285714285,
+      "successful": 7,
+      "total": 7,
+      "results": [
+        {
+          "case_id": 1,
+          "category": "brand-product-association",
+          "primary_slug": "jojo-maman-bebe-baby-clothes-guide",
+          "alternatives": [],
+          "expected_themes": [
+            "clothes",
+            "uk",
+            "guide",
+            "baby",
+            "shopping"
+          ],
+          "matched_themes": [
+            "guide",
+            "clothes",
+            "baby"
+          ],
+          "theme_coverage": 0.6,
+          "duration": 3.4671528339385986
+        },
+        {
+          "case_id": 2,
+          "category": "product-recognition",
+          "primary_slug": "kindle-ereader-buying-guide",
+          "alternatives": [
+            "kindle-ereader-price-comparison"
+          ],
+          "expected_themes": [
+            "kindle",
+            "comparison",
+            "guide",
+            "ereader"
+          ],
+          "matched_themes": [
+            "ereader",
+            "kindle",
+            "comparison",
+            "guide"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 3.1648361682891846
+        },
+        {
+          "case_id": 3,
+          "category": "seasonal-content",
+          "primary_slug": "back-to-school-ifme-gregory-guide",
+          "alternatives": [
+            "back-to-school-electronic-supplies-guide"
+          ],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags"
+          ],
+          "matched_themes": [
+            "school"
+          ],
+          "theme_coverage": 0.25,
+          "duration": 4.526331901550293
+        },
+        {
+          "case_id": 4,
+          "category": "fashion-brands",
+          "primary_slug": "gap-fashion-us-shopping-guide",
+          "alternatives": [
+            "old-navy-fashion-us-guide"
+          ],
+          "expected_themes": [
+            "fashion",
+            "us",
+            "brands",
+            "gap"
+          ],
+          "matched_themes": [
+            "fashion",
+            "us",
+            "gap"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.4883062839508057
+        },
+        {
+          "case_id": 5,
+          "category": "platform-product",
+          "primary_slug": "rakuten-umbrellas-buying-guide",
+          "alternatives": [
+            "japanese-umbrellas-shopping-guide"
+          ],
+          "expected_themes": [
+            "umbrella",
+            "japan",
+            "rakuten",
+            "weather"
+          ],
+          "matched_themes": [
+            "umbrella",
+            "japan",
+            "rakuten"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.9263598918914795
+        },
+        {
+          "case_id": 6,
+          "category": "marketplace-fashion",
+          "primary_slug": "rakuten-fashion-guide-japan",
+          "alternatives": [
+            "japan-fashion-discount-guide"
+          ],
+          "expected_themes": [
+            "rakuten",
+            "fashion",
+            "japan",
+            "sale"
+          ],
+          "matched_themes": [
+            "rakuten",
+            "fashion",
+            "japan"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 3.521566152572632
+        },
+        {
+          "case_id": 7,
+          "category": "luxury-brands",
+          "primary_slug": "japanese-luxury-jewelry-brands-guide",
+          "alternatives": [
+            "luxury-jewelry-brands-japan-guide"
+          ],
+          "expected_themes": [
+            "jewelry",
+            "guide",
+            "japanese",
+            "brands"
+          ],
+          "matched_themes": [
+            "jewelry",
+            "guide",
+            "japanese",
+            "brands"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 3.2280561923980713
+        }
+      ]
+    },
+    "v3": {
+      "avg_coverage": 0.6071428571428571,
+      "successful": 6,
+      "total": 7,
+      "results": [
+        {
+          "case_id": 1,
+          "category": "brand-product-association",
+          "error": "No valid slugs generated",
+          "duration": 0
+        },
+        {
+          "case_id": 2,
+          "category": "product-recognition",
+          "primary_slug": "kindle-ereader-comparison-guide",
+          "alternatives": [
+            "kindle-ereader-shopping-guide"
+          ],
+          "expected_themes": [
+            "kindle",
+            "comparison",
+            "guide",
+            "ereader"
+          ],
+          "matched_themes": [
+            "ereader",
+            "kindle",
+            "comparison",
+            "guide"
+          ],
+          "theme_coverage": 1.0,
+          "duration": 3.626858949661255
+        },
+        {
+          "case_id": 3,
+          "category": "seasonal-content",
+          "primary_slug": "ifme-gregory-back-to-school-guide",
+          "alternatives": [],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags"
+          ],
+          "matched_themes": [
+            "school"
+          ],
+          "theme_coverage": 0.25,
+          "duration": 2.667025089263916
+        },
+        {
+          "case_id": 4,
+          "category": "fashion-brands",
+          "primary_slug": "us-fashion-gaps-old-navy-guide",
+          "alternatives": [
+            "gap-fashion-shopping-guide-us"
+          ],
+          "expected_themes": [
+            "fashion",
+            "us",
+            "brands",
+            "gap"
+          ],
+          "matched_themes": [
+            "fashion",
+            "us",
+            "gap"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 3.643533706665039
+        },
+        {
+          "case_id": 5,
+          "category": "platform-product",
+          "primary_slug": "rakuten-umbrella-japan-guide",
+          "alternatives": [
+            "japan-umbrella-shopping-guide"
+          ],
+          "expected_themes": [
+            "umbrella",
+            "japan",
+            "rakuten",
+            "weather"
+          ],
+          "matched_themes": [
+            "umbrella",
+            "japan",
+            "rakuten"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.8626890182495117
+        },
+        {
+          "case_id": 6,
+          "category": "marketplace-fashion",
+          "primary_slug": "rakuten-fashion-japan-guide",
+          "alternatives": [
+            "japan-fashion-shopping-guide"
+          ],
+          "expected_themes": [
+            "rakuten",
+            "fashion",
+            "japan",
+            "sale"
+          ],
+          "matched_themes": [
+            "rakuten",
+            "fashion",
+            "japan"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 2.8104798793792725
+        },
+        {
+          "case_id": 7,
+          "category": "luxury-brands",
+          "primary_slug": "japan-luxury-jewelry-brands-guide",
+          "alternatives": [
+            "luxury-jewelry-brands-japan-guide"
+          ],
+          "expected_themes": [
+            "jewelry",
+            "guide",
+            "japanese",
+            "brands"
+          ],
+          "matched_themes": [
+            "jewelry",
+            "guide",
+            "brands"
+          ],
+          "theme_coverage": 0.75,
+          "duration": 3.5539090633392334
+        }
+      ]
+    }
+  },
+  "best_version": "v2",
+  "improvement_over_baseline": 0.1428571428571429
+}

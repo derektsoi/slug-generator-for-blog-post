@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-20T09:57:55.336793",
+  "config": {
+    "metrics": [
+      "avg_theme_coverage",
+      "success_rate",
+      "avg_duration"
+    ],
+    "primary_metric": "avg_theme_coverage",
+    "confidence_threshold": 0.7
+  },
+  "results": {
+    "v2_production": {
+      "avg_theme_coverage": 0.67,
+      "success_rate": 1.0,
+      "avg_duration": 3.4896900177001955,
+      "total_tests": 5,
+      "successful_tests": 5,
+      "individual_results": [
+        {
+          "title": "英國必買童裝 JoJo Maman Bébé官網購買教學",
+          "primary_slug": "jojo-maman-bebe-baby-clothes-guide",
+          "alternatives": [],
+          "theme_coverage": 0.6,
+          "matched_themes": [
+            "baby",
+            "clothes",
+            "guide"
+          ],
+          "expected_themes": [
+            "uk",
+            "baby",
+            "clothes",
+            "shopping",
+            "guide"
+          ],
+          "duration": 4.567032098770142,
+          "success": true
+        },
+        {
+          "title": "Kindle電子書閱讀器攻略：型號比較及購買教學",
+          "primary_slug": "kindle-ereader-buying-guide",
+          "alternatives": [
+            "kindle-ereader-model-comparison"
+          ],
+          "theme_coverage": 1.0,
+          "matched_themes": [
+            "ereader",
+            "comparison",
+            "kindle",
+            "guide"
+          ],
+          "expected_themes": [
+            "kindle",
+            "ereader",
+            "comparison",
+            "guide"
+          ],
+          "duration": 3.167487382888794,
+          "success": true
+        },
+        {
+          "title": "開學季必買清單！鞋子背囊及文具產品低至3折",
+          "primary_slug": "back-to-school-shopping-guide",
+          "alternatives": [
+            "school-supplies-shopping-guide"
+          ],
+          "theme_coverage": 0.25,
+          "matched_themes": [
+            "school"
+          ],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags"
+          ],
+          "duration": 2.765131711959839,
+          "success": true
+        },
+        {
+          "title": "GAP集團美國官網網購教學及副牌介紹",
+          "primary_slug": "gap-fashion-us-shopping-guide",
+          "alternatives": [
+            "us-fashion-gap-shopping-tutorial"
+          ],
+          "theme_coverage": 0.75,
+          "matched_themes": [
+            "gap",
+            "fashion",
+            "us"
+          ],
+          "expected_themes": [
+            "gap",
+            "us",
+            "fashion",
+            "brands"
+          ],
+          "duration": 3.6874749660491943,
+          "success": true
+        },
+        {
+          "title": "日本樂天時尚特價購買及集運教學",
+          "primary_slug": "rakuten-fashion-japan-guide",
+          "alternatives": [
+            "japan-fashion-rakuten-tutorial"
+          ],
+          "theme_coverage": 0.75,
+          "matched_themes": [
+            "rakuten",
+            "fashion",
+            "japan"
+          ],
+          "expected_themes": [
+            "japan",
+            "rakuten",
+            "fashion",
+            "shopping"
+          ],
+          "duration": 3.261323928833008,
+          "success": true
+        }
+      ],
+      "version": "v2_production",
+      "test_time": "2025-08-20T09:57:39.082927",
+      "total_test_cases": 5
+    },
+    "v4_optimized": {
+      "avg_theme_coverage": 0.6799999999999999,
+      "success_rate": 1.0,
+      "avg_duration": 3.246807813644409,
+      "total_tests": 5,
+      "successful_tests": 5,
+      "individual_results": [
+        {
+          "title": "英國必買童裝 JoJo Maman Bébé官網購買教學",
+          "primary_slug": "kids-fashion-uk-buying-guide",
+          "alternatives": [],
+          "theme_coverage": 0.4,
+          "matched_themes": [
+            "uk",
+            "guide"
+          ],
+          "expected_themes": [
+            "uk",
+            "baby",
+            "clothes",
+            "shopping",
+            "guide"
+          ],
+          "duration": 3.6726930141448975,
+          "success": true
+        },
+        {
+          "title": "Kindle電子書閱讀器攻略：型號比較及購買教學",
+          "primary_slug": "kindle-ereader-hong-kong-buying-guide",
+          "alternatives": [
+            "ereader-comparison-hong-kong-guide"
+          ],
+          "theme_coverage": 1.0,
+          "matched_themes": [
+            "ereader",
+            "comparison",
+            "kindle",
+            "guide"
+          ],
+          "expected_themes": [
+            "kindle",
+            "ereader",
+            "comparison",
+            "guide"
+          ],
+          "duration": 2.8791911602020264,
+          "success": true
+        },
+        {
+          "title": "開學季必買清單！鞋子背囊及文具產品低至3折",
+          "primary_slug": "back-to-school-shopping-guide",
+          "alternatives": [
+            "student-essentials-guide"
+          ],
+          "theme_coverage": 0.25,
+          "matched_themes": [
+            "school"
+          ],
+          "expected_themes": [
+            "school",
+            "season",
+            "shoes",
+            "bags"
+          ],
+          "duration": 3.3355891704559326,
+          "success": true
+        },
+        {
+          "title": "GAP集團美國官網網購教學及副牌介紹",
+          "primary_slug": "us-gap-fashion-shopping-guide",
+          "alternatives": [
+            "gap-fashion-guide-us"
+          ],
+          "theme_coverage": 0.75,
+          "matched_themes": [
+            "gap",
+            "fashion",
+            "us"
+          ],
+          "expected_themes": [
+            "gap",
+            "us",
+            "fashion",
+            "brands"
+          ],
+          "duration": 3.7459747791290283,
+          "success": true
+        },
+        {
+          "title": "日本樂天時尚特價購買及集運教學",
+          "primary_slug": "japan-rakuten-fashion-shopping-guide",
+          "alternatives": [
+            "rakuten-fashion-buying-guide-japan"
+          ],
+          "theme_coverage": 1.0,
+          "matched_themes": [
+            "rakuten",
+            "fashion",
+            "shopping",
+            "japan"
+          ],
+          "expected_themes": [
+            "japan",
+            "rakuten",
+            "fashion",
+            "shopping"
+          ],
+          "duration": 2.600590944290161,
+          "success": true
+        }
+      ],
+      "version": "v4_optimized",
+      "test_time": "2025-08-20T09:57:55.335152",
+      "total_test_cases": 5
+    }
+  },
+  "insights": {
+    "summary": {
+      "status": "success",
+      "total_versions": 2,
+      "successful_versions": 2,
+      "failed_versions": 0,
+      "metrics_available": [
+        "avg_theme_coverage",
+        "success_rate",
+        "avg_duration",
+        "total_tests",
+        "successful_tests",
+        "total_test_cases"
+      ],
+      "best_avg_theme_coverage": {
+        "version": "v4_optimized",
+        "value": 0.6799999999999999
+      },
+      "worst_avg_theme_coverage": {
+        "version": "v2_production",
+        "value": 0.67
+      }
+    },
+    "performance_analysis": {
+      "avg_theme_coverage": {
+        "mean": 0.675,
+        "min": 0.67,
+        "max": 0.6799999999999999,
+        "range": 0.009999999999999898,
+        "std_dev": 0.007071067811865403,
+        "coefficient_of_variation": 0.010475656017578374
+      },
+      "success_rate": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "std_dev": 0.0,
+        "coefficient_of_variation": 0.0
+      },
+      "avg_duration": {
+        "mean": 3.3682489156723023,
+        "min": 3.246807813644409,
+        "max": 3.4896900177001955,
+        "range": 0.2428822040557863,
+        "std_dev": 0.17174365351738127,
+        "coefficient_of_variation": 0.05098900283713184
+      },
+      "performance_distribution": {
+        "high_performers": 0,
+        "medium_performers": 2,
+        "low_performers": 0,
+        "performance_consistency": "high"
+      }
+    },
+    "recommendations": [
+      "⚠️ Best version achieves 68.0% coverage - consider further optimization",
+      "🧪 Test more prompt versions for better optimization insights"
+    ],
+    "statistical_analysis": {
+      "best_vs_baseline": {
+        "best_version": "v4_optimized",
+        "baseline_version": "v2_production",
+        "improvement": 0.009999999999999898,
+        "improvement_percentage": 1.4925373134328206,
+        "relative_improvement": 1.0149253731343282
+      },
+      "effect_size": "small"
+    },
+    "optimization_summary": {
+      "best_version": "v4_optimized",
+      "total_versions_tested": 2,
+      "primary_metric": "avg_theme_coverage",
+      "ranking": [
+        "v4_optimized",
+        "v2_production"
+      ]
+    },
+    "deployment_recommendation": {
+      "recommended_version": "v4_optimized",
+      "confidence_level": "medium",
+      "next_steps": [
+        "Investigate why improvements are minimal",
+        "Consider testing more diverse prompt variations",
+        "Analyze failed test cases for insights"
+      ]
+    }
+  }
+}
