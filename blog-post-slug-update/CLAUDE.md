@@ -39,27 +39,44 @@ src/
     ├── seo_generator.py            # Full SEO package generation
     └── legacy_content_analyzer.py  # Legacy content analysis
 
-scripts/
+scripts/                            # Production-ready scripts only
 ├── suggest_slug.py                 # CLI entry point for slug generation
+├── evaluate_v10.py                 # V10 production evaluation
+├── v10_dev_validate.py             # V10 development validation
+└── validate_setup.py               # Setup validation utility
 
 tests/                              # Organized test suite
-├── unit/
+├── helpers/                        # TDD and testing utilities
+│   ├── demo_tdd_success.py         # TDD success demonstration
+│   └── run_tdd_tests.py            # TDD test runner
+├── unit/                           # Unit tests (21/21 batch processing tests)
 │   ├── test_core.py               # Core functionality tests
-│   ├── test_content_analyzer.py   # Content analysis tests
-│   └── test_cli.py                # CLI interface tests
-├── integration/
+│   ├── test_batch_components.py    # Batch processing component tests
+│   └── test_*.py                   # Additional unit tests
+├── integration/                    # Integration tests
 │   ├── test_end_to_end.py         # Full workflow tests
-│   └── test_optimization.py       # LLM optimization tests
+│   ├── test_production_batch_processor.py # Production batch testing
+│   └── test_*.py                   # Additional integration tests
 ├── fixtures/
 │   ├── sample_blog_urls.json      # 8,194 real blog URLs for testing
 │   └── mock_patterns.py           # Test utilities
 └── performance/
     └── test_prompt_versions.py    # Prompt performance comparison
 
-results/                            # Generated test results and analysis
-├── v6_vs_v5_comparison_*.json     # V6 validation results
-├── comprehensive_prompt_comparison_*.json
-└── prompt_evolution_*.json
+docs/                               # Organized documentation structure
+├── sessions/                       # Historical session summaries
+├── development/                    # Planning and development docs
+│   ├── tdd/                       # TDD requirements and methodology
+│   └── AI_SCIENTIST_*.md          # AI scientist technical notes
+├── evolution/                      # Version history and results
+│   └── results/                   # Canonical test results by version
+└── archive/                       # Development artifacts
+    ├── development-results/        # Timestamped development test results
+    └── development-scripts/        # Archived development scripts
+├── docs/evolution/results/v6-v8/  # V6-V8 evolution results
+├── docs/evolution/results/v9/     # V9 LLM-guided development results
+├── docs/evolution/results/v10/    # V10 production validation results
+└── docs/archive/development-results/ # Archived timestamped development artifacts
 ```
 
 ## Project Purpose
