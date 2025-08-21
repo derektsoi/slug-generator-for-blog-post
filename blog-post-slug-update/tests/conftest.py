@@ -90,10 +90,9 @@ def prompt_files_test_data(project_root_path):
         "prompt_dir": prompt_dir,
         "expected_files": [
             "current.txt",
+            "v6_prompt.txt",
             "v7_prompt.txt", 
-            "v8_enhanced_constraints.txt",
             "v8_prompt.txt",
-            "v9_llm_guided.txt",
             "v9_prompt.txt"
         ],
         "archive_files": [

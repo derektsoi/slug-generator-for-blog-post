@@ -31,7 +31,7 @@ class TestSlugGeneratorConfigBasics:
         assert config.MAX_WORDS == 6
         assert config.MAX_CHARS == 60
         assert config.MIN_WORDS == 3
-        assert config.DEFAULT_PROMPT_VERSION == "v5"
+        assert config.DEFAULT_PROMPT_VERSION == "v6"
     
     def test_to_dict_conversion(self):
         """Test configuration can be converted to dictionary"""
@@ -49,7 +49,7 @@ class TestSlugGeneratorConfigBasics:
         
         assert config_dict['openai_model'] == "gpt-4o-mini"
         assert config_dict['max_retries'] == 3
-        assert config_dict['default_prompt_version'] == "v5"
+        assert config_dict['default_prompt_version'] == "v6"
 
 
 class TestVersionSpecificSettings:

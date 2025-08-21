@@ -35,7 +35,7 @@ class SlugGeneratorConfig:
     MIN_WORDS = 3
     
     # Prompt Configuration
-    DEFAULT_PROMPT_VERSION = "v5"  # Current production version
+    DEFAULT_PROMPT_VERSION = "v6"  # V6 Cultural Enhanced - stable production version
     
     # Version-specific settings
     VERSION_SETTINGS = {
@@ -62,6 +62,29 @@ class SlugGeneratorConfig:
         return api_key
     
     @classmethod
+    def validate_version(cls, version: str = None) -> bool:
+        """Validate that version exists and is properly configured"""
+        if version is None:
+            return True
+        
+        if version == "current":
+            return True
+        
+        if version == cls.DEFAULT_PROMPT_VERSION:
+            return True
+        
+        # Check if version has specific settings or prompt file
+        if version in cls.VERSION_SETTINGS:
+            return True
+        
+        # Check if prompt file exists
+        try:
+            path = cls.get_prompt_path(version)
+            return os.path.exists(path)
+        except Exception:
+            return False
+    
+    @classmethod
     def get_prompt_path(cls, version: str = None) -> str:
         """Get path to prompt file for specified version"""
         version = version or cls.DEFAULT_PROMPT_VERSION
@@ -72,7 +95,13 @@ class SlugGeneratorConfig:
             filename = f"{version}_prompt.txt"
         
         config_dir = os.path.dirname(__file__)
-        return os.path.join(config_dir, 'prompts', filename)
+        path = os.path.join(config_dir, 'prompts', filename)
+        
+        # Validation layer - ensure file exists
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Prompt file not found: {path}")
+        
+        return path
     
     def apply_version_settings(self, version: str = None) -> 'SlugGeneratorConfig':
         """Apply version-specific settings and return configured instance"""
@@ -85,6 +114,10 @@ class SlugGeneratorConfig:
     @classmethod
     def for_version(cls, version: str = None) -> 'SlugGeneratorConfig':
         """Create a configuration instance with version-specific settings applied"""
+        # Validate version before creating configuration
+        if not cls.validate_version(version):
+            raise ValueError(f"Invalid or unsupported version: {version}")
+        
         config = cls()
         return config.apply_version_settings(version)
     
