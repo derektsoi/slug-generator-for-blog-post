@@ -8,8 +8,22 @@ import os
 import json
 import time
 from typing import Dict, List, Optional
-from dotenv import load_dotenv
-import openai
+
+# Optional imports for graceful fallback in testing environments
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # Graceful fallback for environments without python-dotenv
+    # Production environments should have environment variables set directly
+    pass
+
+try:
+    import openai
+except ImportError:
+    # Graceful fallback for testing environments without openai package
+    # This allows testing of non-API functionality
+    openai = None
 
 from core.content_extractor import extract_title_and_content, is_url
 from core.validators import clean_slug, validate_slug
@@ -18,9 +32,6 @@ from core.exceptions import (
     JSONFormatError, SlugValidationError
 )
 from config.settings import SlugGeneratorConfig
-
-# Load environment variables
-load_dotenv()
 
 
 class SlugGenerator:
@@ -73,7 +84,13 @@ class SlugGenerator:
         self.api_key = api_key or self.config.get_api_key()
         
         # Initialize OpenAI client
-        self.client = openai.OpenAI(api_key=self.api_key)
+        # Initialize OpenAI client with graceful fallback
+        if openai is not None:
+            self.client = openai.OpenAI(api_key=self.api_key)
+        else:
+            self.client = None
+            if dev_mode:
+                print("⚠️  OpenAI package not available - API functionality disabled")
         
         # Backward compatibility properties
         self.max_retries = self.config.MAX_RETRIES

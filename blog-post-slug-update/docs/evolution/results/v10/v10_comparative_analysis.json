@@ -1,0 +1,512 @@
+{
+  "test_cases": 5,
+  "versions_compared": [
+    "v6",
+    "v8",
+    "v9",
+    "v10"
+  ],
+  "detailed_results": {
+    "case_1": {
+      "test_case": {
+        "title": "【2025年最新】日本一番賞Online手把手教學！用超親民價格獲得高質官方動漫周邊",
+        "content": "詳細教學如何在日本一番賞官網購買動漫周邊商品",
+        "expected_improvements": [
+          "cultural_preservation",
+          "competitive_appeal"
+        ],
+        "category": "cultural_tutorial"
+      },
+      "evaluations": {
+        "v6": {
+          "slug": "ichiban-kuji-anime-japan-guide",
+          "version": "v6",
+          "category": "cultural_tutorial",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.875
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Preserved cultural term: ichiban-kuji",
+            "Good word count: 5",
+            "Good length: 30 chars"
+          ],
+          "weaknesses": []
+        },
+        "v8": {
+          "slug": "ichiban-kuji-online-guide-japan-2025",
+          "version": "v8",
+          "category": "cultural_tutorial",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.875
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Preserved cultural term: ichiban-kuji",
+            "Good word count: 6",
+            "Good length: 36 chars"
+          ],
+          "weaknesses": []
+        },
+        "v9": {
+          "slug": "ultimate-ichiban-kuji-online-purchasing-masterclass",
+          "version": "v9",
+          "category": "cultural_tutorial",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Preserved cultural term: ichiban-kuji",
+            "Good competitive enhancement: ultimate",
+            "Good word count: 6",
+            "Good length: 51 chars"
+          ],
+          "weaknesses": []
+        },
+        "v10": {
+          "slug": "ultimate-ichiban-kuji-anime-japan-masterclass",
+          "version": "v10",
+          "category": "cultural_tutorial",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Preserved cultural term: ichiban-kuji",
+            "Good competitive enhancement: ultimate",
+            "Good word count: 6",
+            "Good length: 45 chars"
+          ],
+          "weaknesses": []
+        }
+      }
+    },
+    "case_2": {
+      "test_case": {
+        "title": "大國藥妝香港開店定價無優勢！學識日本轉運平價入手化妝品、日用品等必買推介",
+        "content": "大國藥妝進駐香港市場，但價格沒有優勢，教你透過日本轉運服務平價購入",
+        "expected_improvements": [
+          "compound_brand",
+          "insider_knowledge"
+        ],
+        "category": "compound_brand"
+      },
+      "evaluations": {
+        "v6": {
+          "slug": "daikoku-drugstore-hongkong-proxy-guide",
+          "version": "v6",
+          "category": "compound_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.875
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Perfect brand detection",
+            "Preserved cultural term: drugstore",
+            "Good word count: 5",
+            "Good length: 38 chars"
+          ],
+          "weaknesses": []
+        },
+        "v8": {
+          "slug": "daikoku-drugstore-japan-proxy-guide",
+          "version": "v8",
+          "category": "compound_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.875
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Perfect brand detection",
+            "Preserved cultural term: drugstore",
+            "Good word count: 5",
+            "Good length: 35 chars"
+          ],
+          "weaknesses": []
+        },
+        "v9": {
+          "slug": "premium-daikoku-drugstore-insider-guide",
+          "version": "v9",
+          "category": "compound_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Preserved cultural term: drugstore",
+            "Good competitive enhancement: premium",
+            "Good word count: 5",
+            "Good length: 39 chars"
+          ],
+          "weaknesses": []
+        },
+        "v10": {
+          "slug": "insider-daikoku-drugstore-japan-proxy-guide",
+          "version": "v10",
+          "category": "compound_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Preserved cultural term: drugstore",
+            "Good competitive enhancement: insider",
+            "Good word count: 6",
+            "Good length: 43 chars"
+          ],
+          "weaknesses": []
+        }
+      }
+    },
+    "case_3": {
+      "test_case": {
+        "title": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+        "content": "推薦7大熱門手機殼品牌包括SKINNIYDIP、iface、犀牛盾等",
+        "expected_improvements": [
+          "multi_brand",
+          "comprehensive_guide"
+        ],
+        "category": "multi_brand"
+      },
+      "evaluations": {
+        "v6": {
+          "slug": "phone-cases-shopping-guide",
+          "version": "v6",
+          "category": "multi_brand",
+          "scores": {
+            "brand_detection": 0.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.575
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Good word count: 4",
+            "Good length: 26 chars"
+          ],
+          "weaknesses": [
+            "Missing all brands"
+          ]
+        },
+        "v8": {
+          "slug": "skinnydip-iface-rhinoshield-phone-cases-guide",
+          "version": "v8",
+          "category": "multi_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.5,
+            "technical_compliance": 1.0,
+            "overall": 0.875
+          },
+          "feedback": [
+            "Could benefit from competitive enhancement"
+          ],
+          "strengths": [
+            "Perfect brand detection",
+            "Good word count: 6",
+            "Good length: 45 chars"
+          ],
+          "weaknesses": []
+        },
+        "v9": {
+          "slug": "comprehensive-phone-cases-brand-comparison",
+          "version": "v9",
+          "category": "multi_brand",
+          "scores": {
+            "brand_detection": 0.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 0.7
+          },
+          "feedback": [],
+          "strengths": [
+            "Good competitive enhancement: comprehensive",
+            "Good word count: 5",
+            "Good length: 42 chars"
+          ],
+          "weaknesses": [
+            "Missing all brands"
+          ]
+        },
+        "v10": {
+          "slug": "ultimate-skinnydip-iface-rhinoshield-phone-cases-guide",
+          "version": "v10",
+          "category": "multi_brand",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Good competitive enhancement: ultimate",
+            "Good word count: 7",
+            "Good length: 54 chars"
+          ],
+          "weaknesses": []
+        }
+      }
+    },
+    "case_4": {
+      "test_case": {
+        "title": "Tory Burch減價優惠！英國網購低至3折",
+        "content": "Tory Burch英國官網大減價，精選商品低至3折優惠",
+        "expected_improvements": [
+          "standard_appropriate"
+        ],
+        "category": "simple_deal"
+      },
+      "evaluations": {
+        "v6": {
+          "slug": "tory-burch-uk-discount-shopping",
+          "version": "v6",
+          "category": "simple_deal",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 5",
+            "Good length: 31 chars"
+          ],
+          "weaknesses": []
+        },
+        "v8": {
+          "slug": "tory-burch-uk-discount-shopping",
+          "version": "v8",
+          "category": "simple_deal",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 5",
+            "Good length: 31 chars"
+          ],
+          "weaknesses": []
+        },
+        "v9": {
+          "slug": "exclusive-tory-burch-uk-shopping-deals",
+          "version": "v9",
+          "category": "simple_deal",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 6",
+            "Good length: 38 chars"
+          ],
+          "weaknesses": []
+        },
+        "v10": {
+          "slug": "tory-burch-uk-discount-shopping",
+          "version": "v10",
+          "category": "simple_deal",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 5",
+            "Good length: 31 chars"
+          ],
+          "weaknesses": []
+        }
+      }
+    },
+    "case_5": {
+      "test_case": {
+        "title": "【JK制服品牌Lucy Pop】人氣日系校園穿搭登陸香港",
+        "content": "日本人氣JK制服品牌Lucy Pop進駐香港，帶來正宗日系校園穿搭",
+        "expected_improvements": [
+          "cultural_subculture",
+          "brand_recognition"
+        ],
+        "category": "cultural_fashion"
+      },
+      "evaluations": {
+        "v6": {
+          "slug": "lucy-pop-jk-uniform-hongkong-guide",
+          "version": "v6",
+          "category": "cultural_fashion",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 6",
+            "Good length: 34 chars"
+          ],
+          "weaknesses": []
+        },
+        "v8": {
+          "slug": "lucy-pop-jk-uniform-hongkong-guide",
+          "version": "v8",
+          "category": "cultural_fashion",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 1.0,
+            "technical_compliance": 1.0,
+            "overall": 1.0
+          },
+          "feedback": [],
+          "strengths": [
+            "Perfect brand detection",
+            "Appropriate simplicity for content type",
+            "Good word count: 6",
+            "Good length: 34 chars"
+          ],
+          "weaknesses": []
+        },
+        "v9": {
+          "slug": "ultimate-jk-uniform-fashion-hongkong-guide",
+          "version": "v9",
+          "category": "cultural_fashion",
+          "scores": {
+            "brand_detection": 0.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.8,
+            "technical_compliance": 1.0,
+            "overall": 0.65
+          },
+          "feedback": [
+            "Enhancement may be unnecessary for simple content"
+          ],
+          "strengths": [
+            "Good word count: 6",
+            "Good length: 42 chars"
+          ],
+          "weaknesses": [
+            "Missing all brands"
+          ]
+        },
+        "v10": {
+          "slug": "comprehensive-lucy-pop-jk-uniform-hongkong-guide",
+          "version": "v10",
+          "category": "cultural_fashion",
+          "scores": {
+            "brand_detection": 1.0,
+            "cultural_preservation": 1.0,
+            "competitive_enhancement": 0.8,
+            "technical_compliance": 1.0,
+            "overall": 0.95
+          },
+          "feedback": [
+            "Enhancement may be unnecessary for simple content"
+          ],
+          "strengths": [
+            "Perfect brand detection",
+            "Good word count: 7",
+            "Good length: 48 chars"
+          ],
+          "weaknesses": []
+        }
+      }
+    }
+  },
+  "summary": {
+    "v6": {
+      "average_score": 0.865,
+      "score_range": "0.57 - 1.00",
+      "test_cases": 5
+    },
+    "v8": {
+      "average_score": 0.925,
+      "score_range": "0.88 - 1.00",
+      "test_cases": 5
+    },
+    "v9": {
+      "average_score": 0.87,
+      "score_range": "0.65 - 1.00",
+      "test_cases": 5
+    },
+    "v10": {
+      "average_score": 0.99,
+      "score_range": "0.95 - 1.00",
+      "test_cases": 5
+    }
+  }
+}
