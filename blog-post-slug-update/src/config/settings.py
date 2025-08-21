@@ -55,6 +55,11 @@ class SlugGeneratorConfig:
             'MAX_CHARS': 70,     # Maintain V8's character limits
             'CONFIDENCE_THRESHOLD': 0.7,   # LLM-guided improvements should meet high standards
         },
+        'v10': {
+            'MAX_WORDS': 10,     # V8's 8 + 2 for competitive enhancements + compound brands
+            'MAX_CHARS': 90,     # V8's 70 + 20 for competitive terms + compound brands
+            'CONFIDENCE_THRESHOLD': 0.75,  # High threshold for quality assurance
+        },
         # Future versions can experiment within system bounds (1-20 words, 1-300 chars)
         'experimental': {
             'MAX_WORDS': 12,     # Example: More flexible for complex content
