@@ -1,0 +1,863 @@
+{
+  "timestamp": "2025-08-21T08:43:31.853232",
+  "v9_performance": {
+    "version": "v9",
+    "test_results": {
+      "v8_breakthrough": {
+        "generated_slug": null,
+        "success": false,
+        "error": "No valid slugs generated"
+      },
+      "v6_cultural": {
+        "generated_slug": "ultimate-ichiban-kuji-online-purchasing-masterclass",
+        "evaluation": {
+          "quantitative_analysis": {
+            "analysis_type": "quantitative_only",
+            "overall_score": 0.792,
+            "technical_seo": {
+              "score": 0.96,
+              "word_count": 6,
+              "char_count": 51,
+              "word_score": 0.9,
+              "char_score": 0.98,
+              "structure_score": 1.0,
+              "has_numbers": false,
+              "has_special_chars": false,
+              "proper_format": true
+            },
+            "brand_hierarchy": {
+              "score": 0.3,
+              "detected_brands": [],
+              "brands_count": 0,
+              "brand_positions": [],
+              "avg_brand_position": 0,
+              "multi_brand_handling": false
+            },
+            "cultural_preservation": {
+              "score": 1.0,
+              "preservation_rate": 1.0,
+              "original_cultural_terms": [
+                "一番賞"
+              ],
+              "preserved_terms": [
+                "ichiban-kuji"
+              ],
+              "generic_dilution": false,
+              "cultural_terms_count": 1
+            },
+            "structure_analysis": {
+              "score": 0.7000000000000001,
+              "word_count": 6,
+              "word_lengths": [
+                8,
+                7,
+                4,
+                6,
+                10,
+                11
+              ],
+              "avg_word_length": 7.666666666666667,
+              "very_long_words": 2,
+              "very_short_words": 0,
+              "readability_score": 0.7000000000000001
+            },
+            "seo_compliance": {
+              "score": 1.0,
+              "compliance_checks": {
+                "uses_hyphens": true,
+                "lowercase_only": true,
+                "no_special_chars": true,
+                "reasonable_length": true,
+                "starts_with_letter": true,
+                "ends_with_alphanumeric": true,
+                "no_consecutive_hyphens": true,
+                "no_leading_trailing_hyphens": true
+              },
+              "passed_checks": 8,
+              "total_checks": 8,
+              "compliance_percentage": 100.0
+            },
+            "metadata": {
+              "analyzer_version": "1.0",
+              "slug_length": 51,
+              "word_count": 6,
+              "analysis_timestamp": "2025-08-21T08:43:40.457112"
+            }
+          },
+          "qualitative_insights": {
+            "dimension_scores": {
+              "user_intent_match": 0.8,
+              "brand_hierarchy": 0.7,
+              "cultural_authenticity": 0.9,
+              "click_through_potential": 0.6,
+              "competitive_differentiation": 0.8,
+              "technical_seo": 0.7
+            },
+            "overall_score": 0.73,
+            "qualitative_feedback": "The slug 'ultimate-ichiban-kuji-online-purchasing-masterclass' effectively captures the essence of the content, which is a detailed guide on purchasing Ichiban Kuji products online. The use of 'ultimate' and 'masterclass' indicates a comprehensive resource, aligning well with user intent for in-depth learning. However, the length of the slug may hinder its click-through potential and readability. The brand 'Ichiban Kuji' is well-recognized among anime merchandise enthusiasts, which adds to the brand hierarchy but could be positioned more prominently. The term 'ichiban-kuji' is culturally authentic and resonates with the target audience, enhancing its relevance in the Asian e-commerce context. While the slug is unique and stands out against generic alternatives, it could benefit from being more concise to improve clarity and appeal in search results. Overall, the slug is effective but could be optimized for better performance.",
+            "confidence": 0.85,
+            "key_strengths": [
+              "Strong alignment with user intent for comprehensive learning",
+              "Culturally relevant terminology enhances authenticity",
+              "Unique phrasing differentiates from competitors"
+            ],
+            "improvement_areas": [
+              "Reduce length for better readability and click potential",
+              "Consider reordering elements for stronger brand emphasis",
+              "Enhance clarity by simplifying language"
+            ],
+            "cultural_insights": "The term 'ichiban-kuji' is deeply rooted in Japanese culture, specifically in the context of collectible merchandise, which resonates strongly with fans of anime and manga. This cultural specificity is crucial for attracting the right audience and enhancing engagement.",
+            "competitive_analysis": "Compared to typical alternatives that may use more generic terms like 'anime merchandise' or 'collectibles guide', this slug stands out due to its specificity and comprehensive nature. However, many competitors may have shorter, more concise slugs that could outperform this in terms of click-through rates due to ease of understanding.",
+            "analysis_type": "llm_qualitative",
+            "model_used": "gpt-4o-mini"
+          },
+          "analysis_type": "complete",
+          "llm_available": true,
+          "capabilities": {
+            "quantitative_analysis": true,
+            "qualitative_analysis": true,
+            "llm_model": "gpt-4o-mini",
+            "analysis_dimensions": {
+              "quantitative": [
+                "technical_seo",
+                "brand_hierarchy",
+                "cultural_preservation",
+                "structure_analysis",
+                "seo_compliance"
+              ],
+              "qualitative": [
+                "user_intent_match",
+                "brand_hierarchy",
+                "cultural_authenticity",
+                "click_through_potential",
+                "competitive_differentiation",
+                "technical_seo"
+              ]
+            }
+          },
+          "combined_recommendation": {
+            "combined_score": 0.7548,
+            "recommendation": "Good slug with room for targeted improvements",
+            "convergent_insights": [],
+            "analysis_agreement": true,
+            "primary_strengths": [
+              "Strong alignment with user intent for comprehensive learning",
+              "Culturally relevant terminology enhances authenticity",
+              "Unique phrasing differentiates from competitors"
+            ],
+            "priority_improvements": [
+              "Reduce length for better readability and click potential",
+              "Consider reordering elements for stronger brand emphasis",
+              "Enhance clarity by simplifying language"
+            ]
+          },
+          "meta_analysis": {
+            "dimension_comparison": {
+              "technical_seo": {
+                "quantitative_score": 0.96,
+                "qualitative_score": 0.7,
+                "agreement": false,
+                "difference": 0.26
+              },
+              "brand_hierarchy": {
+                "quantitative_score": 0.3,
+                "qualitative_score": 0.7,
+                "agreement": false,
+                "difference": 0.39999999999999997
+              },
+              "cultural_preservation": {
+                "quantitative_score": 1.0,
+                "qualitative_score": 0.9,
+                "agreement": true,
+                "difference": 0.09999999999999998
+              }
+            },
+            "overall_agreement": 0.3333333333333333,
+            "analysis_confidence": [
+              "1.0",
+              0.85
+            ],
+            "meta_insights": [
+              "Significant disagreement between analysis methods - manual review recommended",
+              "Large disagreement in brand_hierarchy assessment - qualitative analysis may reveal nuances"
+            ]
+          }
+        },
+        "success": true,
+        "key_metrics": {
+          "overall_score": 0.73,
+          "click_through_potential": 0.6,
+          "competitive_differentiation": 0.8,
+          "brand_hierarchy": 0.7,
+          "cultural_authenticity": 0.9
+        }
+      },
+      "brand_compound": {
+        "generated_slug": null,
+        "success": false,
+        "error": "No valid slugs generated"
+      }
+    },
+    "performance_summary": {
+      "success_rate": 0.3333333333333333,
+      "successful_cases": 1,
+      "total_cases": 3,
+      "avg_overall_score": 0.73,
+      "avg_dimension_scores": {
+        "click_through_potential": 0.6,
+        "competitive_differentiation": 0.8,
+        "brand_hierarchy": 0.7,
+        "cultural_authenticity": 0.9
+      }
+    }
+  },
+  "v8_comparison": {
+    "version": "v8",
+    "test_results": {
+      "v8_breakthrough": {
+        "generated_slug": "skinniydip-iface-rhinoshield-phone-cases-guide",
+        "evaluation": {
+          "quantitative_analysis": {
+            "analysis_type": "quantitative_only",
+            "overall_score": 0.9433333333333334,
+            "technical_seo": {
+              "score": 0.9666666666666667,
+              "word_count": 6,
+              "char_count": 46,
+              "word_score": 0.9,
+              "char_score": 1.0,
+              "structure_score": 1.0,
+              "has_numbers": false,
+              "has_special_chars": false,
+              "proper_format": true
+            },
+            "brand_hierarchy": {
+              "score": 0.95,
+              "detected_brands": [
+                "skinniydip",
+                "iface",
+                "rhinoshield"
+              ],
+              "brands_count": 3,
+              "brand_positions": [
+                0.0,
+                0.2391304347826087,
+                0.3695652173913043
+              ],
+              "avg_brand_position": 0.2028985507246377,
+              "multi_brand_handling": true
+            },
+            "cultural_preservation": {
+              "score": 1.0,
+              "preservation_rate": 1.0,
+              "original_cultural_terms": [],
+              "preserved_terms": [],
+              "generic_dilution": false,
+              "cultural_terms_count": 0
+            },
+            "structure_analysis": {
+              "score": 0.8,
+              "word_count": 6,
+              "word_lengths": [
+                10,
+                5,
+                11,
+                5,
+                5,
+                5
+              ],
+              "avg_word_length": 6.833333333333333,
+              "very_long_words": 2,
+              "very_short_words": 0,
+              "readability_score": 0.8
+            },
+            "seo_compliance": {
+              "score": 1.0,
+              "compliance_checks": {
+                "uses_hyphens": true,
+                "lowercase_only": true,
+                "no_special_chars": true,
+                "reasonable_length": true,
+                "starts_with_letter": true,
+                "ends_with_alphanumeric": true,
+                "no_consecutive_hyphens": true,
+                "no_leading_trailing_hyphens": true
+              },
+              "passed_checks": 8,
+              "total_checks": 8,
+              "compliance_percentage": 100.0
+            },
+            "metadata": {
+              "analyzer_version": "1.0",
+              "slug_length": 46,
+              "word_count": 6,
+              "analysis_timestamp": "2025-08-21T08:43:58.641641"
+            }
+          },
+          "qualitative_insights": {
+            "dimension_scores": {
+              "user_intent_match": 0.6,
+              "brand_hierarchy": 0.8,
+              "cultural_authenticity": 0.7,
+              "click_through_potential": 0.5,
+              "competitive_differentiation": 0.6,
+              "technical_seo": 0.7
+            },
+            "overall_score": 0.6,
+            "qualitative_feedback": "The slug 'skinniydip-iface-rhinoshield-phone-cases-guide' captures some user intent related to phone cases, particularly for brands that are popular in the Asian market. However, it lacks specificity regarding the context of the content, which is a guide to seven major brands in the Asian market. While the brand names are recognizable, the overall structure could be clearer to enhance user understanding. The cultural context is somewhat preserved, but the use of English brand names may not resonate with all target audiences. The click-through potential is moderate, as the slug is somewhat generic and may not stand out in search results. Improvements could focus on enhancing clarity and specificity to better align with user searches. The technical aspects are generally sound, but the length could be optimized further for better readability.",
+            "confidence": 0.75,
+            "key_strengths": [
+              "Strong brand recognition",
+              "Cultural relevance of brands"
+            ],
+            "improvement_areas": [
+              "Enhance clarity and specificity",
+              "Optimize length for readability"
+            ],
+            "cultural_insights": "The use of brands that are popular in Japan, Korea, and Taiwan reflects an understanding of the regional market. However, the slug could benefit from incorporating more localized language or terms that resonate with the target audience, as the current format may alienate non-English speakers.",
+            "competitive_analysis": "Compared to typical alternatives, this slug does include specific brand names which can help it stand out. However, many competitors may use more concise and clear slugs that directly reflect the content's purpose, which could give them an advantage in click-through rates. A more engaging and descriptive slug could enhance its competitive positioning.",
+            "analysis_type": "llm_qualitative",
+            "model_used": "gpt-4o-mini"
+          },
+          "analysis_type": "complete",
+          "llm_available": true,
+          "capabilities": {
+            "quantitative_analysis": true,
+            "qualitative_analysis": true,
+            "llm_model": "gpt-4o-mini",
+            "analysis_dimensions": {
+              "quantitative": [
+                "technical_seo",
+                "brand_hierarchy",
+                "cultural_preservation",
+                "structure_analysis",
+                "seo_compliance"
+              ],
+              "qualitative": [
+                "user_intent_match",
+                "brand_hierarchy",
+                "cultural_authenticity",
+                "click_through_potential",
+                "competitive_differentiation",
+                "technical_seo"
+              ]
+            }
+          },
+          "combined_recommendation": {
+            "combined_score": 0.7373333333333334,
+            "recommendation": "Good slug with room for targeted improvements",
+            "convergent_insights": [
+              "Brand hierarchy assessment shows strong agreement"
+            ],
+            "analysis_agreement": false,
+            "primary_strengths": [
+              "Strong brand recognition",
+              "Cultural relevance of brands"
+            ],
+            "priority_improvements": [
+              "Enhance clarity and specificity",
+              "Optimize length for readability"
+            ]
+          },
+          "meta_analysis": {
+            "dimension_comparison": {
+              "technical_seo": {
+                "quantitative_score": 0.9666666666666667,
+                "qualitative_score": 0.7,
+                "agreement": false,
+                "difference": 0.2666666666666667
+              },
+              "brand_hierarchy": {
+                "quantitative_score": 0.95,
+                "qualitative_score": 0.8,
+                "agreement": true,
+                "difference": 0.1499999999999999
+              },
+              "cultural_preservation": {
+                "quantitative_score": 1.0,
+                "qualitative_score": 0.7,
+                "agreement": false,
+                "difference": 0.30000000000000004
+              }
+            },
+            "overall_agreement": 0.3333333333333333,
+            "analysis_confidence": [
+              "1.0",
+              0.75
+            ],
+            "meta_insights": [
+              "Significant disagreement between analysis methods - manual review recommended",
+              "Large disagreement in cultural_preservation assessment - qualitative analysis may reveal nuances"
+            ]
+          }
+        },
+        "success": true,
+        "key_metrics": {
+          "overall_score": 0.6,
+          "click_through_potential": 0.5,
+          "competitive_differentiation": 0.6,
+          "brand_hierarchy": 0.8,
+          "cultural_authenticity": 0.7
+        }
+      },
+      "v6_cultural": {
+        "generated_slug": "ichiban-kuji-japan-online-tutorial-2025",
+        "evaluation": {
+          "quantitative_analysis": {
+            "analysis_type": "quantitative_only",
+            "overall_score": 0.8466666666666667,
+            "technical_seo": {
+              "score": 0.9333333333333332,
+              "word_count": 6,
+              "char_count": 39,
+              "word_score": 0.9,
+              "char_score": 1.0,
+              "structure_score": 0.9,
+              "has_numbers": true,
+              "has_special_chars": false,
+              "proper_format": true
+            },
+            "brand_hierarchy": {
+              "score": 0.3,
+              "detected_brands": [],
+              "brands_count": 0,
+              "brand_positions": [],
+              "avg_brand_position": 0,
+              "multi_brand_handling": false
+            },
+            "cultural_preservation": {
+              "score": 1.0,
+              "preservation_rate": 1.0,
+              "original_cultural_terms": [
+                "一番賞"
+              ],
+              "preserved_terms": [
+                "ichiban-kuji"
+              ],
+              "generic_dilution": false,
+              "cultural_terms_count": 1
+            },
+            "structure_analysis": {
+              "score": 1.0,
+              "word_count": 6,
+              "word_lengths": [
+                7,
+                4,
+                5,
+                6,
+                8,
+                4
+              ],
+              "avg_word_length": 5.666666666666667,
+              "very_long_words": 0,
+              "very_short_words": 0,
+              "readability_score": 1.0
+            },
+            "seo_compliance": {
+              "score": 1.0,
+              "compliance_checks": {
+                "uses_hyphens": true,
+                "lowercase_only": true,
+                "no_special_chars": true,
+                "reasonable_length": true,
+                "starts_with_letter": true,
+                "ends_with_alphanumeric": true,
+                "no_consecutive_hyphens": true,
+                "no_leading_trailing_hyphens": true
+              },
+              "passed_checks": 8,
+              "total_checks": 8,
+              "compliance_percentage": 100.0
+            },
+            "metadata": {
+              "analyzer_version": "1.0",
+              "slug_length": 39,
+              "word_count": 6,
+              "analysis_timestamp": "2025-08-21T08:44:07.733358"
+            }
+          },
+          "qualitative_insights": {
+            "dimension_scores": {
+              "user_intent_match": 0.8,
+              "brand_hierarchy": 0.9,
+              "cultural_authenticity": 0.9,
+              "click_through_potential": 0.7,
+              "competitive_differentiation": 0.6,
+              "technical_seo": 0.8
+            },
+            "overall_score": 0.75,
+            "qualitative_feedback": "The slug 'ichiban-kuji-japan-online-tutorial-2025' effectively captures the essence of the content, which is an online tutorial for Ichiban Kuji, a popular Japanese lottery system. It aligns well with user intent, as individuals searching for tutorials on this specific topic are likely to include 'Ichiban Kuji' in their queries. The inclusion of '2025' also indicates that the content is up-to-date, appealing to users seeking the latest information. The brand name 'Ichiban Kuji' is prominently featured, enhancing brand recognition. The cultural authenticity is strong, as it uses a term that resonates well with the target audience familiar with Japanese pop culture. However, the slug could improve its click-through potential by being more concise and engaging. While it is informative, it lacks a compelling hook that would entice users to click. In terms of competitive differentiation, while it is specific, it could benefit from a more unique phrasing that stands out against competitors. Technically, the slug is well-structured and readable, but it could be shortened for better optimization.",
+            "confidence": 0.85,
+            "key_strengths": [
+              "Strong alignment with user intent",
+              "High brand recognition with 'Ichiban Kuji'",
+              "Culturally relevant and authentic terminology"
+            ],
+            "improvement_areas": [
+              "Enhance click-through potential with a more engaging phrasing",
+              "Consider shortening for better readability and impact",
+              "Differentiate further from competitors with unique descriptors"
+            ],
+            "cultural_insights": "The term 'Ichiban Kuji' is deeply embedded in Japanese culture, particularly among anime and gaming enthusiasts. It signifies a lottery system that offers exclusive merchandise, making it a sought-after experience. This cultural context is crucial for attracting the right audience, and the slug does a good job of preserving this authenticity.",
+            "competitive_analysis": "Compared to typical alternatives, this slug stands out due to its specificity to 'Ichiban Kuji' rather than generic terms like 'anime merchandise'. However, many competitors may use shorter, catchier slugs that could potentially outperform this one in terms of click-through rates. A more engaging title could help in distinguishing it further.",
+            "analysis_type": "llm_qualitative",
+            "model_used": "gpt-4o-mini"
+          },
+          "analysis_type": "complete",
+          "llm_available": true,
+          "capabilities": {
+            "quantitative_analysis": true,
+            "qualitative_analysis": true,
+            "llm_model": "gpt-4o-mini",
+            "analysis_dimensions": {
+              "quantitative": [
+                "technical_seo",
+                "brand_hierarchy",
+                "cultural_preservation",
+                "structure_analysis",
+                "seo_compliance"
+              ],
+              "qualitative": [
+                "user_intent_match",
+                "brand_hierarchy",
+                "cultural_authenticity",
+                "click_through_potential",
+                "competitive_differentiation",
+                "technical_seo"
+              ]
+            }
+          },
+          "combined_recommendation": {
+            "combined_score": 0.7886666666666666,
+            "recommendation": "Good slug with room for targeted improvements",
+            "convergent_insights": [
+              "Technical SEO assessment converges between analyses"
+            ],
+            "analysis_agreement": true,
+            "primary_strengths": [
+              "Strong alignment with user intent",
+              "High brand recognition with 'Ichiban Kuji'",
+              "Culturally relevant and authentic terminology"
+            ],
+            "priority_improvements": [
+              "Enhance click-through potential with a more engaging phrasing",
+              "Consider shortening for better readability and impact",
+              "Differentiate further from competitors with unique descriptors"
+            ]
+          },
+          "meta_analysis": {
+            "dimension_comparison": {
+              "technical_seo": {
+                "quantitative_score": 0.9333333333333332,
+                "qualitative_score": 0.8,
+                "agreement": true,
+                "difference": 0.1333333333333332
+              },
+              "brand_hierarchy": {
+                "quantitative_score": 0.3,
+                "qualitative_score": 0.9,
+                "agreement": false,
+                "difference": 0.6000000000000001
+              },
+              "cultural_preservation": {
+                "quantitative_score": 1.0,
+                "qualitative_score": 0.9,
+                "agreement": true,
+                "difference": 0.09999999999999998
+              }
+            },
+            "overall_agreement": 0.6666666666666666,
+            "analysis_confidence": [
+              "1.0",
+              0.85
+            ],
+            "meta_insights": [
+              "Large disagreement in brand_hierarchy assessment - qualitative analysis may reveal nuances"
+            ]
+          }
+        },
+        "success": true,
+        "key_metrics": {
+          "overall_score": 0.75,
+          "click_through_potential": 0.7,
+          "competitive_differentiation": 0.6,
+          "brand_hierarchy": 0.9,
+          "cultural_authenticity": 0.9
+        }
+      },
+      "brand_compound": {
+        "generated_slug": "daikoku-drugstore-hongkong-proxy-shopping-guide",
+        "evaluation": {
+          "quantitative_analysis": {
+            "analysis_type": "quantitative_only",
+            "overall_score": 0.9333333333333333,
+            "technical_seo": {
+              "score": 0.9666666666666667,
+              "word_count": 6,
+              "char_count": 47,
+              "word_score": 0.9,
+              "char_score": 1.0,
+              "structure_score": 1.0,
+              "has_numbers": false,
+              "has_special_chars": false,
+              "proper_format": true
+            },
+            "brand_hierarchy": {
+              "score": 0.7,
+              "detected_brands": [
+                "daikoku"
+              ],
+              "brands_count": 1,
+              "brand_positions": [
+                0.0
+              ],
+              "avg_brand_position": 0.0,
+              "multi_brand_handling": false
+            },
+            "cultural_preservation": {
+              "score": 1.0,
+              "preservation_rate": 1.0,
+              "original_cultural_terms": [
+                "大國藥妝",
+                "藥妝"
+              ],
+              "preserved_terms": [
+                "daikoku-drugstore",
+                "drugstore"
+              ],
+              "generic_dilution": false,
+              "cultural_terms_count": 2
+            },
+            "structure_analysis": {
+              "score": 1.0,
+              "word_count": 6,
+              "word_lengths": [
+                7,
+                9,
+                8,
+                5,
+                8,
+                5
+              ],
+              "avg_word_length": 7.0,
+              "very_long_words": 1,
+              "very_short_words": 0,
+              "readability_score": 1.0
+            },
+            "seo_compliance": {
+              "score": 1.0,
+              "compliance_checks": {
+                "uses_hyphens": true,
+                "lowercase_only": true,
+                "no_special_chars": true,
+                "reasonable_length": true,
+                "starts_with_letter": true,
+                "ends_with_alphanumeric": true,
+                "no_consecutive_hyphens": true,
+                "no_leading_trailing_hyphens": true
+              },
+              "passed_checks": 8,
+              "total_checks": 8,
+              "compliance_percentage": 100.0
+            },
+            "metadata": {
+              "analyzer_version": "1.0",
+              "slug_length": 47,
+              "word_count": 6,
+              "analysis_timestamp": "2025-08-21T08:44:20.088493"
+            }
+          },
+          "qualitative_insights": {
+            "dimension_scores": {
+              "user_intent_match": 0.8,
+              "brand_hierarchy": 0.9,
+              "cultural_authenticity": 0.7,
+              "click_through_potential": 0.75,
+              "competitive_differentiation": 0.6,
+              "technical_seo": 0.85
+            },
+            "overall_score": 0.78,
+            "qualitative_feedback": "The slug 'daikoku-drugstore-hongkong-proxy-shopping-guide' effectively captures user intent, particularly for those searching for guidance on proxy shopping for Japanese products in Hong Kong. It aligns well with the content's purpose, which is to inform users about purchasing Japanese cosmetics and daily necessities. The brand name 'Daikoku Drugstore' is prominently featured, enhancing brand recognition. However, while the cultural terms are somewhat preserved, there is room for improvement in making them more relatable to the target audience. The slug is clear and concise, which aids in readability and SEO performance, but it could benefit from a more unique angle to stand out against competitors. Overall, the slug is strong but has areas for enhancement to maximize its effectiveness.",
+            "confidence": 0.85,
+            "key_strengths": [
+              "Strong brand recognition with 'Daikoku Drugstore'",
+              "Clear alignment with user intent for proxy shopping",
+              "Good technical SEO structure and readability"
+            ],
+            "improvement_areas": [
+              "Enhance cultural authenticity by incorporating more localized terms",
+              "Increase uniqueness to differentiate from competitors",
+              "Consider simplifying the slug for better memorability"
+            ],
+            "cultural_insights": "The use of 'Daikoku' resonates well with consumers familiar with Japanese drugstores, but the term 'proxy shopping' may require additional context for users less familiar with the concept. Incorporating more local vernacular or slang could enhance relatability and engagement.",
+            "competitive_analysis": "Compared to typical alternatives, this slug is more descriptive and informative, but it lacks a unique hook that could make it more memorable. Competitors often use simpler, catchier phrases that may be easier for users to recall. This slug could benefit from a more creative approach to stand out in search results.",
+            "analysis_type": "llm_qualitative",
+            "model_used": "gpt-4o-mini"
+          },
+          "analysis_type": "complete",
+          "llm_available": true,
+          "capabilities": {
+            "quantitative_analysis": true,
+            "qualitative_analysis": true,
+            "llm_model": "gpt-4o-mini",
+            "analysis_dimensions": {
+              "quantitative": [
+                "technical_seo",
+                "brand_hierarchy",
+                "cultural_preservation",
+                "structure_analysis",
+                "seo_compliance"
+              ],
+              "qualitative": [
+                "user_intent_match",
+                "brand_hierarchy",
+                "cultural_authenticity",
+                "click_through_potential",
+                "competitive_differentiation",
+                "technical_seo"
+              ]
+            }
+          },
+          "combined_recommendation": {
+            "combined_score": 0.8413333333333333,
+            "recommendation": "Excellent slug - both quantitative metrics and qualitative insights positive",
+            "convergent_insights": [
+              "Technical SEO assessment converges between analyses"
+            ],
+            "analysis_agreement": true,
+            "primary_strengths": [
+              "Strong brand recognition with 'Daikoku Drugstore'",
+              "Clear alignment with user intent for proxy shopping",
+              "Good technical SEO structure and readability"
+            ],
+            "priority_improvements": [
+              "Enhance cultural authenticity by incorporating more localized terms",
+              "Increase uniqueness to differentiate from competitors",
+              "Consider simplifying the slug for better memorability"
+            ]
+          },
+          "meta_analysis": {
+            "dimension_comparison": {
+              "technical_seo": {
+                "quantitative_score": 0.9666666666666667,
+                "qualitative_score": 0.85,
+                "agreement": true,
+                "difference": 0.1166666666666667
+              },
+              "brand_hierarchy": {
+                "quantitative_score": 0.7,
+                "qualitative_score": 0.9,
+                "agreement": false,
+                "difference": 0.20000000000000007
+              },
+              "cultural_preservation": {
+                "quantitative_score": 1.0,
+                "qualitative_score": 0.7,
+                "agreement": false,
+                "difference": 0.30000000000000004
+              }
+            },
+            "overall_agreement": 0.3333333333333333,
+            "analysis_confidence": [
+              "1.0",
+              0.85
+            ],
+            "meta_insights": [
+              "Significant disagreement between analysis methods - manual review recommended",
+              "Large disagreement in cultural_preservation assessment - qualitative analysis may reveal nuances"
+            ]
+          }
+        },
+        "success": true,
+        "key_metrics": {
+          "overall_score": 0.78,
+          "click_through_potential": 0.75,
+          "competitive_differentiation": 0.6,
+          "brand_hierarchy": 0.9,
+          "cultural_authenticity": 0.7
+        }
+      }
+    },
+    "performance_summary": {
+      "success_rate": 1.0,
+      "successful_cases": 3,
+      "total_cases": 3,
+      "avg_overall_score": 0.71,
+      "avg_dimension_scores": {
+        "click_through_potential": 0.65,
+        "competitive_differentiation": 0.6,
+        "brand_hierarchy": 0.8666666666666667,
+        "cultural_authenticity": 0.7666666666666666
+      }
+    }
+  },
+  "improvement_validation": {
+    "overall_comparison": {
+      "success_rate_change": -0.6666666666666667,
+      "avg_score_change": 0.020000000000000018,
+      "v9_success_rate": 0.3333333333333333,
+      "v8_success_rate": 1.0
+    },
+    "dimensional_improvements": {
+      "click_through_potential": {
+        "v9_average": 0.6,
+        "v8_average": 0.65,
+        "improvement": -0.050000000000000044,
+        "improvement_percentage": -7.692307692307699
+      },
+      "competitive_differentiation": {
+        "v9_average": 0.8,
+        "v8_average": 0.6,
+        "improvement": 0.20000000000000007,
+        "improvement_percentage": 33.33333333333335
+      },
+      "brand_hierarchy": {
+        "v9_average": 0.7,
+        "v8_average": 0.8666666666666667,
+        "improvement": -0.16666666666666674,
+        "improvement_percentage": -19.230769230769237
+      },
+      "cultural_authenticity": {
+        "v9_average": 0.9,
+        "v8_average": 0.7666666666666666,
+        "improvement": 0.13333333333333341,
+        "improvement_percentage": 17.391304347826097
+      }
+    },
+    "case_by_case_analysis": {
+      "v8_breakthrough": {
+        "v9_slug": null,
+        "v8_slug": "skinniydip-iface-rhinoshield-phone-cases-guide",
+        "expected_improvements": [
+          "click_through_optimization",
+          "competitive_differentiation"
+        ],
+        "actual_improvements": []
+      },
+      "v6_cultural": {
+        "v9_slug": "ultimate-ichiban-kuji-online-purchasing-masterclass",
+        "v8_slug": "ichiban-kuji-japan-online-tutorial-2025",
+        "expected_improvements": [
+          "click_through_optimization",
+          "brand_optimization"
+        ],
+        "actual_improvements": []
+      },
+      "brand_compound": {
+        "v9_slug": null,
+        "v8_slug": "daikoku-drugstore-hongkong-proxy-shopping-guide",
+        "expected_improvements": [
+          "brand_optimization",
+          "competitive_differentiation"
+        ],
+        "actual_improvements": []
+      }
+    },
+    "improvement_validation": {}
+  },
+  "llm_feedback_analysis": [
+    "❌ No improvement in click_through_potential: -0.050 (-7.7%)",
+    "✅ LLM-guided improvement in competitive_differentiation: +0.200 (+33.3%)",
+    "❌ No improvement in brand_hierarchy: -0.167 (-19.2%)"
+  ]
+}

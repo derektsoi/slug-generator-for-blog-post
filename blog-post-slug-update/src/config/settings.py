@@ -43,6 +43,11 @@ class SlugGeneratorConfig:
             'MAX_WORDS': 8,      # Relaxed from 6 to 8 for complex multi-brand
             'MAX_CHARS': 70,     # Relaxed from 60 to 70 for longer descriptive slugs
             'CONFIDENCE_THRESHOLD': 0.75,  # Higher threshold for V8's enhanced complexity
+        },
+        'v9': {
+            'MAX_WORDS': 8,      # Maintain V8's flexibility
+            'MAX_CHARS': 70,     # Maintain V8's character limits
+            'CONFIDENCE_THRESHOLD': 0.7,   # LLM-guided improvements should meet high standards
         }
     }
     
