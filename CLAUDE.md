@@ -13,7 +13,7 @@ This is **claude-project** - a comprehensive AI development project repository c
 - `claude-code-curriculum/week-4-integration/` - System integration (planned)
 
 **Production Projects:**
-- `blog-post-slug-update/` - **V8 Enhanced Constraints LLM slug generator** with HISTORIC BREAKTHROUGH in multi-brand handling and Asian e-commerce cultural awareness
+- `blog-post-slug-update/` - **V10 Competitive Enhanced LLM slug generator** with HISTORIC BREAKTHROUGH in multi-brand handling, Asian e-commerce cultural awareness, and **production-ready batch processing extensions** (21/21 TDD tests passing)
 
 **Multi-Project Structure:**
 - **Each project maintains its own `CLAUDE.md`** for specific guidance
