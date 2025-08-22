@@ -19,6 +19,7 @@ This is **claude-project** - a comprehensive AI development project repository c
 - **Each project maintains its own `CLAUDE.md`** for specific guidance
 - **This parent `CLAUDE.md`** provides repository-wide security and development principles
 - **Shared security practices** apply across all projects
+- **🚨 MANDATORY TDD PROTOCOL** applies to ALL projects
 
 ## Project Quick Start
 
@@ -282,6 +283,47 @@ derived_status = calculate_from_authoritative(authoritative_file)
 **Lesson**: Always validate technical assumptions with actual code review before optimizing the wrong component.
 
 These patterns help debug similar issues across different AI projects and prevent common architectural mistakes.
+
+## 🧪 Test-Driven Development Protocol (MANDATORY)
+
+**🚨 CRITICAL: ALL code development must follow TDD practices - NO EXCEPTIONS**
+
+### **Universal TDD Rules (Apply to ALL Projects):**
+1. **🔴 RED FIRST**: Write failing tests before ANY implementation
+2. **🟢 GREEN MINIMAL**: Write only enough code to make tests pass  
+3. **🔵 REFACTOR SAFELY**: Improve code while maintaining green tests
+4. **✅ VERIFY CYCLE**: Run tests before AND after each implementation step
+
+### **TDD Enforcement Checklist:**
+```bash
+# BEFORE writing any code:
+□ Write comprehensive failing tests
+□ Verify tests fail (RED state confirmed)
+□ Document expected behavior in tests
+
+# DURING implementation:  
+□ Write minimal code to satisfy tests
+□ Verify tests pass (GREEN state achieved)
+□ Refactor for quality while preserving tests
+
+# AFTER each cycle:
+□ Commit working changes
+□ Update TDD status in CLAUDE.md
+□ Plan next test cases
+```
+
+### **TDD Violation Prevention:**
+- ❌ **NEVER** write production code without failing tests first
+- ❌ **NEVER** skip test verification phases  
+- ❌ **NEVER** implement features beyond test requirements
+- ❌ **NEVER** refactor without running full test suite
+
+### **Per-Project TDD Status:**
+- **Blog Post Slug Generator**: Phase 1 Core Infrastructure (RED ✅, GREEN in progress)
+- **Content Analyzer**: TDD protocol to be applied to future features
+- **New Projects**: Must start with TDD from day one
+
+**This TDD protocol supersedes all other development practices and must be followed religiously for code quality assurance.**
 
 ## 🔐 Security & Secret Management
 

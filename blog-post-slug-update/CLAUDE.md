@@ -583,27 +583,64 @@ print('✅ Enhanced A/B testing framework with per-URL analysis available')
 "
 ```
 
-## Test-Driven Development
+## 🧪 Test-Driven Development (MANDATORY PRACTICE)
 
-**Comprehensive Test Suite:**
+**🚨 CRITICAL TDD PROTOCOL - ALWAYS FOLLOW:**
 
-**Current Implementation Analysis:**
-- Content extraction validation
-- Prompt effectiveness testing
-- Fallback mechanism detection
-- Content limit analysis
+### **RED-GREEN-REFACTOR Cycle (NON-NEGOTIABLE):**
+1. **🔴 RED**: Write failing tests FIRST before any implementation
+2. **🟢 GREEN**: Write minimal code to make tests pass
+3. **🔵 REFACTOR**: Improve code while keeping tests green
 
-**Improved Implementation (TDD):**
-- ✅ Keyword fallback elimination
-- ✅ Retry logic with exponential backoff
-- ✅ Enhanced content limits
-- ✅ Structured prompt patterns
-- ✅ JSON response parsing
-- ✅ Model upgrade validation
-- ✅ Error handling without fallbacks
+### **TDD Rules (STRICTLY ENFORCED):**
+- ✅ **NEVER write production code without a failing test first**
+- ✅ **Write only enough test code to demonstrate a failure**
+- ✅ **Write only enough production code to make the test pass**
+- ✅ **Run tests before AND after each implementation**
+- ✅ **Commit after each successful RED-GREEN-REFACTOR cycle**
 
-**Test Results:**
-- **19/19 tests passing** ✅
+### **Test Organization:**
+```
+tests/
+├── unit/                           # Unit tests (isolated components)
+│   ├── test_*.py                  # Individual component tests
+├── integration/                    # Integration tests (component interactions)
+├── performance/                    # Performance and optimization tests
+├── regression/                     # Regression prevention tests
+└── fixtures/                       # Test data and utilities
+```
+
+### **TDD Commands (Run Before Implementation):**
+```bash
+# Verify tests fail first (RED phase)
+python3 tests/unit/test_component.py
+
+# Implement minimal code (GREEN phase)
+# ... implement component ...
+
+# Verify tests pass (GREEN verification)
+python3 tests/unit/test_component.py
+
+# Refactor and verify tests still pass (REFACTOR phase)
+# ... improve implementation ...
+python3 tests/unit/test_component.py
+```
+
+### **Current TDD Status:**
+
+**✅ Phase 1 Core Infrastructure (TDD Complete):**
+- `AtomicJSONLWriter`: 9 comprehensive tests (RED ✅, GREEN pending)
+- `RobustCheckpointManager`: 11 comprehensive tests (RED ✅, GREEN pending) 
+- `SynchronizedProgressTracker`: 12 comprehensive tests (RED ✅, GREEN pending)
+
+**⚠️ TDD Violations Prevention:**
+- Tests MUST be written and verified to fail before implementation
+- Implementation MUST be minimal to satisfy test requirements
+- Refactoring MUST preserve all passing tests
+- No feature additions without corresponding test additions
+
+**Legacy Test Results (Pre-TDD Era):**
+- **19/19 tests passing** ✅ (batch processing components)
 - **100% success rate** on real API tests
 - **Zero fallbacks triggered** in production testing
 
