@@ -2,6 +2,7 @@
 """
 AtomicJSONLWriter - Thread-safe JSONL writer with atomic operations
 Implementation follows TDD approach - minimal code to satisfy test requirements.
+Refactored to use shared file operation utilities.
 """
 
 import json
@@ -10,14 +11,30 @@ import time
 import threading
 from typing import Dict, Any
 
+# Handle both relative and absolute imports for test compatibility
+try:
+    from .file_operations import BaseTimestampedException, AtomicFileOperations, JSONLOperations
+except ImportError:
+    # Fallback for direct module loading (used by tests)
+    import importlib.util
+    import os
+    spec = importlib.util.spec_from_file_location(
+        "file_operations", 
+        os.path.join(os.path.dirname(__file__), "file_operations.py")
+    )
+    file_ops_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(file_ops_module)
+    BaseTimestampedException = file_ops_module.BaseTimestampedException
+    AtomicFileOperations = file_ops_module.AtomicFileOperations
+    JSONLOperations = file_ops_module.JSONLOperations
 
-class JSONWriteError(Exception):
+
+class JSONWriteError(BaseTimestampedException):
     """Custom exception for JSON write operations"""
     
     def __init__(self, message: str, error_type: str):
         super().__init__(message)
         self.error_type = error_type
-        self.timestamp = time.time()
 
 
 class AtomicJSONLWriter:
@@ -43,12 +60,8 @@ class AtomicJSONLWriter:
         self._lock = threading.Lock()
         self._write_count = 0
         
-        # Ensure directory exists (handle permission errors gracefully)
-        try:
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        except (OSError, PermissionError):
-            # Let write_entry handle the actual write failure
-            pass
+        # Ensure directory exists using shared utility
+        AtomicFileOperations.ensure_directory(file_path)
     
     def write_entry(self, data: Dict[Any, Any]) -> bool:
         """
@@ -61,16 +74,10 @@ class AtomicJSONLWriter:
             bool: True if write successful, False otherwise
         """
         with self._lock:
-            try:
-                # Validate data is JSON serializable
-                json_str = json.dumps(data, ensure_ascii=False)
-                
-                # Write to temp file with explicit newline
-                with open(self.temp_path, 'a', encoding='utf-8') as f:
-                    f.write(json_str + '\n')  # CRITICAL: Always add newline
-                    f.flush()
-                    os.fsync(f.fileno())  # Force OS write
-                
+            # Use shared JSONL operations for consistent formatting
+            success = JSONLOperations.append_jsonl_entry(self.temp_path, data, lock=None)
+            
+            if success:
                 self._write_count += 1
                 
                 # Handle finalization and backup
@@ -78,13 +85,8 @@ class AtomicJSONLWriter:
                     return self._atomic_finalize()
                 
                 return True
-                
-            except (TypeError, ValueError):
-                # JSON serialization error
-                return False
-            except Exception:
-                # File write error
-                return False
+            
+            return False
     
     def _should_finalize(self) -> bool:
         """

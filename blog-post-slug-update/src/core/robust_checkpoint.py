@@ -2,6 +2,7 @@
 """
 RobustCheckpointManager - Schema-validated checkpoint operations with atomic saves and recovery
 Implementation follows TDD approach - minimal code to satisfy test requirements.
+Refactored to use shared file operation utilities.
 """
 
 import json
@@ -10,24 +11,38 @@ import time
 import threading
 from typing import Dict, Any, Optional
 
+# Handle both relative and absolute imports for test compatibility
+try:
+    from .file_operations import BaseTimestampedException, AtomicFileOperations
+except ImportError:
+    # Fallback for direct module loading (used by tests)
+    import importlib.util
+    import os
+    spec = importlib.util.spec_from_file_location(
+        "file_operations", 
+        os.path.join(os.path.dirname(__file__), "file_operations.py")
+    )
+    file_ops_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(file_ops_module)
+    BaseTimestampedException = file_ops_module.BaseTimestampedException
+    AtomicFileOperations = file_ops_module.AtomicFileOperations
 
-class CheckpointFormatError(Exception):
+
+class CheckpointFormatError(BaseTimestampedException):
     """Custom exception for checkpoint format validation errors"""
     
     def __init__(self, message: str, validation_details: Dict[str, Any] = None):
         super().__init__(message)
         self.validation_details = validation_details or {}
-        self.timestamp = time.time()
 
 
-class CheckpointRecoveryError(Exception):
+class CheckpointRecoveryError(BaseTimestampedException):
     """Custom exception for checkpoint recovery errors"""
     
     def __init__(self, message: str, recovery_attempts: int = 0, last_error: str = None):
         super().__init__(message)
         self.recovery_attempts = recovery_attempts
         self.last_error = last_error
-        self.timestamp = time.time()
 
 
 class RobustCheckpointManager:
@@ -62,8 +77,8 @@ class RobustCheckpointManager:
         self.temp_file = f"{self.checkpoint_file}.tmp"
         self._lock = threading.Lock()
         
-        # Ensure directory exists
-        os.makedirs(output_dir, exist_ok=True)
+        # Ensure directory exists using shared utility
+        AtomicFileOperations.ensure_directory(self.checkpoint_file)
     
     def save_checkpoint(self, data: Dict[str, Any]) -> bool:
         """
@@ -78,35 +93,18 @@ class RobustCheckpointManager:
         Raises:
             CheckpointFormatError: If data doesn't match required schema
         """
-        with self._lock:
-            try:
-                # Validate schema before saving
-                self._validate_checkpoint_format(data)
-                
-                # Write to temp file first (atomic operation)
-                with open(self.temp_file, 'w', encoding='utf-8') as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
-                    f.flush()
-                    os.fsync(f.fileno())
-                
-                # Create backup of existing checkpoint if it exists
-                if os.path.exists(self.checkpoint_file):
-                    with open(self.checkpoint_file, 'r', encoding='utf-8') as src:
-                        with open(self.backup_file, 'w', encoding='utf-8') as dst:
-                            dst.write(src.read())
-                
-                # Atomic move from temp to main
-                os.rename(self.temp_file, self.checkpoint_file)
-                
-                return True
-                
-            except CheckpointFormatError:
-                # Re-raise format errors for caller to handle
-                raise
-            except Exception:
-                # File operation errors
-                self._cleanup_temp_file()
-                return False
+        try:
+            # Validate schema before saving
+            self._validate_checkpoint_format(data)
+            
+            # Use shared atomic backup and write operation
+            return AtomicFileOperations.atomic_backup_and_write(
+                self.checkpoint_file, data, backup_enabled=True, lock=self._lock
+            )
+            
+        except CheckpointFormatError:
+            # Re-raise format errors for caller to handle
+            raise
     
     def load_checkpoint(self) -> Optional[Dict[str, Any]]:
         """
@@ -115,23 +113,20 @@ class RobustCheckpointManager:
         Returns:
             dict: Loaded checkpoint data, or None if no valid checkpoint found
         """
-        with self._lock:
-            # Try loading main checkpoint first
-            if os.path.exists(self.checkpoint_file):
-                try:
-                    with open(self.checkpoint_file, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-                    
-                    # Validate loaded data
-                    self._validate_checkpoint_format(data)
-                    return data
-                    
-                except (json.JSONDecodeError, CheckpointFormatError):
-                    # Main checkpoint corrupted, try backup recovery
-                    return self._attempt_backup_recovery()
-            
-            # No checkpoint file exists
-            return None
+        # Try loading main checkpoint first using shared utility
+        data = AtomicFileOperations.safe_read_json(self.checkpoint_file, self._lock)
+        
+        if data is not None:
+            try:
+                # Validate loaded data
+                self._validate_checkpoint_format(data)
+                return data
+            except CheckpointFormatError:
+                # Main checkpoint corrupted, try backup recovery
+                return self._attempt_backup_recovery()
+        
+        # No checkpoint file exists
+        return None
     
     def _validate_checkpoint_format(self, data: Dict[str, Any]) -> None:
         """

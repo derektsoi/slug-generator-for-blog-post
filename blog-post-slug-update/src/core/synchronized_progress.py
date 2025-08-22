@@ -2,6 +2,7 @@
 """
 SynchronizedProgressTracker - Thread-safe progress tracking with immediate file synchronization
 Implementation follows TDD approach - minimal code to satisfy test requirements.
+Refactored to use shared file operation utilities.
 """
 
 import json
@@ -10,15 +11,30 @@ import time
 import threading
 from typing import Dict, Any
 
+# Handle both relative and absolute imports for test compatibility
+try:
+    from .file_operations import BaseTimestampedException, AtomicFileOperations
+except ImportError:
+    # Fallback for direct module loading (used by tests)
+    import importlib.util
+    import os
+    spec = importlib.util.spec_from_file_location(
+        "file_operations", 
+        os.path.join(os.path.dirname(__file__), "file_operations.py")
+    )
+    file_ops_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(file_ops_module)
+    BaseTimestampedException = file_ops_module.BaseTimestampedException
+    AtomicFileOperations = file_ops_module.AtomicFileOperations
 
-class ProgressSyncError(Exception):
+
+class ProgressSyncError(BaseTimestampedException):
     """Custom exception for progress synchronization errors"""
     
     def __init__(self, message: str, memory_state: Dict[str, Any], file_state: Dict[str, Any]):
         super().__init__(message)
         self.memory_state = memory_state
         self.file_state = file_state
-        self.timestamp = time.time()
 
 
 class SynchronizedProgressTracker:
@@ -47,11 +63,11 @@ class SynchronizedProgressTracker:
         }
         self._lock = threading.Lock()
         
-        # Ensure directory exists
-        os.makedirs(output_dir, exist_ok=True)
-        
         # Initialize live progress file immediately
         self.live_progress_file = os.path.join(output_dir, 'live_progress.json')
+        
+        # Ensure directory exists using shared utility
+        AtomicFileOperations.ensure_directory(self.live_progress_file)
         
         # Try to recover from existing file first, then persist if no recovery
         if not self._try_auto_recovery():
@@ -99,15 +115,10 @@ class SynchronizedProgressTracker:
                 'timestamp': time.time()
             }
             
-            # Write to live progress file atomically
-            temp_file = f"{self.live_progress_file}.tmp"
-            with open(temp_file, 'w', encoding='utf-8') as f:
-                json.dump(progress_data, f, ensure_ascii=False)
-                f.flush()
-                os.fsync(f.fileno())
-            
-            # Atomic move
-            os.rename(temp_file, self.live_progress_file)
+            # Use shared atomic write operation (don't pass lock as we're already in lock context)
+            AtomicFileOperations.atomic_write_json(
+                self.live_progress_file, progress_data, lock=None
+            )
             
         except Exception as e:
             # Progress sync error - could raise ProgressSyncError for serious failures
@@ -121,23 +132,20 @@ class SynchronizedProgressTracker:
         Returns:
             dict: Recovered progress state, or current state if recovery fails
         """
-        with self._lock:
-            try:
-                if os.path.exists(self.live_progress_file):
-                    with open(self.live_progress_file, 'r', encoding='utf-8') as f:
-                        file_data = json.load(f)
-                    
-                    # Update memory state from file
-                    self._memory_state['processed'] = file_data.get('processed', 0)
-                    self._memory_state['failed'] = file_data.get('failed', 0)
-                    self._memory_state['current_index'] = file_data.get('current_index', 0)
-                    
-                    # Return the recovered state
-                    return self._memory_state.copy()
-            except Exception:
-                pass
-            
-            return self._memory_state.copy()
+        # Use shared safe read operation
+        file_data = AtomicFileOperations.safe_read_json(self.live_progress_file, lock=None)
+        
+        if file_data is not None:
+            with self._lock:
+                # Update memory state from file
+                self._memory_state['processed'] = file_data.get('processed', 0)
+                self._memory_state['failed'] = file_data.get('failed', 0)
+                self._memory_state['current_index'] = file_data.get('current_index', 0)
+                
+                # Return the recovered state
+                return self._memory_state.copy()
+        
+        return self._memory_state.copy()
     
     def _try_auto_recovery(self) -> bool:
         """
@@ -146,18 +154,14 @@ class SynchronizedProgressTracker:
         Returns:
             bool: True if recovery succeeded, False if no file or recovery failed
         """
-        try:
-            if os.path.exists(self.live_progress_file):
-                with open(self.live_progress_file, 'r', encoding='utf-8') as f:
-                    file_data = json.load(f)
-                
-                # Update memory state from file
-                self._memory_state['processed'] = file_data.get('processed', 0)
-                self._memory_state['failed'] = file_data.get('failed', 0)
-                self._memory_state['current_index'] = file_data.get('current_index', 0)
-                
-                return True
-        except Exception:
-            pass
+        # Use shared safe read operation (no lock needed for auto-recovery)
+        file_data = AtomicFileOperations.safe_read_json(self.live_progress_file, lock=None)
+        
+        if file_data is not None:
+            # Update memory state from file
+            self._memory_state['processed'] = file_data.get('processed', 0)
+            self._memory_state['failed'] = file_data.get('failed', 0)
+            self._memory_state['current_index'] = file_data.get('current_index', 0)
+            return True
         
         return False
