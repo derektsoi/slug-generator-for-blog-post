@@ -15,8 +15,19 @@ from unittest.mock import patch, Mock
 try:
     import sys
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
-    from core.robust_checkpoint import RobustCheckpointManager, CheckpointFormatError, CheckpointRecoveryError
-except ImportError:
+    # Import directly from the module to avoid __init__.py dependencies
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "robust_checkpoint", 
+        os.path.join(os.path.dirname(__file__), '..', '..', 'src', 'core', 'robust_checkpoint.py')
+    )
+    checkpoint_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checkpoint_module)
+    
+    RobustCheckpointManager = checkpoint_module.RobustCheckpointManager
+    CheckpointFormatError = checkpoint_module.CheckpointFormatError
+    CheckpointRecoveryError = checkpoint_module.CheckpointRecoveryError
+except (ImportError, AttributeError, FileNotFoundError):
     # Expected to fail initially - we haven't implemented it yet
     RobustCheckpointManager = None
     CheckpointFormatError = Exception
