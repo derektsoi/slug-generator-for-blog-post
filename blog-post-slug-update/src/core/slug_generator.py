@@ -499,13 +499,13 @@ Generate {count} different slug options with confidence scores and reasoning.
     
     def is_valid_slug(self, slug: str) -> bool:
         """
-        Check if a slug meets validation criteria.
+        Check if a slug meets validation criteria using the generator's configuration.
         """
-        validation = validate_slug(slug)
+        validation = validate_slug(slug, self.config)
         return validation['is_valid']
     
     def get_slug_validation(self, slug: str) -> Dict:
         """
-        Get detailed validation information for a slug.
+        Get detailed validation information for a slug using the generator's configuration.
         """
-        return validate_slug(slug)
+        return validate_slug(slug, self.config)

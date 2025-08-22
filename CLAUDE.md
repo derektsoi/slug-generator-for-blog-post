@@ -162,6 +162,105 @@ After:  Clean core/config/utils/optimization/extensions + version-aware configur
 
 **See:** `blog-post-slug-update/CLAUDE.md` for comprehensive technical documentation and methodology.
 
+## 🐛 Bug Patterns & Debugging Methodology
+
+**Reusable debugging patterns discovered through systematic AI development:**
+
+### **Validation Configuration Mismatches**
+**Pattern**: AI generates correct output but validation uses wrong constraints  
+**Symptoms**: High API success rate but low validation pass rate, "generated content rejected"  
+**Root Cause**: Validation functions using default/global config instead of version-specific config  
+**Debug Steps**:
+1. Check if AI output looks correct but gets rejected
+2. Compare validation constraints vs generator constraints  
+3. Verify configuration objects passed to validation functions
+
+**Fix Pattern**:
+```python
+# ❌ Wrong: Uses default config
+validation = validate_output(content)
+
+# ✅ Correct: Uses generator's config  
+validation = validate_output(content, self.config)
+```
+
+### **Progress Tracking in Multi-Step Systems**
+**Pattern**: Progress updated in memory but not persisted for monitoring threads  
+**Symptoms**: Progress bars stuck at 0%, count mismatches between components, stale UI  
+**Root Cause**: Background threads can only read files, not memory state  
+**Debug Steps**:
+1. Check if processing logic updates progress correctly
+2. Verify if progress data is written to files
+3. Confirm monitoring threads read from correct data source
+
+**Fix Pattern**:
+```python
+# ❌ Wrong: Progress only in memory
+progress_info = self.monitor.update_progress()
+
+# ✅ Correct: Progress persisted to disk
+progress_info = self.monitor.update_progress()
+self._write_progress_to_file(progress_info)
+```
+
+### **File vs Memory State Synchronization**
+**Pattern**: Processing logic works but monitoring shows incorrect state  
+**Symptoms**: Accurate final results but wrong real-time progress, UI lag  
+**Root Cause**: State stored in memory while monitors read from files  
+**Fix**: Ensure all state changes are immediately written to files that monitors can access
+
+### **Import Dependencies in Modular Systems**
+**Pattern**: Silent failures when adding new functionality to existing modules  
+**Symptoms**: Methods not working, missing functionality, silent exceptions  
+**Root Cause**: Missing imports when adding new methods that use additional libraries  
+**Debug**: Check error logs for import-related failures, verify all dependencies imported  
+**Fix**: Add missing imports at module level when extending functionality
+
+### **Configuration vs Prompt Version Mismatches**
+**Pattern**: Prompts designed for enhanced capabilities but constrained by old validation  
+**Symptoms**: Advanced AI output rejected by legacy validation rules  
+**Root Cause**: Version-specific prompts not paired with version-specific validation  
+**Fix**: Implement version-aware configuration systems that update both prompts and constraints
+
+### **Batch Processing Resume Failures**
+**Pattern**: Resume logic restarts from beginning instead of checkpoint, creating duplicates  
+**Symptoms**: Progress shows high completion but processing starts from 0, duplicate entries in results  
+**Root Cause**: Resume checkpoint format mismatches, file overwriting instead of appending  
+**Debug Steps**:
+1. Check if multiple result files exist with different entry counts
+2. Verify checkpoint files have compatible formats with resume logic
+3. Examine if results files use overwrite vs append mode during resume
+
+**Fix Pattern**:
+```python
+# ❌ Wrong: Overwrites existing results
+results_file = open(output_file, 'w')
+
+# ✅ Correct: Appends to existing results during resume  
+results_file = open(output_file, 'a' if resume else 'w')
+```
+
+### **Multi-File State Synchronization Issues**
+**Pattern**: Processing logic updates one set of files while monitoring reads from different files  
+**Symptoms**: Progress tracking shows incorrect state, UI displays stale data, file count mismatches  
+**Root Cause**: State distributed across multiple files without proper synchronization  
+**Debug Steps**:
+1. Map all state files and their update/read patterns
+2. Verify which files are authoritative vs derived
+3. Check if resume logic reads from correct checkpoint files
+
+**Fix Pattern**:
+```python
+# ❌ Wrong: Multiple files with unclear precedence
+progress_file_1, progress_file_2, checkpoint_file = get_files()
+
+# ✅ Correct: Single source of truth with clear derivation
+authoritative_file = get_primary_checkpoint()
+derived_status = calculate_from_authoritative(authoritative_file)
+```
+
+These patterns help debug similar issues across different AI projects and prevent common architectural mistakes.
+
 ## 🔐 Security & Secret Management
 
 **Critical Security Principles for ALL Projects:**

@@ -6,6 +6,7 @@ Minimal production batch processor implementation to pass tests
 import os
 import sys
 import time
+import json
 from typing import List, Dict, Any, Tuple
 
 # Add src to path for imports
@@ -97,14 +98,18 @@ class ProductionBatchProcessor:
                     budget_limit_reached = True
                     break
                 
-                # Check duplicates
+                # Check duplicates and process URL
                 if self.duplicate_detector.is_duplicate(url):
-                    continue
-                
-                # Process URL with retry logic
-                success, result_or_error = self._process_single_url_with_retries(url_data)
-                
-                # Progress is updated inside the retry function
+                    # URL is a duplicate - count as processed but don't reprocess
+                    progress_info = self.progress_monitor.update_progress(success=True)
+                    self._write_progress_status(progress_info)
+                    continue  # Skip to next URL
+                else:
+                    # Process URL with retry logic
+                    success, result_or_error = self._process_single_url_with_retries(url_data)
+                    # Update progress once per URL
+                    progress_info = self.progress_monitor.update_progress(success=success)
+                    self._write_progress_status(progress_info)
                 
                 if success:
                     result = result_or_error
@@ -125,9 +130,9 @@ class ProductionBatchProcessor:
                     self.duplicate_detector.add_processed(url, result['primary'])
                     
                     successful_results.append(result)
-                    # Progress already updated above
                     
                 else:
+                    # Handle errors from processing
                     error_msg = result_or_error
                     
                     # Check for rate limit with specific error handling
@@ -147,7 +152,6 @@ class ProductionBatchProcessor:
                         break
                     
                     failed_urls.append({'url': url, 'error': error_msg})
-                    # Progress already updated above
                 
                 # Checkpoint saving
                 if self.checkpoint_manager.should_save_checkpoint(len(successful_results)):
@@ -206,15 +210,9 @@ class ProductionBatchProcessor:
                     title = url_data.get('title', '')
                     content = url_data.get('title', '')  # Use title as content fallback
                     
-                    # Update progress before API call (for test capture)
-                    self.progress_monitor.update_progress(success=True)
-                    
                     # Use content generation method
                     result = self.slug_generator.generate_slug_from_content(title, content)
                 else:
-                    # Update progress before API call (for test capture)
-                    self.progress_monitor.update_progress(success=True)
-                    
                     # Use URL generation method
                     result = self.slug_generator.generate_slug(url_data)
                 
@@ -238,3 +236,21 @@ class ProductionBatchProcessor:
                 time.sleep(2 ** attempt)
         
         return False, "Max retries exceeded"
+    
+    def _write_progress_status(self, progress_info: Dict):
+        """Write real-time progress to file for monitoring thread."""
+        try:
+            progress_status_file = os.path.join(self.output_dir, 'live_progress.json')
+            with open(progress_status_file, 'w') as f:
+                json.dump({
+                    'processed': progress_info['processed'],
+                    'failed': progress_info['failed'],
+                    'total': self.progress_monitor.total_urls,
+                    'percent': progress_info['percent'],
+                    'processing_rate': progress_info['processing_rate'],
+                    'eta_seconds': progress_info['eta_seconds'],
+                    'timestamp': time.time()
+                }, f)
+        except Exception:
+            # Don't let progress writing break the main processing
+            pass

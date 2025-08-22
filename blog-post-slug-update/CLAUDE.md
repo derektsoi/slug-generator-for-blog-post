@@ -793,3 +793,81 @@ OPENAI_API_KEY=your-openai-api-key-here
 - **Comprehensive Documentation** - V11 enhancement roadmap for future development
 
 **Production Ready + V11 Foundation:** V10 represents the pinnacle of the V1→V10 evolution journey, combining V8 robustness, V9 competitive appeal, and V6 cultural foundation into a single intelligently enhanced prompt. V11 roadmap focuses on advanced semantic understanding and dynamic constraint optimization.
+
+## 🐛 Known Issues & Production Fixes
+
+**Critical fixes applied for production deployment:**
+
+### **V10 Prompt Configuration Issues**
+**Problem**: V10 prompt filename mismatch causing fallback to default prompts
+- **File naming requirement**: V10 prompt must be named `v10_prompt.txt` (not `v10_competitive_enhanced.txt`)
+- **Location**: `/src/config/prompts/v10_prompt.txt`
+- **Symptoms**: 40% success rate instead of expected 99%+
+- **Fix applied**: ✅ File copied to correct name
+
+**Problem**: Validation using default constraints instead of V10 enhanced constraints
+- **V10 constraints**: 10 words, 90 characters (enhanced for competitive slugs)
+- **Default constraints**: 6 words, 60 characters (legacy limits)
+- **Code fix**: Updated `SlugGenerator.is_valid_slug()` to pass `self.config` to `validate_slug()`
+- **Symptoms**: Perfect slugs rejected as "too long"
+- **Fix applied**: ✅ `validate_slug(slug, self.config)`
+
+### **Batch Processing Progress Tracking**
+**Problem**: Progress count mismatches in production batch processing
+- **Duplicate handling**: URLs skipped with `continue` but progress not updated
+- **Result**: Asked for 10 URLs, processed 7, progress showed wrong counts
+- **Fix applied**: ✅ Update progress before `continue` statements
+
+**Problem**: Real-time progress bar stuck at 0%
+- **Root cause**: Progress monitor counted file lines instead of actual progress
+- **Missing component**: No real-time progress data written to disk
+- **Fix applied**: ✅ Added `live_progress.json` with real-time data
+- **Required imports**: ✅ Added missing `json` import in `production_batch_processor.py`
+
+### **Batch Resume System Failures (August 2025)**
+**Critical Issue**: Original batch processor resume logic completely broken
+- **Problem**: Resume restarted from 0 instead of checkpoint (6921), wasted money reprocessing 
+- **Symptoms**: 6900+ URLs processed → resume showed only 117/8000 (1.4%)
+- **Root cause**: File overwriting during resume instead of appending, checkpoint format mismatches
+- **Data corruption**: 7079 results with 61 duplicates from multiple failed resume attempts
+
+**Solutions Implemented**:
+- ✅ **Safe completion script**: Bypassed broken resume with append-only approach
+- ✅ **File deduplication**: 7079 → 7018 unique results, removed 61 duplicates  
+- ✅ **Checkpoint cleanup**: Removed conflicting progress files, aligned state
+- ✅ **Resumption testing**: Verified script can continue from index 7157
+- ✅ **Data backup**: Full backup before cleanup in `backup_before_cleanup/`
+
+**Files Cleaned**:
+- ❌ Removed: `results.jsonl.tmp` (corrupted, 61 duplicates)
+- ❌ Removed: `results.jsonl` (outdated)  
+- ❌ Removed: `batch_progress.json` (wrong checkpoint format)
+- ✅ Kept: `results_final.jsonl` (7018 unique URLs)
+- ✅ Kept: `safe_progress.json` (100 processed, index 7157)
+
+**Production Status**: 7018/8194 URLs completed (85.6%), ~1037 remaining, safe resumption verified
+
+### **Duplicate Detection Behavior** 
+**Expected behavior**: Prevents reprocessing URLs from existing `results.jsonl`
+- **Count impact**: Duplicates count toward "processed" but not "success" 
+- **Clean start**: Use `rm -rf output_dir` for fresh processing without duplicates
+- **Resume mode**: Automatic duplicate detection enables checkpoint resume
+
+### **V10 Production Performance Expectations**
+**Validated performance metrics**:
+- ✅ **Success rate**: 100% with proper configuration
+- ✅ **Slug quality**: All results show `quality_score: 1.0` and `quality_issues: []`
+- ✅ **Enhanced features**: 10-word limit, competitive terms, cultural awareness
+- ✅ **Cost efficiency**: ~$6.40 for 8000 URLs (gpt-4o-mini pricing)
+- ✅ **Processing speed**: ~5 seconds per URL average
+
+**Production command validated**:
+```bash
+python scripts/run_production_batch.py --count 8000 --budget 100 --output-dir ./batch_8000 --verbose
+```
+
+**Troubleshooting guide**:
+- **Low success rate**: Check prompt filename and validation configuration
+- **Progress bar stuck**: Verify `live_progress.json` exists and `json` import present
+- **Count mismatches**: Ensure progress updated before duplicate `continue` statements
+- **Quality issues**: V10 should consistently produce `quality_score: 1.0`
