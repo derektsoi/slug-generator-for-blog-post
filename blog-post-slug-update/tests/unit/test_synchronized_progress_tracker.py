@@ -16,8 +16,18 @@ from unittest.mock import patch, Mock
 try:
     import sys
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
-    from core.synchronized_progress import SynchronizedProgressTracker, ProgressSyncError
-except ImportError:
+    # Import directly from the module to avoid __init__.py dependencies
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "synchronized_progress", 
+        os.path.join(os.path.dirname(__file__), '..', '..', 'src', 'core', 'synchronized_progress.py')
+    )
+    progress_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(progress_module)
+    
+    SynchronizedProgressTracker = progress_module.SynchronizedProgressTracker
+    ProgressSyncError = progress_module.ProgressSyncError
+except (ImportError, AttributeError, FileNotFoundError):
     # Expected to fail initially - we haven't implemented it yet
     SynchronizedProgressTracker = None
     ProgressSyncError = Exception
