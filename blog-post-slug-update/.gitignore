@@ -43,3 +43,17 @@ Thumbs.db
 # Project specific
 data/outputs/
 *.log
+
+# Batch processing artifacts
+batch_*/backup_*/
+batch_*/debug_*/
+batch_*/*_corrupted.jsonl
+batch_*/*.tmp
+*_backup_*.jsonl
+remaining_urls.json
+
+# Development artifacts  
+debug_batch/
+test_batch/
+batch_results/
+complete_batch.py
