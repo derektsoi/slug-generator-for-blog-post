@@ -847,6 +847,21 @@ OPENAI_API_KEY=your-openai-api-key-here
 
 **Production Status**: 7018/8194 URLs completed (85.6%), ~1037 remaining, safe resumption verified
 
+### **Content Processing Approach Analysis (August 2025)**
+**Investigation**: Analyzed title-only vs full content processing approaches
+- **Discovery**: Both original batch and safe completion use identical title-only approach
+- **Dataset**: JSON contains `{title, url}` pairs only, no pre-extracted content
+- **Current approach**: `generate_slug_from_content(title, title)` for all processing
+- **Performance**: 99.7% success rate (21 failures in 7018 URLs)
+- **Edge cases**: Very short titles (≤5 chars) occasionally fail without full content context
+
+**Future Enhancement Plan**: Hybrid approach documented
+- **Phase 1**: Continue title-only for efficiency (99.7% success rate)
+- **Phase 2**: Implement automatic fallback to full content extraction for failed cases
+- **Trigger**: Empty slugs or titles ≤10 characters automatically use `generate_slug(url)`
+- **Benefits**: Best of both worlds - speed + quality assurance for edge cases
+- **Documentation**: Complete analysis in `CONTENT_APPROACH_ANALYSIS.md`
+
 ### **Duplicate Detection Behavior** 
 **Expected behavior**: Prevents reprocessing URLs from existing `results.jsonl`
 - **Count impact**: Duplicates count toward "processed" but not "success" 

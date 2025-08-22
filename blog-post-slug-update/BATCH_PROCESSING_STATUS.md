@@ -101,6 +101,14 @@ watch -n 10 'echo "Results: $(wc -l < batch_8000/results_final.jsonl) / 8194" &&
 - ❌ Will restart from 0 and waste money/time
 - ✅ Use `safe_complete_batch.py` instead
 
+### **Content Processing Approach**
+- **Current method**: Title-only processing (`generate_slug_from_content(title, title)`)
+- **Both systems identical**: Original batch and safe completion use same approach
+- **Dataset structure**: JSON contains `{title, url}` pairs only
+- **Success rate**: 99.7% (21 failures in 7018 URLs)
+- **Edge cases**: Very short titles (≤5 chars) occasionally fail
+- **Future enhancement**: Hybrid approach with automatic fallback to full content (see `CONTENT_APPROACH_ANALYSIS.md`)
+
 ### **If Issues Occur**
 1. **Stop processing**: Press Ctrl+C (progress is saved)
 2. **Check files**: Verify `results_final.jsonl` and `safe_progress.json` exist

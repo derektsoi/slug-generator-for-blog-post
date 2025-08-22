@@ -259,6 +259,28 @@ authoritative_file = get_primary_checkpoint()
 derived_status = calculate_from_authoritative(authoritative_file)
 ```
 
+### **Content Processing Assumption Validation**
+**Pattern**: Assuming different systems use different content processing approaches without verification  
+**Symptoms**: Unexplained performance differences, incorrect root cause analysis, wrong optimization targets  
+**Root Cause**: Technical assumptions not validated against actual implementation code  
+**Debug Steps**:
+1. Verify actual method calls in both systems (title-only vs full content)
+2. Check dataset structure and what data is actually available
+3. Test both approaches on the same failure cases to isolate true causes
+
+**Fix Pattern**:
+```python
+# ❌ Wrong: Assuming without verification
+# "System A uses full content, System B uses titles only"
+
+# ✅ Correct: Code analysis reveals truth
+# Both systems: generate_slug_from_content(title, title)
+# Dataset: {title, url} pairs only - no content field
+# True cause: Edge cases with very short titles (≤5 chars)
+```
+
+**Lesson**: Always validate technical assumptions with actual code review before optimizing the wrong component.
+
 These patterns help debug similar issues across different AI projects and prevent common architectural mistakes.
 
 ## 🔐 Security & Secret Management
