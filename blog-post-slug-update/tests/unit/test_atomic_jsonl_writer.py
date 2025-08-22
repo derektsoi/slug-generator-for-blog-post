@@ -16,8 +16,18 @@ from unittest.mock import patch, Mock
 try:
     import sys
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
-    from core.atomic_writer import AtomicJSONLWriter, JSONWriteError
-except ImportError:
+    # Import directly from the module to avoid __init__.py dependencies
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "atomic_writer", 
+        os.path.join(os.path.dirname(__file__), '..', '..', 'src', 'core', 'atomic_writer.py')
+    )
+    atomic_writer_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(atomic_writer_module)
+    
+    AtomicJSONLWriter = atomic_writer_module.AtomicJSONLWriter
+    JSONWriteError = atomic_writer_module.JSONWriteError
+except (ImportError, AttributeError, FileNotFoundError):
     # Expected to fail initially - we haven't implemented it yet
     AtomicJSONLWriter = None
     JSONWriteError = Exception
