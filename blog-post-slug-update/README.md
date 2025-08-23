@@ -190,10 +190,19 @@ python scripts/validate_setup.py
 
 ## 📚 Documentation
 
-- **[CLAUDE.md](CLAUDE.md)** - Comprehensive technical documentation
-- **[docs/evolution/](docs/evolution/)** - Complete V1→V10 evolution history  
-- **[docs/development/](docs/development/)** - TDD methodology and planning
-- **[docs/archive/](docs/archive/)** - Historical development artifacts
+**📋 [Complete Documentation Index](docs/README.md)** - Start here for organized documentation
+
+### Quick Access
+- **🚀 [Installation](docs/setup/INSTALLATION.md)** - Get started quickly  
+- **🔧 [CLI Usage](docs/usage/CLI_GUIDE.md)** - Command line reference
+- **🏭 [Batch Processing](docs/usage/BATCH_PROCESSING.md)** - Large-scale processing
+- **🧪 [TDD Protocol](docs/development/TDD_PROTOCOL.md)** - Development methodology  
+- **📊 [Version History](docs/evolution/VERSION_HISTORY.md)** - V1→V10 evolution journey
+
+### Developer Resources  
+- **[CLAUDE.md](CLAUDE.md)** - Claude Code guidance and technical details
+- **[docs/refactoring/](docs/refactoring/)** - TDD refactoring with 101/101 tests  
+- **[development/scripts/](development/scripts/)** - Development and testing scripts
 
 ## 🎯 Use Cases
 
