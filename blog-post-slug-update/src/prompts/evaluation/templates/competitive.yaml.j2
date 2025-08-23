@@ -1,0 +1,154 @@
+# Competitive Differentiation Focused Template  
+# Creates an evaluation prompt that prioritizes competitive positioning and click appeal
+# Ideal for competitive markets, commercial content, and conversion-focused pages
+#
+# Required variables:
+# - display_name: Human-readable name for the prompt
+# - description: Brief description of the prompt's purpose
+# - author: Email or name of the prompt author
+#
+# Optional variables:
+# - competitive_weight: Weight for competitive differentiation (default: 0.25)
+# - click_weight: Weight for click-through potential (default: 0.20)
+# - competitive_threshold: Minimum competitive score threshold (default: 0.8)
+# - target_market: Target market focus (default: "e-commerce")
+# - custom_instructions: Additional competitive guidelines
+
+meta:
+  id: {{ prompt_id }}
+  name: "{{ display_name }}"
+  version: "1.0"
+  description: "{{ description }}"
+  author: "{{ author }}"
+  created: "{{ now().isoformat() }}"
+  status: development
+  base_template: competitive
+
+focus:
+  primary: competitive_differentiation
+  secondary: click_through_potential
+  target_market: "{{ target_market | default('e-commerce') }}"
+
+weights:
+  competitive_differentiation: {{ competitive_weight | default(0.25) }}
+  click_through_potential: {{ click_weight | default(0.20) }}
+  user_intent_match: {{ intent_weight | default(0.15) }}
+  brand_hierarchy: {{ brand_weight | default(0.15) }}
+  technical_seo: {{ seo_weight | default(0.15) }}
+  cultural_authenticity: {{ cultural_weight | default(0.10) }}
+
+thresholds:
+  minimum_confidence: 0.7
+  competitive_appeal_threshold: {{ competitive_threshold | default(0.8) }}
+  click_potential_threshold: 0.75
+
+prompt: |
+  You are evaluating a URL slug for SEO effectiveness with STRONG EMPHASIS on competitive positioning and click-through appeal.
+  
+  {% if custom_instructions -%}
+  COMPETITIVE GUIDELINES:
+  {{ custom_instructions }}
+  
+  {% endif -%}
+  EVALUATION PRIORITY ORDER:
+  1. Competitive Differentiation ({{ (competitive_weight | default(0.25) * 100) | int }}%): HIGHEST PRIORITY
+     - Stand out from competitor slugs and positioning
+     - Use unique angles and value propositions
+     - Identify competitive advantages and highlight them
+     - Avoid generic or commodity-like phrasing
+  
+  2. Click-Through Potential ({{ (click_weight | default(0.20) * 100) | int }}%): HIGH PRIORITY
+     - Generate strong click-through intent
+     - Use compelling and engaging language
+     - Create curiosity and urgency where appropriate
+     - Appeal to emotional and practical motivations
+  
+  3. User Intent Match ({{ (intent_weight | default(0.15) * 100) | int }}%): Important
+     - Align with high-conversion search intent
+     - Target commercial and transactional keywords
+  
+  4. Brand Hierarchy ({{ (brand_weight | default(0.15) * 100) | int }}%): Important
+     - Leverage brand authority for competitive advantage
+     - Position brand as market leader where applicable
+  
+  5. Technical SEO ({{ (seo_weight | default(0.15) * 100) | int }}%): Important
+     - Optimize for competitive keyword targeting
+     - Ensure strong technical foundation
+  
+  6. Cultural Authenticity ({{ (cultural_weight | default(0.10) * 100) | int }}%): Lower Priority
+     - Maintain authenticity but prioritize competitive edge
+  
+  COMPETITIVE EVALUATION GUIDELINES:
+  - **Unique Value Proposition**: What makes this content uniquely valuable?
+  - **Competitive Angles**: How does this differentiate from standard approaches?
+  - **Market Positioning**: Is this positioned as premium, comprehensive, exclusive, etc.?
+  - **Click Appeal**: Would users choose this over competitor results?
+  - **Commercial Intent**: Does it align with buying/conversion intent?
+  
+  CONTENT TO EVALUATE:
+  Title: {{title}}
+  Content: {{content}}
+  Proposed Slug: {{slug}}
+  
+  Please evaluate the slug with COMPETITIVE DIFFERENTIATION as your TOP PRIORITY. For each dimension:
+  - Provide a score from 0.0 to 1.0 (where 1.0 is perfect)
+  - Give specific reasoning focusing on competitive advantages
+  - Suggest improvements that enhance competitive positioning
+  
+  Format your response as JSON:
+  {
+    "overall_score": 0.XX,
+    "dimension_scores": {
+      "competitive_differentiation": 0.XX,
+      "click_through_potential": 0.XX,
+      "user_intent_match": 0.XX,
+      "brand_hierarchy": 0.XX,
+      "technical_seo": 0.XX,
+      "cultural_authenticity": 0.XX
+    },
+    "reasoning": {
+      "competitive_differentiation": "detailed competitive analysis...",
+      "click_through_potential": "click appeal analysis...",
+      "user_intent_match": "search intent analysis...",
+      "brand_hierarchy": "brand positioning analysis...",
+      "technical_seo": "technical SEO assessment...",
+      "cultural_authenticity": "cultural preservation analysis..."
+    },
+    "competitive_analysis": {
+      "unique_angles": ["list of competitive differentiators"],
+      "market_positioning": "premium/comprehensive/exclusive/etc.",
+      "click_factors": ["elements that drive clicks"],
+      "competitive_strength": 0.XX
+    },
+    "suggestions": ["competitive improvement suggestions"],
+    "confidence": 0.XX
+  }
+
+test_cases:
+  - name: "Ultimate Comparison Guide"
+    slug: "ultimate-phone-cases-comparison-guide"
+    title: "Ultimate Phone Case Brand Comparison"
+    content: "Comprehensive comparison of top phone case brands with pros and cons"
+    expectations:
+      overall: ">= 0.75"
+      competitive_differentiation: ">= 0.85"
+      click_through_potential: ">= 0.80"
+      
+  - name: "Premium Shopping Guide"
+    slug: "premium-luxury-watch-buying-guide"
+    title: "Premium Luxury Watch Buying Guide"
+    content: "Expert guide to buying luxury watches with insider tips and recommendations"
+    expectations:
+      overall: ">= 0.80"
+      competitive_differentiation: ">= 0.85"
+      click_through_potential: ">= 0.85"
+
+benchmarks:
+  baseline: "current"
+  target_improvement: 0.05
+  competitive_focus_boost: 0.10  # Expected boost in competitive scoring
+  min_performance:
+    avg_overall: 0.75
+    avg_competitive: 0.80
+    avg_click_potential: 0.75
+    competitive_threshold_pass_rate: 0.80

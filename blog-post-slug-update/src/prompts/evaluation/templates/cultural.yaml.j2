@@ -1,0 +1,135 @@
+# Cultural Authenticity Focused Template
+# Creates an evaluation prompt that prioritizes cultural term preservation and authenticity
+# Ideal for Asian e-commerce content, cultural products, and cross-border content
+#
+# Required variables:
+# - display_name: Human-readable name for the prompt
+# - description: Brief description of the prompt's purpose
+# - author: Email or name of the prompt author
+#
+# Optional variables:
+# - cultural_weight: Weight for cultural authenticity dimension (default: 0.25)
+# - brand_weight: Weight for brand hierarchy dimension (default: 0.20)
+# - cultural_threshold: Minimum cultural score threshold (default: 0.8)
+# - custom_instructions: Additional cultural guidelines
+# - target_cultures: List of target cultural contexts (default: ["asian", "japanese", "korean"])
+
+meta:
+  id: {{ prompt_id }}
+  name: "{{ display_name }}"
+  version: "1.0"
+  description: "{{ description }}"
+  author: "{{ author }}"
+  created: "{{ now().isoformat() }}"
+  status: development
+  base_template: cultural
+
+focus:
+  primary: cultural_authenticity
+  secondary: brand_hierarchy
+  target_cultures: {{ target_cultures | default(["asian", "japanese", "korean"]) | tojson }}
+
+weights:
+  cultural_authenticity: {{ cultural_weight | default(0.25) }}
+  brand_hierarchy: {{ brand_weight | default(0.20) }}
+  user_intent_match: {{ intent_weight | default(0.15) }}
+  technical_seo: {{ seo_weight | default(0.15) }}
+  click_through_potential: {{ click_weight | default(0.15) }}
+  competitive_differentiation: {{ competitive_weight | default(0.10) }}
+
+thresholds:
+  minimum_confidence: 0.7
+  cultural_preservation_threshold: {{ cultural_threshold | default(0.8) }}
+  brand_recognition_threshold: 0.75
+
+prompt: |
+  You are evaluating a URL slug for SEO effectiveness with STRONG EMPHASIS on cultural authenticity and preservation.
+  
+  {% if custom_instructions -%}
+  CULTURAL GUIDELINES:
+  {{ custom_instructions }}
+  
+  {% endif -%}
+  EVALUATION PRIORITY ORDER:
+  1. Cultural Authenticity ({{ (cultural_weight | default(0.25) * 100) | int }}%): HIGHEST PRIORITY
+     - Preserve cultural terms in their authentic form (一番賞 → ichiban-kuji, NOT lottery-prize)
+     - Maintain cultural context and meaning
+     - Respect cultural nuances and significance
+     - Avoid over-westernization of Asian terms
+  
+  2. Brand Hierarchy ({{ (brand_weight | default(0.20) * 100) | int }}%): HIGH PRIORITY
+     - Respect brand positioning and recognition
+     - Maintain proper brand name formatting
+     - Consider brand authority and trust signals
+  
+  3. User Intent Match ({{ (intent_weight | default(0.15) * 100) | int }}%): Important
+     - Align with how users search for cultural content
+     - Consider both English and romanized search patterns
+  
+  4. Technical SEO ({{ (seo_weight | default(0.15) * 100) | int }}%): Important
+     - Follow SEO best practices
+     - Ensure slug is crawlable and indexable
+  
+  5. Click-Through Potential ({{ (click_weight | default(0.15) * 100) | int }}%): Moderate
+     - Generate engagement while maintaining cultural integrity
+  
+  6. Competitive Differentiation ({{ (competitive_weight | default(0.10) * 100) | int }}%): Lower Priority
+     - Differentiate from competitors but not at cultural authenticity expense
+  
+  CULTURAL EVALUATION GUIDELINES:
+  - Preserve Original Cultural Terms: Keep terms like ichiban-kuji, daikoku, JK-seifuku in romanized form
+  - Avoid Generic Translations: Don't turn specific cultural concepts into generic English
+  - Respect Cultural Context: Understand the cultural significance of terms and concepts
+  - Consider Target Audience: Balance cultural authenticity with accessibility
+  
+  CONTENT TO EVALUATE:
+  Title: {{title}}
+  Content: {{content}}
+  Proposed Slug: {{slug}}
+  
+  Please evaluate the slug with CULTURAL AUTHENTICITY as your TOP PRIORITY. For each dimension:
+  - Provide a score from 0.0 to 1.0 (where 1.0 is perfect)
+  - Give specific reasoning focusing on cultural preservation
+  - Suggest improvements that maintain or enhance cultural authenticity
+  
+  Format your response as JSON with this structure:
+  - overall_score: 0.XX (float from 0.0 to 1.0)
+  - dimension_scores: object with scores for each dimension
+  - reasoning: explanations for each dimension score
+  - cultural_analysis: detailed cultural preservation analysis
+  - suggestions: array of improvement recommendations
+  - confidence: 0.XX (float from 0.0 to 1.0)
+
+test_cases:
+  - name: "Ichiban Kuji Guide"
+    slug: "ultimate-ichiban-kuji-guide"
+    title: "一番賞完全購入指南"
+    content: "Complete guide to ichiban-kuji lottery prize purchasing and collecting"
+    expectations:
+      overall: ">= 0.75"
+      cultural_authenticity: ">= 0.85"
+      
+  - name: "Daikoku Drugstore Shopping"
+    slug: "daikoku-drugstore-shopping-guide"
+    title: "大國藥妝購物完全攻略"
+    content: "Comprehensive Daikoku drugstore shopping guide for international customers"
+    expectations:
+      overall: ">= 0.80"
+      cultural_authenticity: ">= 0.90"
+      
+  - name: "JK Uniform Authentication"
+    slug: "authentic-jk-uniform-buying-guide"
+    title: "正版JK制服購買指南與假貨辨別"
+    content: "Guide to buying authentic JK school uniforms with counterfeit identification"
+    expectations:
+      overall: ">= 0.75"
+      cultural_authenticity: ">= 0.85"
+
+benchmarks:
+  baseline: "current"
+  target_improvement: 0.05
+  cultural_focus_boost: 0.10  # Expected boost in cultural scoring
+  min_performance:
+    avg_overall: 0.75
+    avg_cultural: 0.80
+    cultural_threshold_pass_rate: 0.80

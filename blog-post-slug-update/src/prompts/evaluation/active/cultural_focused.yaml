@@ -1,0 +1,109 @@
+# Cultural Authenticity Focused Evaluation Prompt (Migrated)
+# Migrated from v2_cultural_focused.txt + metadata.json
+# Prioritizes cultural term preservation over competitive appeal
+
+meta:
+  id: cultural_focused
+  name: "Cultural Authenticity Focused Evaluation"
+  version: "2.1" 
+  description: "Prioritizes cultural term preservation over competitive appeal"
+  author: "system"
+  created: "2025-08-23"
+  status: active
+  base_template: cultural
+  legacy_version: "v2_cultural_focused"
+
+focus:
+  primary: cultural_authenticity
+  secondary: brand_hierarchy
+  target_cultures: ["asian", "japanese", "korean"]
+
+weights:
+  cultural_authenticity: 0.25
+  brand_hierarchy: 0.20
+  user_intent_match: 0.15
+  technical_seo: 0.15
+  click_through_potential: 0.15
+  competitive_differentiation: 0.10
+
+thresholds:
+  minimum_confidence: 0.7
+  cultural_preservation_threshold: 0.8
+
+prompt: |
+  Evaluate this SEO slug with STRONG emphasis on cultural preservation and authenticity:
+
+  SLUG: "{{slug}}"
+  ORIGINAL TITLE: "{{title}}"
+  CONTENT PREVIEW: "{{content}}"
+
+  PRIORITY EVALUATION CRITERIA (Rate 0.0-1.0):
+
+  1. CULTURAL_AUTHENTICITY (HIGH PRIORITY - 25%): Does this preserve cultural terms like ichiban-kuji, daikoku-drugstore instead of generic alternatives? Score 0.9+ for preserved terms like "ichiban-kuji" vs 0.3 for "anime-merchandise".
+
+  2. BRAND_HIERARCHY (HIGH PRIORITY - 20%): Are Asian brand names properly positioned and recognizable? Prioritize cultural brand preservation.
+
+  3. USER_INTENT_MATCH (15%): Does this capture cultural shopping intent and authentic terminology?
+
+  4. TECHNICAL_SEO (15%): Basic technical compliance while preserving cultural terms?
+
+  5. CLICK_THROUGH_POTENTIAL (15%): Appeal to culturally-aware shoppers seeking authentic experiences?
+
+  6. COMPETITIVE_DIFFERENTIATION (10%): Stand out from generic western alternatives through cultural specificity?
+
+  Focus evaluation feedback on cultural preservation strengths and authentic terminology usage.
+
+  Return JSON format:
+  {
+      "dimension_scores": {
+          "user_intent_match": 0.0-1.0,
+          "brand_hierarchy": 0.0-1.0,
+          "cultural_authenticity": 0.0-1.0, 
+          "click_through_potential": 0.0-1.0,
+          "competitive_differentiation": 0.0-1.0,
+          "technical_seo": 0.0-1.0
+      },
+      "overall_score": 0.0-1.0,
+      "qualitative_feedback": "detailed cultural authenticity analysis...",
+      "confidence": 0.0-1.0
+  }
+
+test_cases:
+  - name: "Ichiban Kuji Guide"
+    slug: "ultimate-ichiban-kuji-guide"
+    title: "一番賞完全購入指南"
+    content: "Complete guide to ichiban-kuji purchasing and collecting rare anime merchandise"
+    expectations:
+      overall: ">= 0.75"
+      cultural_authenticity: ">= 0.85"
+      
+  - name: "Daikoku Drugstore Shopping"
+    slug: "daikoku-drugstore-shopping-guide"
+    title: "大國藥妝購物完全攻略"
+    content: "Comprehensive Daikoku drugstore shopping guide for Hong Kong customers"
+    expectations:
+      overall: ">= 0.80"
+      cultural_authenticity: ">= 0.90"
+      
+  - name: "JK Uniform Authentication"
+    slug: "authentic-jk-uniform-buying-guide"
+    title: "正版JK制服購買指南與假貨辨別"
+    content: "Guide to buying authentic JK school uniforms with counterfeit identification"
+    expectations:
+      overall: ">= 0.75"
+      cultural_authenticity: ">= 0.85"
+
+benchmarks:
+  baseline: "current"
+  target_improvement: 0.05
+  cultural_focus_boost: 0.10  # Expected boost in cultural scoring
+  min_performance:
+    avg_overall: 0.75
+    avg_cultural: 0.80
+    cultural_threshold_pass_rate: 0.80
+
+use_cases:
+  - "asian_ecommerce_cultural_preservation"
+  - "brand_focused_evaluation"
+  - "cross_border_shopping_content"
+  - "authentic_product_guides"

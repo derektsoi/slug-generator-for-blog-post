@@ -1,0 +1,103 @@
+# Basic Evaluation Prompt Template
+# Creates a balanced evaluation prompt with equal weighting across all dimensions
+# Use this template for general-purpose evaluation scenarios
+#
+# Required variables:
+# - display_name: Human-readable name for the prompt
+# - description: Brief description of the prompt's purpose  
+# - author: Email or name of the prompt author
+#
+# Optional variables:
+# - custom_instructions: Additional instructions for the evaluator
+# - target_improvement: Expected improvement over baseline (default: 0.05)
+
+meta:
+  id: {{ prompt_id }}
+  name: "{{ display_name }}"
+  version: "1.0"
+  description: "{{ description }}"
+  author: "{{ author }}"
+  created: "{{ now().isoformat() }}"
+  status: development
+  base_template: basic
+
+focus:
+  primary: balanced_evaluation
+  secondary: general_quality
+
+weights:
+  user_intent_match: 0.167
+  brand_hierarchy: 0.167
+  cultural_authenticity: 0.167
+  click_through_potential: 0.166
+  competitive_differentiation: 0.166
+  technical_seo: 0.167
+
+thresholds:
+  minimum_confidence: 0.7
+  quality_threshold: 0.75
+
+prompt: |
+  You are evaluating a URL slug for SEO effectiveness with a balanced approach across all criteria.
+  
+  {% if custom_instructions -%}
+  SPECIAL INSTRUCTIONS:
+  {{ custom_instructions }}
+  
+  {% endif -%}
+  EVALUATION CRITERIA (Equal Priority):
+  1. User Intent Match (16.7%): Does the slug align with user search behavior?
+  2. Brand Hierarchy (16.7%): Does the slug respect brand positioning and recognition?
+  3. Cultural Authenticity (16.7%): Are cultural terms and context preserved appropriately?
+  4. Click-Through Potential (16.7%): Is the slug compelling and engaging?
+  5. Competitive Differentiation (16.7%): Does the slug stand out from competitors?
+  6. Technical SEO (16.7%): Does the slug follow SEO best practices?
+  
+  CONTENT TO EVALUATE:
+  Title: {{title}}
+  Content: {{content}}
+  Proposed Slug: {{slug}}
+  
+  Please evaluate the slug across all six dimensions. For each dimension:
+  - Provide a score from 0.0 to 1.0 (where 1.0 is perfect)
+  - Give specific reasoning for your score
+  - Suggest improvements if the score is below 0.8
+  
+  Format your response as JSON:
+  {
+    "overall_score": 0.XX,
+    "dimension_scores": {
+      "user_intent_match": 0.XX,
+      "brand_hierarchy": 0.XX,
+      "cultural_authenticity": 0.XX,
+      "click_through_potential": 0.XX,
+      "competitive_differentiation": 0.XX,
+      "technical_seo": 0.XX
+    },
+    "reasoning": {
+      "user_intent_match": "explanation...",
+      "brand_hierarchy": "explanation...",
+      "cultural_authenticity": "explanation...",
+      "click_through_potential": "explanation...",
+      "competitive_differentiation": "explanation...",
+      "technical_seo": "explanation..."
+    },
+    "suggestions": ["improvement suggestion 1", "improvement suggestion 2"],
+    "confidence": 0.XX
+  }
+
+test_cases:
+  - name: "Basic E-commerce Guide"
+    slug: "ultimate-shopping-guide"
+    title: "Ultimate Shopping Guide"
+    content: "Complete guide to online shopping"
+    expectations:
+      overall: ">= 0.70"
+      user_intent_match: ">= 0.75"
+
+benchmarks:
+  baseline: "current"
+  target_improvement: {{ target_improvement | default(0.05) }}
+  min_performance:
+    avg_overall: 0.70
+    avg_user_intent: 0.75
