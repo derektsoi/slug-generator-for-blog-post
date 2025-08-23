@@ -2,37 +2,40 @@
 """
 PreFlightValidator - Comprehensive pre-flight validation system
 Implementation follows TDD approach - minimal code to satisfy test requirements.
+Refactored to use shared utilities and validation models.
 """
 
 import os
 import time
 import tempfile
-import importlib.util
 from typing import Dict, Any, Callable
 
-# Handle both relative and absolute imports for test compatibility
+# Use shared import utilities
 try:
-    from .file_operations import BaseTimestampedException
-    from .configuration_pipeline import ConfigurationPipeline
+    from .import_utils import import_from_core
+    BaseTimestampedException = import_from_core('file_operations', 'BaseTimestampedException')
+    ValidationResult, ValidationSuite = import_from_core('validation_models', 'ValidationResult', 'ValidationSuite')
+    ConfigurationPipeline = import_from_core('configuration_pipeline', 'ConfigurationPipeline')
 except ImportError:
-    # Fallback for direct module loading (used by tests)
+    # Fallback for direct module loading
     import importlib.util
     import os
-    spec = importlib.util.spec_from_file_location(
-        "file_operations", 
-        os.path.join(os.path.dirname(__file__), "file_operations.py")
-    )
-    file_ops_module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(file_ops_module)
+    
+    # Load modules with fallback
+    def load_module(name, file_name):
+        spec = importlib.util.spec_from_file_location(name, os.path.join(os.path.dirname(__file__), file_name))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+    
+    file_ops_module = load_module("file_operations", "file_operations.py")
     BaseTimestampedException = file_ops_module.BaseTimestampedException
     
-    # Load configuration pipeline
-    config_spec = importlib.util.spec_from_file_location(
-        "configuration_pipeline", 
-        os.path.join(os.path.dirname(__file__), "configuration_pipeline.py")
-    )
-    config_module = importlib.util.module_from_spec(config_spec)
-    config_spec.loader.exec_module(config_module)
+    validation_module = load_module("validation_models", "validation_models.py")
+    ValidationResult = validation_module.ValidationResult
+    ValidationSuite = validation_module.ValidationSuite
+    
+    config_module = load_module("configuration_pipeline", "configuration_pipeline.py")
     ConfigurationPipeline = config_module.ConfigurationPipeline
 
 
@@ -63,37 +66,62 @@ class PreFlightValidator:
     
     def run_full_validation(self) -> Dict[str, Any]:
         """Run complete pre-flight validation suite"""
-        results = {
-            'prompt_config': self.validate_prompt_config(),
-            'file_permissions': self.validate_file_permissions(),
-            'dependencies': self.validate_dependencies(),
-            'configuration_consistency': self.validate_configuration_consistency(),
-            'resume_capability': self.validate_resume_capability()
-        }
+        suite = ValidationSuite(name=f"Pre-flight validation for {self.prompt_version}")
+        
+        # Add core validations
+        validations = [
+            ('prompt_config', self.validate_prompt_config),
+            ('file_permissions', self.validate_file_permissions),
+            ('dependencies', self.validate_dependencies),
+            ('configuration_consistency', self.validate_configuration_consistency),
+            ('resume_capability', self.validate_resume_capability)
+        ]
+        
+        for check_name, validation_func in validations:
+            raw_result = validation_func()
+            # Convert dict to ValidationResult if needed
+            if isinstance(raw_result, dict):
+                result = ValidationResult(
+                    passed=raw_result['passed'],
+                    message=raw_result['message']
+                )
+                if 'fix' in raw_result:
+                    result.add_fix_suggestion(raw_result['fix'])
+            else:
+                result = raw_result
+            
+            suite.add_result(check_name, result)
         
         # Add custom validations
         for name, validation_func in self._custom_validations.items():
-            results[name] = validation_func()
+            raw_result = validation_func()
+            if isinstance(raw_result, dict):
+                result = ValidationResult(
+                    passed=raw_result['passed'],
+                    message=raw_result['message']
+                )
+                if 'fix' in raw_result:
+                    result.add_fix_suggestion(raw_result['fix'])
+            else:
+                result = raw_result
+            suite.add_result(name, result)
         
-        # Aggregate results
-        all_passed = all(result.get('passed', False) for result in results.values())
-        
-        return {
-            'overall_passed': all_passed,
-            'results': results,
-            'recommendation': 'PROCEED' if all_passed else 'FIX_ISSUES'
-        }
+        return suite.to_dict()
     
     def validate_prompt_config(self) -> Dict[str, Any]:
         """Validate prompt file exists and has correct name format"""
         expected_file = f"src/config/prompts/{self.prompt_version}_prompt.txt"
         exists = os.path.exists(expected_file)
         
-        return {
-            'passed': exists,
-            'message': f"Prompt file {'found' if exists else 'missing'}: {expected_file}",
-            'fix': f"Ensure prompt file named exactly: {self.prompt_version}_prompt.txt" if not exists else None
-        }
+        result = ValidationResult(
+            passed=exists,
+            message=f"Prompt file {'found' if exists else 'missing'}: {expected_file}"
+        )
+        
+        if not exists:
+            result.add_fix_suggestion(f"Ensure prompt file named exactly: {self.prompt_version}_prompt.txt")
+        
+        return result.to_dict()
     
     def validate_file_permissions(self) -> Dict[str, Any]:
         """Validate file permissions for output directory"""

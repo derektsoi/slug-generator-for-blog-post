@@ -2,19 +2,24 @@
 """
 ConfigurationPipeline - Version-aware configuration management with validation consistency
 Implementation follows TDD approach - minimal code to satisfy test requirements.
+Refactored to use shared utilities and validation models.
 """
 
 import os
 import time
 from typing import Dict, Any, Optional
 
-# Handle both relative and absolute imports for test compatibility
+# Use shared import utilities
 try:
-    from .file_operations import BaseTimestampedException
+    from .import_utils import import_from_core
+    BaseTimestampedException = import_from_core('file_operations', 'BaseTimestampedException')
+    ValidationResult, ConfigurationSpec = import_from_core('validation_models', 'ValidationResult', 'ConfigurationSpec')
 except ImportError:
-    # Fallback for direct module loading (used by tests)
+    # Fallback for direct module loading
     import importlib.util
     import os
+    
+    # Load file operations
     spec = importlib.util.spec_from_file_location(
         "file_operations", 
         os.path.join(os.path.dirname(__file__), "file_operations.py")
@@ -22,6 +27,16 @@ except ImportError:
     file_ops_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(file_ops_module)
     BaseTimestampedException = file_ops_module.BaseTimestampedException
+    
+    # Load validation models
+    spec = importlib.util.spec_from_file_location(
+        "validation_models", 
+        os.path.join(os.path.dirname(__file__), "validation_models.py")
+    )
+    validation_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validation_module)
+    ValidationResult = validation_module.ValidationResult
+    ConfigurationSpec = validation_module.ConfigurationSpec
 
 
 class ConfigurationError(BaseTimestampedException):
@@ -45,7 +60,7 @@ class ValidationMismatchError(BaseTimestampedException):
 
 
 class SlugGeneratorConfig:
-    """Version-aware configuration for slug generation"""
+    """Version-aware configuration for slug generation - wrapper around ConfigurationSpec"""
     
     def __init__(self, max_slug_words: int, max_slug_chars: int, version: str):
         self.max_slug_words = max_slug_words
@@ -54,39 +69,25 @@ class SlugGeneratorConfig:
     
     @classmethod
     def for_version(cls, version: str) -> 'SlugGeneratorConfig':
-        """Get configuration for specific version"""
-        version_configs = {
-            'v6': cls(max_slug_words=6, max_slug_chars=60, version='v6'),
-            'v8': cls(max_slug_words=8, max_slug_chars=70, version='v8'), 
-            'v10': cls(max_slug_words=10, max_slug_chars=90, version='v10')
-        }
-        
-        if version not in version_configs:
-            raise ConfigurationError(
-                f"Invalid version specified: {version}",
-                invalid_version=version,
-                expected_versions=list(version_configs.keys())
+        """Get configuration for specific version using shared specifications"""
+        try:
+            spec = ConfigurationSpec.for_version(version)
+            return cls(
+                max_slug_words=spec.max_slug_words,
+                max_slug_chars=spec.max_slug_chars,
+                version=spec.version
             )
-        
-        return version_configs[version]
+        except ValueError as e:
+            # Convert to ConfigurationError for backward compatibility
+            specs = ConfigurationSpec.get_specifications()
+            raise ConfigurationError(
+                str(e),
+                invalid_version=version,
+                expected_versions=list(specs.keys())
+            )
 
 
-class MockSlugGenerator:
-    """Mock slug generator for testing configuration pipeline"""
-    
-    def __init__(self, config: SlugGeneratorConfig):
-        self.config = config
-    
-    def is_valid_slug(self, slug: str) -> bool:
-        """Validate slug using version-specific constraints"""
-        words = slug.split('-')
-        
-        if len(words) > self.config.max_slug_words:
-            return False
-        if len(slug) > self.config.max_slug_chars:
-            return False
-        
-        return True
+# MockSlugGenerator moved to tests/unit/test_utilities.py for better separation
 
 
 class ConfigurationPipeline:
@@ -105,10 +106,31 @@ class ConfigurationPipeline:
         return config
     
     @classmethod
-    def create_generator_with_validation(cls, version: str) -> MockSlugGenerator:
+    def create_generator_with_validation(cls, version: str):
         """Create slug generator with matching validation config"""
-        config = cls.get_config_for_version(version)
-        return MockSlugGenerator(config)
+        # Import MockSlugGenerator from test utilities
+        try:
+            import sys
+            import os
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'unit'))
+            from test_utilities import MockSlugGenerator
+            
+            config = cls.get_config_for_version(version)
+            return MockSlugGenerator(config)
+        except ImportError:
+            # For production use, this would integrate with actual SlugGenerator
+            config = cls.get_config_for_version(version) 
+            
+            class ProductionSlugGenerator:
+                def __init__(self, config):
+                    self.config = config
+                
+                def is_valid_slug(self, slug: str) -> bool:
+                    words = slug.split('-')
+                    return (len(words) <= self.config.max_slug_words and 
+                           len(slug) <= self.config.max_slug_chars)
+            
+            return ProductionSlugGenerator(config)
     
     @classmethod
     def validate_configuration_consistency(cls, version: str) -> Dict[str, Any]:
@@ -119,7 +141,16 @@ class ConfigurationPipeline:
             # Test validation consistency with a known slug
             test_slug = "ultimate-test-slug-with-many-words-for-validation"  # 8 words
             
-            generator = MockSlugGenerator(config)
+            # Create test generator directly (inline implementation)
+            class TestGenerator:
+                def __init__(self, config):
+                    self.config = config
+                def is_valid_slug(self, slug: str) -> bool:
+                    words = slug.split('-')
+                    return (len(words) <= self.config.max_slug_words and 
+                           len(slug) <= self.config.max_slug_chars)
+            
+            generator = TestGenerator(config)
             result = generator.is_valid_slug(test_slug)
             
             # For V10 (10 words max), this should be valid
@@ -153,11 +184,15 @@ class ConfigurationPipeline:
         expected_file = f"src/config/prompts/{version}_prompt.txt"
         exists = os.path.exists(expected_file)
         
-        return {
-            'passed': exists,
-            'message': f"Prompt file {'found' if exists else 'missing'}: {expected_file}",
-            'fix': f"Ensure prompt file named exactly: {version}_prompt.txt" if not exists else None
-        }
+        result = ValidationResult(
+            passed=exists,
+            message=f"Prompt file {'found' if exists else 'missing'}: {expected_file}"
+        )
+        
+        if not exists:
+            result.add_fix_suggestion(f"Ensure prompt file named exactly: {version}_prompt.txt")
+        
+        return result.to_dict()
     
     @classmethod 
     def run_complete_configuration_check(cls, version: str) -> Dict[str, Any]:
