@@ -136,7 +136,7 @@ class TestRefactoredBatchProcessor(unittest.TestCase):
             f.write('{"corrupted": "checkpoint"')  # Invalid JSON
         
         # Mock slug generation to fail once, triggering exception and recovery
-        with patch.object(processor, '_generate_slug') as mock_generate:
+        with patch.object(processor.strategy, '_generate_slug') as mock_generate:
             mock_generate.side_effect = Exception("Simulated processing failure")
             
             # Should trigger recovery due to exception
@@ -202,7 +202,7 @@ class TestRefactoredBatchProcessor(unittest.TestCase):
         processor = RefactoredBatchProcessor(self.output_dir)
         
         # Simulate various error conditions
-        with patch.object(processor, '_generate_slug') as mock_generate:
+        with patch.object(processor.strategy, '_generate_slug') as mock_generate:
             # First call succeeds, second fails, third succeeds
             mock_generate.side_effect = [
                 {'primary': 'success-slug', 'alternatives': [], 'confidence': 0.9},
@@ -312,7 +312,7 @@ class TestBatchProcessingContext(unittest.TestCase):
             self.assertEqual(context.prompt_version, 'v8')
             self.assertEqual(context.max_budget, 100.0)
             self.assertIsNotNone(context.config)
-            self.assertIsNotNone(context.component_registry)
+            self.assertIsNotNone(context.components)
     
     @unittest.skipIf(BatchProcessingContext is None, "BatchProcessingContext not implemented yet")
     def test_context_component_injection(self):
