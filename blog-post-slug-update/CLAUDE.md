@@ -268,3 +268,5 @@ V10: ultimate-skinnydip-iface-rhinoshield-phone-cases-guide
 - Virtual environment recommended
 
 This system represents the culmination of systematic LLM prompt optimization achieving production-ready cultural awareness and competitive differentiation for cross-border e-commerce.
+- for this cycle, the machine forgot to align on the what tests to work on first
+- before the machine first work on the test, should first come up with a test plan and review, before asking coder to review

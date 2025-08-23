@@ -1,0 +1,53 @@
+Evaluate this SEO slug with emphasis on competitive differentiation and market positioning:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+HIGH PRIORITY: Competitive Differentiation Analysis
+Rate competitive_differentiation highly based on these criteria:
+- Unique positioning that stands out from generic alternatives
+- Memorable elements that create competitive advantage
+- Innovation in approach beyond standard SEO practices
+- Strategic differentiation that competitors cannot easily replicate
+
+IMPORTANT: Click-Through Potential Assessment
+Evaluate the slug's ability to generate clicks:
+- Compelling language that drives user action
+- Emotional triggers and engagement factors
+- Clear value proposition in the slug structure
+- Appeal that surpasses generic competitor slugs
+
+CONSIDER: Supporting Evaluation Factors
+- User intent alignment with competitive positioning
+- Brand hierarchy that supports competitive advantage
+- Cultural authenticity as a differentiating factor
+- Technical SEO that enhances competitive visibility
+
+Competitive Analysis Framework:
+Consider how this slug performs against typical alternatives:
+- Generic version: "product-review-guide" 
+- Basic branded: "brand-product-guide"
+- Enhanced competitive: "ultimate-brand-product-masterclass"
+
+Scoring Guidelines:
+- 0.9-1.0: Exceptional competitive advantage, clearly superior to alternatives
+- 0.7-0.8: Strong differentiation with notable competitive benefits
+- 0.5-0.6: Moderate differentiation, some competitive edge
+- 0.3-0.4: Limited differentiation, similar to basic alternatives
+- 0.0-0.2: No competitive advantage, generic approach
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0,
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "Detailed competitive analysis focusing on differentiation strategies, market positioning, and competitive advantages with specific recommendations for enhancement",
+    "confidence": 0.0-1.0
+}}

@@ -1,0 +1,46 @@
+Evaluate this SEO slug with emphasis on cultural preservation and authenticity:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+HIGH PRIORITY: Cultural Authenticity Assessment
+Rate cultural_authenticity highly based on these criteria:
+- Preservation of specific cultural terms (e.g., "一番賞" → "ichiban-kuji" rather than "anime merchandise")
+- Maintaining authentic expressions over literal translations
+- Recognizing Asian e-commerce terminology and context
+- Avoiding generic substitutions that lose cultural meaning
+
+IMPORTANT: Brand Hierarchy Analysis  
+Assess brand positioning and recognition:
+- Proper placement of brand names for maximum recognition
+- Clear hierarchy when multiple brands are mentioned
+- Authentic brand representation (e.g., "大國藥妝" → "daikoku-drugstore")
+
+CONSIDER: Additional Evaluation Factors
+- User intent alignment while respecting cultural context
+- Click-through potential enhanced by authentic terminology
+- Competitive differentiation through cultural specificity
+- Technical SEO compliance with cultural term integration
+
+Scoring Guidelines:
+- 0.9-1.0: Excellent cultural preservation with authentic terminology
+- 0.7-0.8: Good cultural awareness with minor generic elements
+- 0.5-0.6: Some cultural elements preserved but diluted
+- 0.3-0.4: Limited cultural authenticity, mostly generic
+- 0.0-0.2: No cultural preservation, completely generic
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0,
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "Detailed analysis focusing on cultural preservation, brand positioning, and authenticity factors with specific examples and improvement suggestions",
+    "confidence": 0.0-1.0
+}}

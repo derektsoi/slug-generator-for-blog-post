@@ -1,0 +1,22 @@
+🧪 TESTING EVALUATION PROMPT: v2_cultural_focused
+==================================================
+Sample Size: 2
+
+Evaluation Results:
+• Overall Score: 0.740
+• User Intent Match: 0.750
+• Brand Hierarchy: 0.750
+• Cultural Authenticity: 0.750
+• Click Through Potential: 0.775
+• Competitive Differentiation: 0.650
+• Technical Seo: 0.900
+
+✨ Moderate performance with improvement opportunities (0.740)
+
+✅ Strengths:
+- Excellent technical seo scoring (0.900)
+- Strong click through potential evaluation (0.775)
+
+⚠️ Areas for improvement:
+- Moderate competitive differentiation performance (0.650) - room for improvement
+

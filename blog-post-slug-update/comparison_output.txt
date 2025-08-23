@@ -1,0 +1,25 @@
+🔬 COMPARISON: current vs v2_cultural_focused
+============================================================
+Sample Size: 2
+
+Performance Summary:
+• current: 0.680
+• v2_cultural_focused: 0.790
+
+🏆 Winner: v2_cultural_focused (0.790)
+Improvement: 16.2% over current
+
+Key Differences:
+• Brand Hierarchy: v2_cultural_focused leads by 0.150
+• Cultural Authenticity: v2_cultural_focused leads by 0.100
+• Competitive Differentiation: v2_cultural_focused leads by 0.150
+• Technical Seo: v2_cultural_focused leads by 0.100
+
+Recommendations:
+• Significant performance difference (0.110) - prefer the winning version
+• v2_cultural_focused excels in: brand hierarchy, cultural authenticity, competitive differentiation, technical seo
+
+Statistical Analysis:
+• Effect size: Large effect size
+• Mean difference: 0.110
+

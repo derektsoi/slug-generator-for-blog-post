@@ -71,6 +71,78 @@ class SEOEvaluator:
             r'amazon',
             r'gap'
         ]
+        
+        # Initialize context configuration for enhanced API
+        self._initialize_context_configuration()
+
+    def _initialize_context_configuration(self) -> None:
+        """Initialize context configuration tracking for enhanced API"""
+        self._current_focus_areas = []
+        self._current_quality_thresholds = {}
+        self._current_evaluation_style = 'balanced'
+        self._context_configured = False
+
+    def configure_context(self, config: Dict[str, Any]) -> None:
+        """
+        Configure evaluation context dynamically
+        
+        Args:
+            config: Configuration dictionary with keys:
+                - focus_areas: List of dimensions to emphasize
+                - quality_thresholds: Dict of threshold overrides  
+                - evaluation_style: 'detailed', 'concise', or 'balanced'
+                - reset: Boolean to reset to defaults
+        
+        Raises:
+            ValueError: For invalid configuration values
+        """
+        # Handle reset
+        if config.get('reset', False):
+            self._initialize_context_configuration()
+            return
+        
+        # Validate and update focus areas
+        if 'focus_areas' in config:
+            self._validate_focus_areas(config['focus_areas'])
+            self._current_focus_areas = config['focus_areas'].copy()
+        
+        # Validate and update quality thresholds
+        if 'quality_thresholds' in config:
+            self._validate_quality_thresholds(config['quality_thresholds'])
+            self._current_quality_thresholds.update(config['quality_thresholds'])
+        
+        # Validate and update evaluation style
+        if 'evaluation_style' in config:
+            self._validate_evaluation_style(config['evaluation_style'])
+            self._current_evaluation_style = config['evaluation_style']
+        
+        # Mark as configured
+        self._context_configured = True
+        
+        logger.info(f"Context configured: focus_areas={self._current_focus_areas}, "
+                   f"style={self._current_evaluation_style}, "
+                   f"thresholds={self._current_quality_thresholds}")
+
+    def _validate_focus_areas(self, focus_areas: List[str]) -> None:
+        """Validate focus areas against available scoring dimensions"""
+        valid_areas = set(self.scoring_dimensions)
+        for area in focus_areas:
+            if area not in valid_areas:
+                raise ValueError(f"Invalid focus area '{area}'. Valid areas: {sorted(valid_areas)}")
+
+    def _validate_quality_thresholds(self, thresholds: Dict[str, float]) -> None:
+        """Validate quality threshold values"""
+        for key, value in thresholds.items():
+            if not isinstance(value, (int, float)):
+                raise ValueError(f"Threshold '{key}' must be numeric, got {type(value)}")
+            if not 0.0 <= value <= 1.0:
+                raise ValueError(f"Threshold '{key}' out of range [0.0, 1.0]: {value}")
+
+    def _validate_evaluation_style(self, style: str) -> None:
+        """Validate evaluation style"""
+        valid_styles = {'detailed', 'concise', 'balanced'}
+        if style not in valid_styles:
+            raise ValueError(f"Invalid evaluation style '{style}'. Valid styles: {sorted(valid_styles)}")
 
     def _load_evaluation_configuration(self) -> None:
         """Load evaluation prompt configuration and metadata"""
@@ -154,20 +226,24 @@ class SEOEvaluator:
         }
 
     def _create_evaluation_prompt(self, slug: str, title: str, content: str) -> str:
-        """Create evaluation prompt using configurable template"""
+        """Create evaluation prompt using configurable template with context modifications"""
         
         try:
             # Load prompt template from configuration
             prompt_template = self.prompt_manager.load_prompt_template(self.evaluation_prompt_version)
             
             # Format the template with the provided values
-            formatted_prompt = prompt_template.format(
+            base_prompt = prompt_template.format(
                 slug=slug,
                 title=title,
                 content=content[:500] + "..." if len(content) > 500 else content
             )
             
-            return formatted_prompt
+            # Apply context configuration modifications
+            if self._context_configured:
+                base_prompt = self._apply_context_modifications(base_prompt)
+            
+            return base_prompt
             
         except Exception as e:
             # Fallback to hardcoded prompt if configuration fails
@@ -204,6 +280,36 @@ Return JSON format:
     "confidence": 0.0-1.0
 }}
 """
+
+    def _apply_context_modifications(self, base_prompt: str) -> str:
+        """Apply context configuration modifications to evaluation prompt"""
+        modified_prompt = base_prompt
+        
+        # Add focus area emphasis
+        if self._current_focus_areas:
+            focus_emphasis = f"\n\nIMPORTANT: Pay special attention to these dimensions: {', '.join(self._current_focus_areas)}"
+            if self._current_evaluation_style == 'detailed':
+                focus_emphasis += "\nProvide comprehensive analysis for these focus areas."
+            elif self._current_evaluation_style == 'concise':  
+                focus_emphasis += "\nProvide focused, brief analysis for these areas."
+            modified_prompt += focus_emphasis
+        
+        # Add evaluation style instructions
+        if self._current_evaluation_style == 'detailed':
+            style_instruction = "\n\nEVALUATION STYLE: Provide detailed, comprehensive analysis with specific examples and thorough explanations for each dimension."
+            modified_prompt += style_instruction
+        elif self._current_evaluation_style == 'concise':
+            style_instruction = "\n\nEVALUATION STYLE: Provide concise, focused analysis. Be brief but precise in your evaluation."
+            modified_prompt += style_instruction
+        
+        # Add quality threshold adjustments
+        if self._current_quality_thresholds:
+            threshold_info = "\n\nQUALITY THRESHOLDS:"
+            for key, value in self._current_quality_thresholds.items():
+                threshold_info += f"\n- {key}: {value}"
+            modified_prompt += threshold_info
+        
+        return modified_prompt
 
     def _validate_evaluation_result(self, result: Dict, slug: str, title: str, content: str) -> Dict[str, Any]:
         """Validate and enhance evaluation result"""

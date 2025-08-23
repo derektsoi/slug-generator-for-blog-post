@@ -1,0 +1,68 @@
+Evaluate this SEO slug across multiple dimensions with balanced consideration:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+BALANCED EVALUATION APPROACH
+Rate each dimension with equal importance for comprehensive assessment:
+
+1. USER_INTENT_MATCH (0.0-1.0)
+How well does the slug capture what users are searching for?
+- Keyword relevance and search behavior alignment
+- Clear connection between user needs and slug content
+- Search query optimization
+
+2. BRAND_HIERARCHY (0.0-1.0)
+Are brand names properly positioned and recognizable?
+- Strategic brand placement for maximum recognition
+- Clear hierarchy when multiple brands are present
+- Brand authenticity and representation
+
+3. CULTURAL_AUTHENTICITY (0.0-1.0)
+Are cultural terms preserved appropriately?
+- Authentic terminology over generic alternatives
+- Cultural context preservation (e.g., ichiban-kuji vs anime-merchandise)
+- Cross-cultural appeal balance
+
+4. CLICK_THROUGH_POTENTIAL (0.0-1.0)
+How likely is this slug to generate clicks in search results?
+- Compelling and engaging language
+- Value proposition clarity
+- Emotional appeal and user motivation
+
+5. COMPETITIVE_DIFFERENTIATION (0.0-1.0)
+Does this stand out from generic alternatives?
+- Unique positioning and memorable elements
+- Strategic differentiation from competitors
+- Innovation beyond standard approaches
+
+6. TECHNICAL_SEO (0.0-1.0)
+Length, structure, readability, keyword placement?
+- Optimal length for SEO performance
+- URL-friendly structure and readability  
+- Strategic keyword placement and density
+
+Scoring Guidelines (Applied to All Dimensions):
+- 0.9-1.0: Excellent performance, exceeds expectations
+- 0.7-0.8: Good performance with minor areas for improvement
+- 0.5-0.6: Moderate performance, meets basic requirements
+- 0.3-0.4: Below expectations, significant improvement needed
+- 0.0-0.2: Poor performance, major issues present
+
+Provide comprehensive qualitative feedback covering all dimensions with specific examples and actionable improvement suggestions.
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0,
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "Comprehensive analysis covering all evaluation dimensions with balanced consideration, specific examples, and detailed improvement recommendations",
+    "confidence": 0.0-1.0
+}}

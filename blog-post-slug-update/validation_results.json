@@ -1,0 +1,183 @@
+{
+  "total_prompts": 4,
+  "valid_prompts": 4,
+  "invalid_prompts": 0,
+  "total_errors": 0,
+  "total_warnings": 0,
+  "validation_results": {
+    "current": {
+      "prompt_version": "current",
+      "validation_timestamp": "2025-08-23T22:18:09.120979",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "file_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "file_readable": true,
+        "template_valid": true,
+        "placeholders_present": [
+          "{slug}",
+          "{title}",
+          "{content}"
+        ]
+      },
+      "metadata_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "json_valid": true,
+        "required_fields_present": [
+          "prompt_version",
+          "scoring_dimensions",
+          "dimension_weights"
+        ],
+        "structure_valid": true
+      },
+      "configuration_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "dimensions_consistent": true,
+        "weights_consistent": true
+      },
+      "recommendations": [
+        "✓ Configuration is valid and ready for use"
+      ]
+    },
+    "v1_baseline": {
+      "prompt_version": "v1_baseline",
+      "validation_timestamp": "2025-08-23T22:18:09.121448",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "file_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "file_readable": true,
+        "template_valid": true,
+        "placeholders_present": [
+          "{slug}",
+          "{title}",
+          "{content}"
+        ]
+      },
+      "metadata_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "json_valid": true,
+        "required_fields_present": [
+          "prompt_version",
+          "scoring_dimensions",
+          "dimension_weights"
+        ],
+        "structure_valid": true
+      },
+      "configuration_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "dimensions_consistent": true,
+        "weights_consistent": true
+      },
+      "recommendations": [
+        "✓ Configuration is valid and ready for use"
+      ]
+    },
+    "v2_cultural_focused": {
+      "prompt_version": "v2_cultural_focused",
+      "validation_timestamp": "2025-08-23T22:18:09.121735",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "file_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "file_readable": true,
+        "template_valid": true,
+        "placeholders_present": [
+          "{slug}",
+          "{title}",
+          "{content}"
+        ]
+      },
+      "metadata_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "json_valid": true,
+        "required_fields_present": [
+          "prompt_version",
+          "scoring_dimensions",
+          "dimension_weights"
+        ],
+        "structure_valid": true
+      },
+      "configuration_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "dimensions_consistent": true,
+        "weights_consistent": true
+      },
+      "recommendations": [
+        "✓ Configuration is valid and ready for use"
+      ]
+    },
+    "v3_competitive_focused": {
+      "prompt_version": "v3_competitive_focused",
+      "validation_timestamp": "2025-08-23T22:18:09.123038",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "file_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "file_readable": true,
+        "template_valid": true,
+        "placeholders_present": [
+          "{slug}",
+          "{title}",
+          "{content}"
+        ]
+      },
+      "metadata_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "file_exists": true,
+        "json_valid": true,
+        "required_fields_present": [
+          "prompt_version",
+          "scoring_dimensions",
+          "dimension_weights"
+        ],
+        "structure_valid": true
+      },
+      "configuration_checks": {
+        "is_valid": true,
+        "errors": [],
+        "warnings": [],
+        "dimensions_consistent": true,
+        "weights_consistent": true
+      },
+      "recommendations": [
+        "✓ Configuration is valid and ready for use"
+      ]
+    }
+  },
+  "overall_status": "PASS",
+  "tool": "validate_evaluation_prompt.py"
+}

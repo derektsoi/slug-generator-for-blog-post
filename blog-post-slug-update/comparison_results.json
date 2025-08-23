@@ -1,0 +1,176 @@
+{
+  "comparison_versions": [
+    "current",
+    "v2_cultural_focused"
+  ],
+  "sample_size": 2,
+  "version_a_results": [
+    {
+      "test_case": {
+        "slug": "ultimate-ichiban-kuji-guide",
+        "title": "一番賞完全購入指南",
+        "content": "Complete guide to ichiban-kuji purchasing and collecting rare anime merchandise"
+      },
+      "evaluation": {
+        "dimension_scores": {
+          "user_intent_match": 0.9,
+          "brand_hierarchy": 0.5,
+          "cultural_authenticity": 0.8,
+          "click_through_potential": 0.85,
+          "competitive_differentiation": 0.7,
+          "technical_seo": 0.9
+        },
+        "overall_score": 0.73,
+        "qualitative_feedback": "The slug 'ultimate-ichiban-kuji-guide' effectively captures user intent, as it clearly indicates that the content is a comprehensive guide related to 'ichiban-kuji', a popular Japanese collectible lottery system. This matches well with what users searching for information on ichiban-kuji would be looking for. However, it could improve in brand hierarchy by explicitly mentioning any associated brands or companies that are well-known in the ichiban-kuji space, which could enhance recognition and authority. The cultural authenticity is strong, as 'ichiban-kuji' is a specific term that resonates with fans of anime merchandise, but it could be further enhanced by including a term that reflects the unique aspects of the culture or the products being discussed. The click-through potential is high due to the use of 'ultimate' which implies a comprehensive resource, enticing users to click. Competitive differentiation is moderate; while the slug is descriptive, it could be more unique by incorporating specific keywords or phrases that competitors may not use. Finally, from a technical SEO perspective, the slug is concise, readable, and well-structured, with appropriate keyword placement. To improve, consider adding a brand name or a unique selling proposition to enhance brand hierarchy and differentiation.",
+        "confidence": 0.85
+      }
+    },
+    {
+      "test_case": {
+        "slug": "skinniydip-iface-rhinoshield-comparison",
+        "title": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+        "content": "Comprehensive comparison of top phone case brands including SKINNIYDIP, iface, and RhinoShield"
+      },
+      "evaluation": {
+        "dimension_scores": {
+          "user_intent_match": 0.7,
+          "brand_hierarchy": 0.8,
+          "cultural_authenticity": 0.6,
+          "click_through_potential": 0.5,
+          "competitive_differentiation": 0.6,
+          "technical_seo": 0.7
+        },
+        "overall_score": 0.63,
+        "qualitative_feedback": "The slug 'skinniydip-iface-rhinoshield-comparison' captures user intent reasonably well, as it indicates a comparison of specific phone case brands, which aligns with the content preview. However, it could be improved by including more relevant keywords such as 'iPhone' or 'smartphone' to better match search queries. The brand hierarchy is strong, with recognizable brand names included, but the lack of a clear structure (e.g., using hyphens instead of underscores) may impact readability. Cultural authenticity is somewhat lacking; while the brands are known in the Asian market, the slug does not reflect the cultural context of the original title, which mentions '日韓台' (Japan, Korea, Taiwan). This could be enhanced by incorporating these terms or their English equivalents to resonate more with the target audience. The click-through potential is moderate; while brand names are included, the slug lacks a compelling hook or unique angle that would entice users to click. Competitive differentiation is average, as it does not stand out significantly from other comparison articles. Finally, from a technical SEO perspective, the slug is of reasonable length and includes relevant keywords, but it could benefit from improved readability and structure. Overall, the slug is functional but could be enhanced by better aligning with user intent, cultural context, and click-through strategies.",
+        "confidence": 0.8
+      }
+    }
+  ],
+  "version_b_results": [
+    {
+      "test_case": {
+        "slug": "ultimate-ichiban-kuji-guide",
+        "title": "一番賞完全購入指南",
+        "content": "Complete guide to ichiban-kuji purchasing and collecting rare anime merchandise"
+      },
+      "evaluation": {
+        "dimension_scores": {
+          "user_intent_match": 0.8,
+          "brand_hierarchy": 0.7,
+          "cultural_authenticity": 0.9,
+          "click_through_potential": 0.8,
+          "competitive_differentiation": 0.8,
+          "technical_seo": 0.9
+        },
+        "overall_score": 0.83,
+        "qualitative_feedback": "The slug 'ultimate-ichiban-kuji-guide' effectively preserves the cultural term 'ichiban-kuji', which is crucial for authenticity in the context of Japanese collectible culture. However, the addition of 'ultimate' may dilute the cultural specificity slightly, as it is a more generic term used in Western marketing. The original title '一番賞完全購入指南' is strong in cultural authenticity, clearly indicating the focus on ichiban-kuji, which is a well-known term among anime merchandise collectors. The content preview aligns well with user intent, targeting those interested in collecting rare anime merchandise, but could benefit from more culturally specific language to enhance the connection with the target audience. The brand hierarchy is moderately strong, as 'ichiban-kuji' is a recognized brand within the anime community, but there could be additional emphasis on other cultural brands or terms to strengthen this aspect further. Click-through potential is high, especially for culturally-aware shoppers, as the slug suggests a comprehensive guide, which is appealing for collectors. Competitive differentiation is present, as the slug stands out against more generic alternatives, but there is room for improvement by incorporating more culturally relevant keywords. Technical SEO is solid, with the slug being concise and readable, but care should be taken to ensure that it remains relevant to the target audience's search behavior. Overall, the slug is a strong candidate for SEO, particularly in the context of cultural preservation and authenticity.",
+        "confidence": 0.85
+      }
+    },
+    {
+      "test_case": {
+        "slug": "skinniydip-iface-rhinoshield-comparison",
+        "title": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+        "content": "Comprehensive comparison of top phone case brands including SKINNIYDIP, iface, and RhinoShield"
+      },
+      "evaluation": {
+        "dimension_scores": {
+          "user_intent_match": 0.8,
+          "brand_hierarchy": 0.9,
+          "cultural_authenticity": 0.7,
+          "click_through_potential": 0.6,
+          "competitive_differentiation": 0.8,
+          "technical_seo": 0.9
+        },
+        "overall_score": 0.75,
+        "qualitative_feedback": "The slug 'skinniydip-iface-rhinoshield-comparison' does a fair job of capturing the intent of users looking for a comparison of popular phone case brands, especially within the Asian market context. However, it lacks cultural specificity and authenticity, as it does not incorporate any culturally significant terms or phrases that resonate with the target audience. The original title includes culturally relevant brands (SKINNIYDIP, iface, and 犀牛盾) and is positioned well for brand recognition, but the slug could benefit from integrating terms that reflect the cultural significance of these brands in the Asian market. For example, using localized terms or phrases that resonate with the audience could enhance cultural authenticity. The click-through potential is moderate, as while the brands are recognized, the lack of cultural context may not fully engage culturally-aware shoppers. The technical SEO aspect is strong, with a clear structure and no issues in compliance. Overall, while the slug is functional, it could be significantly improved by emphasizing cultural preservation and authenticity through more localized terminology.",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "timestamp": "2025-08-23T22:18:37.529731",
+  "results_summary": {
+    "current_performance": {
+      "avg_overall_score": 0.6799999999999999,
+      "avg_dimension_scores": {
+        "user_intent_match": 0.8,
+        "brand_hierarchy": 0.65,
+        "cultural_authenticity": 0.7,
+        "click_through_potential": 0.675,
+        "competitive_differentiation": 0.6499999999999999,
+        "technical_seo": 0.8
+      },
+      "count": 2
+    },
+    "v2_cultural_focused_performance": {
+      "avg_overall_score": 0.79,
+      "avg_dimension_scores": {
+        "user_intent_match": 0.8,
+        "brand_hierarchy": 0.8,
+        "cultural_authenticity": 0.8,
+        "click_through_potential": 0.7,
+        "competitive_differentiation": 0.8,
+        "technical_seo": 0.9
+      },
+      "count": 2
+    }
+  },
+  "comparative_analysis": {
+    "winner": "v2_cultural_focused",
+    "winner_score": 0.79,
+    "runner_up": "current",
+    "runner_up_score": 0.6799999999999999,
+    "score_difference": 0.1100000000000001,
+    "improvement_percentage": 16.176470588235308
+  },
+  "dimension_comparison": {
+    "user_intent_match": {
+      "current_score": 0.8,
+      "v2_cultural_focused_score": 0.8,
+      "winner": "v2_cultural_focused",
+      "difference": 0.0
+    },
+    "brand_hierarchy": {
+      "current_score": 0.65,
+      "v2_cultural_focused_score": 0.8,
+      "winner": "v2_cultural_focused",
+      "difference": 0.15000000000000002
+    },
+    "cultural_authenticity": {
+      "current_score": 0.7,
+      "v2_cultural_focused_score": 0.8,
+      "winner": "v2_cultural_focused",
+      "difference": 0.10000000000000009
+    },
+    "click_through_potential": {
+      "current_score": 0.675,
+      "v2_cultural_focused_score": 0.7,
+      "winner": "v2_cultural_focused",
+      "difference": 0.02499999999999991
+    },
+    "competitive_differentiation": {
+      "current_score": 0.6499999999999999,
+      "v2_cultural_focused_score": 0.8,
+      "winner": "v2_cultural_focused",
+      "difference": 0.15000000000000013
+    },
+    "technical_seo": {
+      "current_score": 0.8,
+      "v2_cultural_focused_score": 0.9,
+      "winner": "v2_cultural_focused",
+      "difference": 0.09999999999999998
+    }
+  },
+  "statistical_analysis": {
+    "mean_difference": 0.1100000000000001,
+    "effect_size": 1.7179113807746687,
+    "confidence_interval": 0.1255012350536838,
+    "sample_size": 2,
+    "significance_note": "Large effect size"
+  },
+  "recommendations": [
+    "Significant performance difference (0.110) - prefer the winning version",
+    "v2_cultural_focused excels in: brand hierarchy, cultural authenticity, competitive differentiation, technical seo"
+  ],
+  "tool": "compare_evaluation_prompts.py"
+}
