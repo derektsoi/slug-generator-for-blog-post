@@ -15,6 +15,11 @@ try:
     from .import_utils import import_from_core
     BaseTimestampedException = import_from_core('file_operations', 'BaseTimestampedException')
     AtomicFileOperations = import_from_core('file_operations', 'AtomicFileOperations')
+    # Import shared error patterns
+    from .error_patterns import (
+        ErrorContext, DiagnosticInfoGenerator, RecoveryStrategyPatterns,
+        CommonRecoveryInstructions
+    )
 except ImportError:
     # Fallback for direct module loading
     import importlib.util
@@ -27,6 +32,18 @@ except ImportError:
     spec.loader.exec_module(file_ops_module)
     BaseTimestampedException = file_ops_module.BaseTimestampedException
     AtomicFileOperations = file_ops_module.AtomicFileOperations
+    
+    # Import error patterns with fallback
+    spec = importlib.util.spec_from_file_location(
+        "error_patterns", 
+        os.path.join(os.path.dirname(__file__), "error_patterns.py")
+    )
+    error_patterns_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(error_patterns_module)
+    ErrorContext = error_patterns_module.ErrorContext
+    DiagnosticInfoGenerator = error_patterns_module.DiagnosticInfoGenerator
+    RecoveryStrategyPatterns = error_patterns_module.RecoveryStrategyPatterns
+    CommonRecoveryInstructions = error_patterns_module.CommonRecoveryInstructions
 
 
 class RecoveryError(BaseTimestampedException):
@@ -148,17 +165,17 @@ class BatchProcessingRecovery:
             # Save using atomic operations
             AtomicFileOperations.atomic_write_json(self.checkpoint_file, checkpoint_data)
             
-            return {
-                'success': True,
-                'new_checkpoint': checkpoint_data,
-                'strategy': 'rebuild_from_results'
-            }
+            return RecoveryStrategyPatterns.create_success_result(
+                'rebuild_from_results',
+                new_checkpoint=checkpoint_data,
+                recovered_count=new_checkpoint['processed_count']
+            )
             
         except Exception as e:
-            return {
-                'success': False, 
-                'message': f'Recovery failed: {str(e)}'
-            }
+            return RecoveryStrategyPatterns.create_failure_result(
+                'rebuild_from_results',
+                f'Recovery failed: {str(e)}'
+            )
     
     def rebuild_checkpoint_from_results(self) -> Dict[str, Any]:
         """Rebuild checkpoint by analyzing results file"""
@@ -296,7 +313,7 @@ class BatchProcessingRecovery:
                     if line.strip():
                         try:
                             entry = json.loads(line.strip())
-                            # Basic validation - should have 'slug' field
+                            # Business logic validation - should have 'slug' field
                             if 'slug' in entry:
                                 valid_entries += 1
                             else:

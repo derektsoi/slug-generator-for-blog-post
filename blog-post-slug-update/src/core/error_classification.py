@@ -12,6 +12,11 @@ from typing import Dict, Any, List, Optional
 try:
     from .import_utils import import_from_core
     BaseTimestampedException = import_from_core('file_operations', 'BaseTimestampedException')
+    # Import shared error patterns
+    from .error_patterns import (
+        ErrorContext, ErrorContextEnricher, DiagnosticInfoGenerator,
+        ErrorSeverityCalculator, CommonRecoveryInstructions
+    )
 except ImportError:
     # Fallback for direct module loading
     import importlib.util
@@ -23,6 +28,19 @@ except ImportError:
     file_ops_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(file_ops_module)
     BaseTimestampedException = file_ops_module.BaseTimestampedException
+    
+    # Import error patterns with fallback
+    spec = importlib.util.spec_from_file_location(
+        "error_patterns", 
+        os.path.join(os.path.dirname(__file__), "error_patterns.py")
+    )
+    error_patterns_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(error_patterns_module)
+    ErrorContext = error_patterns_module.ErrorContext
+    ErrorContextEnricher = error_patterns_module.ErrorContextEnricher
+    DiagnosticInfoGenerator = error_patterns_module.DiagnosticInfoGenerator
+    ErrorSeverityCalculator = error_patterns_module.ErrorSeverityCalculator
+    CommonRecoveryInstructions = error_patterns_module.CommonRecoveryInstructions
 
 
 class BatchProcessingError(BaseTimestampedException):
@@ -129,31 +147,16 @@ class ProgressSyncError(BatchProcessingError):
     
     def get_diagnostic_info(self) -> Dict[str, Any]:
         """Get diagnostic information for troubleshooting"""
-        diagnostic = {}
-        
-        # Calculate sync lag
-        memory_time = self.memory_state.get('timestamp', 0)
-        file_time = self.file_state.get('timestamp', 0)
-        diagnostic['sync_lag_seconds'] = abs(memory_time - file_time)
-        
-        # Calculate how far ahead memory is
-        memory_processed = self.memory_state.get('processed', 0)
-        file_processed = self.file_state.get('processed', 0)
-        diagnostic['memory_ahead_by'] = memory_processed - file_processed
-        
-        return diagnostic
+        return DiagnosticInfoGenerator.generate_sync_diagnostic(self.memory_state, self.file_state)
     
     def get_recovery_priority(self) -> str:
         """Determine recovery priority based on sync difference"""
-        diff = self.get_sync_diff()
-        processed_diff = abs(diff.get('processed', 0))
-        
-        if processed_diff <= 5:
-            return "LOW"
-        elif processed_diff <= 20:
-            return "MEDIUM"
-        else:
-            return "HIGH"
+        return ErrorSeverityCalculator.calculate_sync_severity(self.memory_state, self.file_state)
+    
+    def get_recovery_instructions(self) -> Dict[str, List[str]]:
+        """Get detailed recovery instructions based on severity"""
+        severity = self.get_recovery_priority()
+        return CommonRecoveryInstructions.get_sync_recovery_instructions(severity)
     
     def to_dict(self) -> Dict[str, Any]:
         """Extended serialization including state data"""
