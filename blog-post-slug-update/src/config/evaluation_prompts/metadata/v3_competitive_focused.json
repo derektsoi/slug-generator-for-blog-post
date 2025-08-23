@@ -1,0 +1,31 @@
+{
+  "prompt_version": "v3_competitive_focused",
+  "description": "Emphasizes competitive differentiation and click appeal",
+  "focus_areas": ["competitive_differentiation", "click_through_potential"],
+  "scoring_dimensions": [
+    "user_intent_match",
+    "brand_hierarchy", 
+    "cultural_authenticity",
+    "click_through_potential",
+    "competitive_differentiation",
+    "technical_seo"
+  ],
+  "dimension_weights": {
+    "competitive_differentiation": 0.25,
+    "click_through_potential": 0.20,
+    "user_intent_match": 0.15,
+    "brand_hierarchy": 0.15,
+    "technical_seo": 0.15,
+    "cultural_authenticity": 0.10
+  },
+  "quality_thresholds": {
+    "minimum_confidence": 0.7,
+    "competitive_appeal_threshold": 0.8
+  },
+  "created_date": "2025-08-23",
+  "author": "system",
+  "use_cases": [
+    "competitive_positioning",
+    "click_optimization"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "prompt_version": "v2_cultural_focused",
+  "description": "Prioritizes cultural term preservation over competitive appeal",
+  "focus_areas": ["cultural_authenticity", "brand_hierarchy"],
+  "scoring_dimensions": [
+    "user_intent_match",
+    "brand_hierarchy", 
+    "cultural_authenticity",
+    "click_through_potential",
+    "competitive_differentiation",
+    "technical_seo"
+  ],
+  "dimension_weights": {
+    "cultural_authenticity": 0.25,
+    "brand_hierarchy": 0.20,
+    "user_intent_match": 0.15,
+    "technical_seo": 0.15,
+    "click_through_potential": 0.15,
+    "competitive_differentiation": 0.10
+  },
+  "quality_thresholds": {
+    "minimum_confidence": 0.7,
+    "cultural_preservation_threshold": 0.8
+  },
+  "created_date": "2025-08-23",
+  "author": "system",
+  "use_cases": [
+    "asian_ecommerce_cultural_preservation",
+    "brand_focused_evaluation"
+  ]
+}

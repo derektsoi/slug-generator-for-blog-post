@@ -1,0 +1,31 @@
+Evaluate this SEO slug across multiple dimensions:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+Rate each dimension from 0.0-1.0 and provide overall assessment:
+
+1. USER_INTENT_MATCH (0.0-1.0): How well does the slug capture what users are searching for?
+2. BRAND_HIERARCHY (0.0-1.0): Are brand names properly positioned and recognizable?
+3. CULTURAL_AUTHENTICITY (0.0-1.0): Are cultural terms preserved appropriately (e.g., ichiban-kuji vs generic anime-merchandise)?
+4. CLICK_THROUGH_POTENTIAL (0.0-1.0): How likely is this slug to generate clicks in search results?
+5. COMPETITIVE_DIFFERENTIATION (0.0-1.0): Does this stand out from generic alternatives?
+6. TECHNICAL_SEO (0.0-1.0): Length, structure, readability, keyword placement?
+
+Provide detailed qualitative feedback explaining strengths, weaknesses, and specific improvements.
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0, 
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "detailed analysis...",
+    "confidence": 0.0-1.0
+}}

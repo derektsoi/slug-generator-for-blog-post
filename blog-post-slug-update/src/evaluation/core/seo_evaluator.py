@@ -8,28 +8,45 @@ SEO dimensions with qualitative feedback generation.
 import json
 import time
 import re
+import logging
 from typing import Dict, List, Any, Optional
+from pathlib import Path
+import sys
+
 from openai import OpenAI
+
+# Add src to path for imports
+src_path = Path(__file__).parent.parent.parent
+if str(src_path) not in sys.path:
+    sys.path.insert(0, str(src_path))
+
+from config.evaluation_prompt_manager import EvaluationPromptManager
+from config.constants import DEFAULT_SCORING_DIMENSIONS, DEFAULT_EVALUATION_PROMPT_VERSION, DEFAULT_MODEL
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 
 class SEOEvaluator:
     """Multi-dimensional SEO assessment system using LLM evaluation"""
     
-    def __init__(self, api_key: str, model: str = "gpt-4o-mini"):
-        """Initialize SEO evaluator with OpenAI client"""
+    def __init__(
+        self, 
+        api_key: str, 
+        model: str = DEFAULT_MODEL, 
+        evaluation_prompt_version: str = DEFAULT_EVALUATION_PROMPT_VERSION
+    ):
+        """Initialize SEO evaluator with OpenAI client and configurable evaluation prompts"""
         self.client = OpenAI(api_key=api_key)
         self.model = model
         self.api_key = api_key
+        self.evaluation_prompt_version = evaluation_prompt_version
         
-        # Define SEO scoring dimensions
-        self.scoring_dimensions = [
-            'user_intent_match',
-            'brand_hierarchy', 
-            'cultural_authenticity',
-            'click_through_potential',
-            'competitive_differentiation',
-            'technical_seo'
-        ]
+        # Initialize evaluation prompt manager
+        self.prompt_manager = EvaluationPromptManager()
+        
+        # Load configuration
+        self._load_evaluation_configuration()
         
         # Cultural terms for authenticity scoring
         self.cultural_terms = {
@@ -54,6 +71,19 @@ class SEOEvaluator:
             r'amazon',
             r'gap'
         ]
+
+    def _load_evaluation_configuration(self) -> None:
+        """Load evaluation prompt configuration and metadata"""
+        try:
+            self.prompt_metadata = self.prompt_manager.get_prompt_metadata(self.evaluation_prompt_version)
+            # Use scoring dimensions from metadata
+            self.scoring_dimensions = self.prompt_metadata.get('scoring_dimensions', DEFAULT_SCORING_DIMENSIONS)
+            logger.info(f"Loaded evaluation configuration for version: {self.evaluation_prompt_version}")
+        except Exception as e:
+            # Fallback to default dimensions if prompt loading fails
+            logger.warning(f"Failed to load prompt configuration for {self.evaluation_prompt_version}: {e}")
+            self.scoring_dimensions = DEFAULT_SCORING_DIMENSIONS
+            self.prompt_metadata = self.prompt_manager.get_default_metadata(self.evaluation_prompt_version)
 
     def evaluate_slug(self, slug: str, title: str, content: str) -> Dict[str, Any]:
         """
@@ -124,9 +154,24 @@ class SEOEvaluator:
         }
 
     def _create_evaluation_prompt(self, slug: str, title: str, content: str) -> str:
-        """Create comprehensive evaluation prompt"""
+        """Create evaluation prompt using configurable template"""
         
-        return f"""
+        try:
+            # Load prompt template from configuration
+            prompt_template = self.prompt_manager.load_prompt_template(self.evaluation_prompt_version)
+            
+            # Format the template with the provided values
+            formatted_prompt = prompt_template.format(
+                slug=slug,
+                title=title,
+                content=content[:500] + "..." if len(content) > 500 else content
+            )
+            
+            return formatted_prompt
+            
+        except Exception as e:
+            # Fallback to hardcoded prompt if configuration fails
+            return f"""
 Evaluate this SEO slug across multiple dimensions:
 
 SLUG: "{slug}"

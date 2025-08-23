@@ -1,0 +1,29 @@
+Evaluate this SEO slug with basic assessment criteria:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+Rate each dimension from 0.0-1.0:
+
+1. USER_INTENT_MATCH (0.0-1.0): Does this slug match search intent?
+2. BRAND_HIERARCHY (0.0-1.0): Are brands properly positioned?
+3. CULTURAL_AUTHENTICITY (0.0-1.0): Cultural terms appropriately handled?
+4. CLICK_THROUGH_POTENTIAL (0.0-1.0): Likely to generate clicks?
+5. COMPETITIVE_DIFFERENTIATION (0.0-1.0): Stands out from alternatives?
+6. TECHNICAL_SEO (0.0-1.0): Technical compliance and structure?
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0, 
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "brief assessment...",
+    "confidence": 0.0-1.0
+}}

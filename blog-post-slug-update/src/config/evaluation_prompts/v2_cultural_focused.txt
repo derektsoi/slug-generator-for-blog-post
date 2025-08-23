@@ -1,0 +1,31 @@
+Evaluate this SEO slug with STRONG emphasis on cultural preservation and authenticity:
+
+SLUG: "{slug}"
+ORIGINAL TITLE: "{title}"
+CONTENT PREVIEW: "{content}"
+
+PRIORITY EVALUATION CRITERIA (Rate 0.0-1.0):
+
+1. CULTURAL_AUTHENTICITY (HIGH PRIORITY): Does this preserve cultural terms like ichiban-kuji, daikoku-drugstore instead of generic alternatives? Score 0.9+ for preserved terms like "ichiban-kuji" vs 0.3 for "anime-merchandise".
+2. BRAND_HIERARCHY (HIGH PRIORITY): Are Asian brand names properly positioned and recognizable? Prioritize cultural brand preservation.
+3. USER_INTENT_MATCH: Does this capture cultural shopping intent and authentic terminology?
+4. CLICK_THROUGH_POTENTIAL: Appeal to culturally-aware shoppers seeking authentic experiences?
+5. COMPETITIVE_DIFFERENTIATION: Stand out from generic western alternatives through cultural specificity?
+6. TECHNICAL_SEO: Basic technical compliance while preserving cultural terms?
+
+Focus evaluation feedback on cultural preservation strengths and authentic terminology usage.
+
+Return JSON format:
+{{
+    "dimension_scores": {{
+        "user_intent_match": 0.0-1.0,
+        "brand_hierarchy": 0.0-1.0,
+        "cultural_authenticity": 0.0-1.0, 
+        "click_through_potential": 0.0-1.0,
+        "competitive_differentiation": 0.0-1.0,
+        "technical_seo": 0.0-1.0
+    }},
+    "overall_score": 0.0-1.0,
+    "qualitative_feedback": "detailed cultural authenticity analysis...",
+    "confidence": 0.0-1.0
+}}
