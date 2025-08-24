@@ -1,0 +1,64 @@
+{
+  "prompt_version": "enhanced_seo_focused_v2.1",
+  "description": "Enhanced SEO evaluation with search intent alignment and embedded reference data",
+  "focus_areas": [
+    "red_flag_pattern_avoidance",
+    "brand_hierarchy_accuracy", 
+    "search_intent_alignment",
+    "cultural_authenticity",
+    "cross_border_service_clarity",
+    "technical_seo_compliance"
+  ],
+  "scoring_dimensions": [
+    "brand_hierarchy_accuracy",
+    "red_flag_pattern_avoidance", 
+    "cultural_authenticity",
+    "cross_border_service_clarity",
+    "search_intent_alignment",
+    "technical_seo_compliance"
+  ],
+  "dimension_weights": {
+    "red_flag_pattern_avoidance": 0.30,
+    "brand_hierarchy_accuracy": 0.25,
+    "search_intent_alignment": 0.20,
+    "cultural_authenticity": 0.15,
+    "cross_border_service_clarity": 0.10,
+    "technical_seo_compliance": 0.05
+  },
+  "key_improvements_v2.1": {
+    "search_intent_alignment": "NEW dimension with hypothesis framework for user search behavior",
+    "embedded_reference_data": "Red flag patterns and cultural term dictionary built into prompt",
+    "brand_classification": "Primary vs secondary brand distinction for better hierarchy assessment",
+    "structured_evaluation_process": "5-step evaluation methodology",
+    "enhanced_output_format": "Detailed evaluation summary and flags for human review",
+    "priority_reordering": "Search intent and pattern avoidance as top priorities"
+  },
+  "a_b_testing_focus": {
+    "hypothesis": "V2.1 will show improved search intent matching and reduced false positives on brand detection",
+    "key_metrics": [
+      "search_intent_alignment scores vs v1.0",
+      "red_flag_pattern_detection accuracy",
+      "brand_hierarchy_accuracy consistency",
+      "evaluation_summary quality",
+      "false positive rate on cultural terms"
+    ]
+  },
+  "production_data_insights": {
+    "total_slugs_analyzed": 7018,
+    "critical_overuse_patterns": {
+      "premium": "64.0% usage rate - AUTO-PENALIZE",
+      "ultimate": "8.6% usage rate - RESTRICT to multi-brand only",
+      "discount-shopping": "12.9% ending pattern - AVOID",
+      "shopping-guide": "6.4% ending pattern - DIVERSIFY"
+    }
+  },
+  "created_date": "2025-08-24",
+  "author": "Claude Code + User Collaboration",
+  "use_cases": [
+    "search_intent_optimization",
+    "pattern_repetition_prevention",
+    "brand_hierarchy_enforcement", 
+    "cultural_authenticity_assessment",
+    "a_b_testing_framework"
+  ]
+}
