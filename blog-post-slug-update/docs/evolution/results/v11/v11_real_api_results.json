@@ -1,0 +1,241 @@
+{
+  "test_metadata": {
+    "test_type": "real_api_testing_corrected",
+    "timestamp": "2025-08-24T13:23:22.707033",
+    "versions_tested": [
+      "v8",
+      "v9",
+      "v10"
+    ],
+    "critical_finding": "V11a and V11b do not exist - previous testing was completely simulated",
+    "total_cases": 5
+  },
+  "results": [
+    {
+      "test_case": {
+        "id": "test_01",
+        "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+        "content": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感",
+        "source": "production"
+      },
+      "version_results": {
+        "v8": {
+          "slug": "buyandship-rhythm-fan-review",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 4,
+          "analysis": {}
+        },
+        "v9": {
+          "slug": "exclusive-rhythm-fan-review-buyandship-community-insights",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 7,
+          "analysis": {}
+        },
+        "v10": {
+          "slug": "expert-rhythm-fan-review-buyandship",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 5,
+          "analysis": {}
+        }
+      }
+    },
+    {
+      "test_case": {
+        "id": "test_02",
+        "title": "HK$38 買 Ralph Lauren Tee！",
+        "content": "HK$38 買 Ralph Lauren Tee！",
+        "source": "production"
+      },
+      "version_results": {
+        "v8": {
+          "slug": "ralph-lauren-tee-hong-kong-discount",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 6,
+          "analysis": {}
+        },
+        "v9": {
+          "slug": "exclusive-ralph-lauren-tee-hk38-limited-offer",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 7,
+          "analysis": {}
+        },
+        "v10": {
+          "slug": "ralph-lauren-hongkong-premium-shopping",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 5,
+          "analysis": {}
+        }
+      }
+    },
+    {
+      "test_case": {
+        "id": "test_03",
+        "title": "日本 Onspotz 靚帽網店特價低至七折",
+        "content": "日本 Onspotz 靚帽網店特價低至七折",
+        "source": "production"
+      },
+      "version_results": {
+        "v8": {
+          "slug": "onspotz-hats-japan-discount-guide",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 5,
+          "analysis": {}
+        },
+        "v9": {
+          "slug": "exclusive-onspotz-japan-beautiful-hats-30-off-sale",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 8,
+          "analysis": {}
+        },
+        "v10": {
+          "slug": "premium-onspotz-hats-japan-shopping",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 5,
+          "analysis": {}
+        }
+      }
+    },
+    {
+      "test_case": {
+        "id": "test_04",
+        "title": "地雷系vs量產型風格完整對比！2025年最新潮流分析",
+        "content": "深入分析地雷系和量產型兩種日系時尚風格的差異和搭配技巧",
+        "source": "problematic"
+      },
+      "version_results": {
+        "v8": {
+          "slug": "jirai-kei-ryousangata-fashion-comparison-japan",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 6,
+          "analysis": {}
+        },
+        "v9": {
+          "slug": "ultimate-japanese-fashion-comparison-dilemma-dairai-vs-ryanshan",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 8,
+          "analysis": {}
+        },
+        "v10": {
+          "slug": "ultimate-jirai-kei-ryousangata-fashion-japan-comparison",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 7,
+          "analysis": {}
+        }
+      }
+    },
+    {
+      "test_case": {
+        "id": "test_05",
+        "title": "大國藥妝香港店vs日本代購vs官網直送完整比較分析",
+        "content": "比較大國藥妝香港實體店、日本代購服務、官網直送的優缺點",
+        "source": "problematic"
+      },
+      "version_results": {
+        "v8": {
+          "error": "No valid slugs generated",
+          "success": false
+        },
+        "v9": {
+          "error": "No valid slugs generated",
+          "success": false
+        },
+        "v10": {
+          "slug": "ultimate-daikoku-drugstore-hongkong-japan-proxy-comparison",
+          "confidence": 0.0,
+          "success": true,
+          "word_count": 7,
+          "analysis": {}
+        }
+      }
+    }
+  ],
+  "analysis": {
+    "version_slugs": {
+      "v8": [
+        {
+          "slug": "buyandship-rhythm-fan-review",
+          "test_id": "test_01",
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感"
+        },
+        {
+          "slug": "ralph-lauren-tee-hong-kong-discount",
+          "test_id": "test_02",
+          "title": "HK$38 買 Ralph Lauren Tee！"
+        },
+        {
+          "slug": "onspotz-hats-japan-discount-guide",
+          "test_id": "test_03",
+          "title": "日本 Onspotz 靚帽網店特價低至七折"
+        },
+        {
+          "slug": "jirai-kei-ryousangata-fashion-comparison-japan",
+          "test_id": "test_04",
+          "title": "地雷系vs量產型風格完整對比！2025年最新潮流分析"
+        }
+      ],
+      "v9": [
+        {
+          "slug": "exclusive-rhythm-fan-review-buyandship-community-insights",
+          "test_id": "test_01",
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感"
+        },
+        {
+          "slug": "exclusive-ralph-lauren-tee-hk38-limited-offer",
+          "test_id": "test_02",
+          "title": "HK$38 買 Ralph Lauren Tee！"
+        },
+        {
+          "slug": "exclusive-onspotz-japan-beautiful-hats-30-off-sale",
+          "test_id": "test_03",
+          "title": "日本 Onspotz 靚帽網店特價低至七折"
+        },
+        {
+          "slug": "ultimate-japanese-fashion-comparison-dilemma-dairai-vs-ryanshan",
+          "test_id": "test_04",
+          "title": "地雷系vs量產型風格完整對比！2025年最新潮流分析"
+        }
+      ],
+      "v10": [
+        {
+          "slug": "expert-rhythm-fan-review-buyandship",
+          "test_id": "test_01",
+          "title": "人氣 Rhythm 風扇專業評測！Buyandship Facebook交流區會員真實用後感"
+        },
+        {
+          "slug": "ralph-lauren-hongkong-premium-shopping",
+          "test_id": "test_02",
+          "title": "HK$38 買 Ralph Lauren Tee！"
+        },
+        {
+          "slug": "premium-onspotz-hats-japan-shopping",
+          "test_id": "test_03",
+          "title": "日本 Onspotz 靚帽網店特價低至七折"
+        },
+        {
+          "slug": "ultimate-jirai-kei-ryousangata-fashion-japan-comparison",
+          "test_id": "test_04",
+          "title": "地雷系vs量產型風格完整對比！2025年最新潮流分析"
+        },
+        {
+          "slug": "ultimate-daikoku-drugstore-hongkong-japan-proxy-comparison",
+          "test_id": "test_05",
+          "title": "大國藥妝香港店vs日本代購vs官網直送完整比較分析"
+        }
+      ]
+    },
+    "total_tests": 5,
+    "analysis_complete": true
+  }
+}
