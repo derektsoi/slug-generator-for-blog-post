@@ -57,9 +57,26 @@ python scripts/suggest_slug.py https://blog.example.com/post
 **Reusable Debugging Patterns:** See `blog-post-slug-update/docs/development/DEBUGGING_PATTERNS.md` for comprehensive debugging patterns and production fixes.
 
 
+## 🚨 ANTI-FAKE ANALYSIS PROTOCOL (ZERO TOLERANCE)
+
+**🔥 CRITICAL: V11 fake analysis disaster prevention - NEVER TRUST SIMULATION DATA**
+
+### **📋 MANDATORY Pre-Analysis Validation:**
+```markdown
+- [ ] Feature/version exists in system configuration (verified)
+- [ ] Real API connectivity confirmed (not simulation)  
+- [ ] Implementation can be instantiated successfully
+- [ ] All test versions validated as working
+- [ ] Reproduction instructions documented
+```
+
+**🚨 ZERO TOLERANCE RULE**: Any analysis based on non-existent features or simulation data is INVALID and must be discarded immediately.
+
+See **[ANTI_FAKE_ANALYSIS_PRINCIPLES.md](ANTI_FAKE_ANALYSIS_PRINCIPLES.md)** for complete safeguards.
+
 ## 🧪 Enhanced AI/LLM TDD Protocol (MANDATORY)
 
-**🚨 CRITICAL: ALL code development must follow enhanced TDD practices - NO EXCEPTIONS**
+**🚨 CRITICAL: ALL code development must follow enhanced TDD practices + real implementation validation**
 
 ### **Enhanced TDD Rules for AI/LLM Systems:**
 1. **🔴 RED FIRST**: Write failing tests before ANY implementation
