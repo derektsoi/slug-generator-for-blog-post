@@ -1,0 +1,157 @@
+{
+  "summary": {
+    "total_slugs": 7018,
+    "total_words": 41261,
+    "unique_words": 4741
+  },
+  "problematic_patterns": {
+    "overused_words": [
+      {
+        "word": "premium",
+        "count": 4569,
+        "percentage": 65.1
+      },
+      {
+        "word": "shopping",
+        "count": 4360,
+        "percentage": 62.1
+      },
+      {
+        "word": "japan",
+        "count": 1420,
+        "percentage": 20.2
+      },
+      {
+        "word": "discount",
+        "count": 1009,
+        "percentage": 14.4
+      },
+      {
+        "word": "guide",
+        "count": 947,
+        "percentage": 13.5
+      },
+      {
+        "word": "us",
+        "count": 894,
+        "percentage": 12.7
+      }
+    ],
+    "repetitive_starters": [],
+    "repetitive_endings": [
+      {
+        "pattern": "shopping-guide",
+        "count": 452,
+        "percentage": 6.4
+      },
+      {
+        "pattern": "japan-shopping",
+        "count": 395,
+        "percentage": 5.6
+      },
+      {
+        "pattern": "discount-shopping",
+        "count": 906,
+        "percentage": 12.9
+      },
+      {
+        "pattern": "us-shopping",
+        "count": 242,
+        "percentage": 3.4
+      }
+    ],
+    "repetitive_sequences": [
+      {
+        "sequence": "hong-kong-shopping",
+        "count": 151,
+        "percentage": 2.2
+      },
+      {
+        "sequence": "us-discount-shopping",
+        "count": 161,
+        "percentage": 2.3
+      }
+    ]
+  },
+  "top_words": {
+    "premium": 4569,
+    "shopping": 4360,
+    "japan": 1420,
+    "discount": 1009,
+    "guide": 947,
+    "us": 894,
+    "ultimate": 606,
+    "uk": 463,
+    "sale": 414,
+    "hongkong": 330,
+    "clothing": 296,
+    "fashion": 285,
+    "taiwan": 259,
+    "hong": 255,
+    "kong": 255,
+    "products": 214,
+    "korea": 213,
+    "rakuten": 207,
+    "shoes": 196,
+    "childrens": 194,
+    "day": 191,
+    "expert": 189,
+    "amazon": 186,
+    "shipping": 185,
+    "buyandship": 185,
+    "black": 176,
+    "online": 164,
+    "disney": 158,
+    "friday": 155,
+    "proxy": 145,
+    "overseas": 143,
+    "new": 128,
+    "summer": 126,
+    "pickup": 119,
+    "baby": 107,
+    "the": 104,
+    "hair": 104,
+    "deals": 102,
+    "off": 102,
+    "sneakers": 100,
+    "local": 99,
+    "beauty": 98,
+    "warehouse": 98,
+    "insider": 97,
+    "tutorial": 97,
+    "collectibles": 95,
+    "limited": 95,
+    "skincare": 93,
+    "australia": 92,
+    "selection": 91
+  },
+  "top_starting_patterns": {
+    "premium-rakuten": 121,
+    "premium-amazon": 109,
+    "premium-buyandship": 105,
+    "premium-disney": 80,
+    "premium-rakuten-japan": 61,
+    "premium-carters": 61,
+    "premium-ralph": 58,
+    "premium-ralph-lauren": 58,
+    "premium-mltd": 51,
+    "premium-the": 49,
+    "premium-adidas": 46,
+    "premium-superdry": 41,
+    "ultimate-rakuten": 33,
+    "premium-samsonite": 31,
+    "premium-bath": 30,
+    "premium-eastbay": 29,
+    "premium-aigle": 27,
+    "warehouse-pickup": 26,
+    "premium-kate": 26,
+    "premium-kate-spade": 26
+  },
+  "recommendations": [
+    {
+      "issue": "Overused Words",
+      "description": "Words appearing in >10% of slugs: premium, shopping, japan, discount, guide",
+      "evaluation_criteria": "Flag slugs using these high-frequency terms without clear justification"
+    }
+  ]
+}

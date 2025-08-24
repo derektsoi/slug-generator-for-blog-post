@@ -1,0 +1,82 @@
+{
+  "prompt_version": "enhanced_seo_focused",
+  "description": "Data-driven SEO evaluation prompt addressing critical pattern repetition crisis based on 7,018 slug analysis",
+  "focus_areas": [
+    "pattern_uniqueness",
+    "brand_hierarchy", 
+    "cross_border_service_clarity",
+    "cultural_authenticity",
+    "technical_seo_compliance"
+  ],
+  "scoring_dimensions": [
+    "brand_hierarchy_accuracy",
+    "pattern_uniqueness", 
+    "cultural_authenticity",
+    "cross_border_service_clarity",
+    "technical_seo_compliance"
+  ],
+  "dimension_weights": {
+    "brand_hierarchy_accuracy": 0.25,
+    "pattern_uniqueness": 0.25,
+    "cultural_authenticity": 0.20,
+    "cross_border_service_clarity": 0.20,
+    "technical_seo_compliance": 0.10
+  },
+  "quality_thresholds": {
+    "minimum_confidence": 0.7,
+    "pattern_repetition_penalty": 0.3,
+    "brand_detection_requirement": 0.8
+  },
+  "production_data_insights": {
+    "total_slugs_analyzed": 7018,
+    "critical_overuse_patterns": {
+      "premium": "64.0% usage rate - ELIMINATE",
+      "ultimate": "8.6% usage rate - RESTRICT to multi-brand only",
+      "shopping": "62.1% usage rate - REDUCE",
+      "discount-shopping": "12.9% ending pattern - DIVERSIFY"
+    },
+    "acceptable_patterns": {
+      "expert": "2.6% usage rate - ACCEPTABLE",
+      "insider": "1.4% usage rate - ACCEPTABLE",
+      "comprehensive": "<1% usage rate - PREFERRED",
+      "definitive": "<1% usage rate - PREFERRED"
+    }
+  },
+  "key_differentiators": [
+    "Production data-driven scoring criteria",
+    "Pattern repetition crisis awareness", 
+    "Cross-border e-commerce specialization",
+    "Asian cultural authenticity focus",
+    "Brand hierarchy mandatory requirements",
+    "72.6% repetition pattern addressing"
+  ],
+  "improvement_over_current": [
+    "Addresses colleague feedback on 'ultimate' overuse",
+    "Solves critical 'premium' overuse (64% of slugs)",
+    "Enforces brand detection requirements",
+    "Prioritizes pattern uniqueness over generic enhancement",
+    "Maintains backward compatibility with existing system"
+  ],
+  "created_date": "2025-08-24",
+  "author": "Claude Code + Production Data Analysis",
+  "use_cases": [
+    "seo_optimization_focused",
+    "pattern_repetition_prevention",
+    "brand_hierarchy_enforcement",
+    "cross_border_evaluation",
+    "cultural_authenticity_assessment"
+  ],
+  "framework_compliance": {
+    "llm_as_judge_structure": true,
+    "six_question_framework": {
+      "role": "Senior cross-border e-commerce SEO specialist",
+      "content_type": "AI-generated SEO URL slugs for cross-border e-commerce",
+      "quality_aspects": "Brand hierarchy, pattern uniqueness, cultural authenticity, service clarity, technical SEO",
+      "scoring_method": "Single output scoring (0.0-1.0 scale per dimension)",
+      "rubric_examples": "Comprehensive rubrics with concrete examples and red flag patterns",
+      "output_format": "JSON with backward compatibility"
+    },
+    "reasoning_instructions": "Step-by-step evaluation process included",
+    "uncertainty_handling": "Explicit instructions for ambiguous cases"
+  }
+}
