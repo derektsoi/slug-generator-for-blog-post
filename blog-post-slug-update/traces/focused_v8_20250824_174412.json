@@ -1,0 +1,167 @@
+{
+  "traces": [
+    {
+      "timestamp": "2025-08-24T17:40:07.288733",
+      "request_hash": "d3b52075feae49a2",
+      "response_hash": "95aec1cbed8f6c1a",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"SKINNIYDIP\", \"iface\", \"\u7280\u725b\u76fe",
+      "response_time_ms": 4905,
+      "token_count": 1693,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:40:37.372604",
+      "request_hash": "ff3060816918af51",
+      "response_hash": "44575630274d4172",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [],\n      \"normalized_brands",
+      "response_time_ms": 4417,
+      "token_count": 1623,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:00.713812",
+      "request_hash": "d575d33d694a2eba",
+      "response_hash": "c5d3843737fcce82",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"JoJo Maman B\u00e9b\u00e9\"],\n      \"",
+      "response_time_ms": 3587,
+      "token_count": 1650,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:25.496982",
+      "request_hash": "81e47108984d7a93",
+      "response_hash": "ba51098ae80b7a4f",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"BuyandShip\", \"Rakuten\", \"A",
+      "response_time_ms": 4279,
+      "token_count": 1643,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:52.327377",
+      "request_hash": "64aaf93d1c147e65",
+      "response_hash": "5e5868f994e5af1e",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"\u5927\u570b\u85e5\u599d\", \"@cosme store\"],\n  ",
+      "response_time_ms": 3971,
+      "token_count": 1656,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:16.906033",
+      "request_hash": "dcaeaf6513d5c741",
+      "response_hash": "337bd275078d18a1",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"DR.WU\"],\n      \"normalized",
+      "response_time_ms": 4472,
+      "token_count": 1635,
+      "confidence_scores": [
+        0.88
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:40.766998",
+      "request_hash": "1dc158d920bcde6d",
+      "response_hash": "26cb9afd066a1c57",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"Musinsa\", \"\u5730\u96f7\u7cfb\", \"\u91cf\u7522\u578b\"],\n ",
+      "response_time_ms": 4240,
+      "token_count": 1665,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:04.258771",
+      "request_hash": "0b3fd67d18e34bbd",
+      "response_hash": "253f456421f6febc",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"Ralph Lauren\"],\n      \"nor",
+      "response_time_ms": 3949,
+      "token_count": 1617,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:27.531854",
+      "request_hash": "753ce1979253488d",
+      "response_hash": "98e04e80c4f96ad9",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"\u4e00\u756a\u8cde\", \"\u6d77\u8cca\u738b\"],\n      \"norma",
+      "response_time_ms": 3657,
+      "token_count": 1644,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:52.068049",
+      "request_hash": "9c2f242296424bd8",
+      "response_hash": "46d563a7029c97ae",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"\u9806\u8c50\u96c6\u904b\", \"\u6613\u9054\u96c6\u904b\", \"\u8cb7\u8cb7\u8cb7\"],\n   ",
+      "response_time_ms": 4313,
+      "token_count": 1674,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    }
+  ],
+  "response_hashes": [
+    "c5d3843737fcce82",
+    "5e5868f994e5af1e",
+    "95aec1cbed8f6c1a",
+    "337bd275078d18a1",
+    "46d563a7029c97ae",
+    "98e04e80c4f96ad9",
+    "44575630274d4172",
+    "26cb9afd066a1c57",
+    "253f456421f6febc",
+    "ba51098ae80b7a4f"
+  ],
+  "generated_at": "2025-08-24T17:44:12.417887"
+}

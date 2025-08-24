@@ -1,0 +1,1 @@
+# Validation module for GPT authenticity and anti-fake analysis

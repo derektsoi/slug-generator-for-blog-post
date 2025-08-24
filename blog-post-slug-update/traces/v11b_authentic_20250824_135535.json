@@ -1,0 +1,55 @@
+{
+  "traces": [
+    {
+      "timestamp": "2025-08-24T13:55:15.897230",
+      "request_hash": "042259970b421884",
+      "response_hash": "eacbb102894dbd8f",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "\n{\n  \"analysis\": {\n    \"detected_brands\": [\"\u5927\u570b\u85e5\u599d\"],\n    \"cultural_terms\": [],\n    \"approach\": \"compr",
+      "response_time_ms": 2847,
+      "token_count": 1035,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T13:55:23.598862",
+      "request_hash": "3491dfa5767e79c6",
+      "response_hash": "520b8a00366ed69a",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [],\n    \"approach\":",
+      "response_time_ms": 2048,
+      "token_count": 1024,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T13:55:31.177327",
+      "request_hash": "4e4f82fb13505744",
+      "response_hash": "0f702304a52d830d",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"skinnydip\", \"iface\"],\n    \"cultural_terms\": [],\n    \"appr",
+      "response_time_ms": 1948,
+      "token_count": 1041,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    }
+  ],
+  "response_hashes": [
+    "520b8a00366ed69a",
+    "eacbb102894dbd8f",
+    "0f702304a52d830d"
+  ],
+  "generated_at": "2025-08-24T13:55:35.377079"
+}

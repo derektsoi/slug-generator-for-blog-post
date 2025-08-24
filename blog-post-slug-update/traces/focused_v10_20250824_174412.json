@@ -1,0 +1,167 @@
+{
+  "traces": [
+    {
+      "timestamp": "2025-08-24T17:40:17.579112",
+      "request_hash": "eb02e95b49af2521",
+      "response_hash": "bc66e6223c07315c",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"skinnydip\", \"iface\", \"rhinoshield\"],\n    \"cultural_terms\"",
+      "response_time_ms": 5325,
+      "token_count": 1794,
+      "confidence_scores": [
+        0.95
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:40:43.793906",
+      "request_hash": "c440941ca683012d",
+      "response_hash": "a3da790d2b464f94",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [],\n    \"cultural_terms\": [\"ichiban-kuji\", \"jirai-kei\", \"ry",
+      "response_time_ms": 3481,
+      "token_count": 1751,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:07.602213",
+      "request_hash": "0e3713ca73cb5073",
+      "response_hash": "e27f38170c8f1b07",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"JoJo Maman B\u00e9b\u00e9\"],\n    \"cultural_terms\": [],\n    \"product",
+      "response_time_ms": 3606,
+      "token_count": 1746,
+      "confidence_scores": [
+        0.95
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:35.534355",
+      "request_hash": "8ace1d049dbf6faa",
+      "response_hash": "19636e76fe235b93",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"BuyandShip\", \"Rakuten\", \"Amazon\"],\n    \"cultural_terms\": ",
+      "response_time_ms": 5529,
+      "token_count": 1752,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:59.218094",
+      "request_hash": "d6a4e5de7db6f7e6",
+      "response_hash": "152e1d45f37a9353",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u5927\u570b\u85e5\u599d\", \"@cosme\"],\n    \"cultural_terms\": [\"\u4ee3\u8cfc\"],\n    \"prod",
+      "response_time_ms": 3361,
+      "token_count": 1763,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:23.562295",
+      "request_hash": "87ccf18d2b61b3b6",
+      "response_hash": "2956c256efb9ce8b",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"DR.WU\"],\n    \"cultural_terms\": [\"\u4ee3\u8cfc\"],\n    \"product_categ",
+      "response_time_ms": 3888,
+      "token_count": 1750,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:47.640134",
+      "request_hash": "c03eb446786e4066",
+      "response_hash": "5de9e8d8b353e005",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Musinsa\"],\n    \"cultural_terms\": [\"jirai-kei\", \"ryousanga",
+      "response_time_ms": 3289,
+      "token_count": 1757,
+      "confidence_scores": [
+        0.95
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:11.177829",
+      "request_hash": "40f46c3e82d28e02",
+      "response_hash": "838d0f17a4751f4b",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [\"\u4ee3\u8cfc\"],\n    \"produc",
+      "response_time_ms": 2850,
+      "token_count": 1736,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:34.701872",
+      "request_hash": "2d9f83498413d59d",
+      "response_hash": "41ec99d99b95eccb",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [],\n    \"cultural_terms\": [\"ichiban-kuji\"],\n    \"product_ca",
+      "response_time_ms": 3188,
+      "token_count": 1753,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:59.410502",
+      "request_hash": "0b5139b310aa5550",
+      "response_hash": "f94e4b55d8b80073",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u9806\u8c50\u96c6\u904b\", \"\u6613\u9054\u96c6\u904b\", \"\u8cb7\u8cb7\u8cb7\"],\n    \"cultural_terms\": [\"\u96c6\u904b\", \"\u4ee3\u8cfc\"]",
+      "response_time_ms": 3857,
+      "token_count": 1775,
+      "confidence_scores": [
+        0.92
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    }
+  ],
+  "response_hashes": [
+    "152e1d45f37a9353",
+    "19636e76fe235b93",
+    "2956c256efb9ce8b",
+    "a3da790d2b464f94",
+    "41ec99d99b95eccb",
+    "f94e4b55d8b80073",
+    "838d0f17a4751f4b",
+    "e27f38170c8f1b07",
+    "bc66e6223c07315c",
+    "5de9e8d8b353e005"
+  ],
+  "generated_at": "2025-08-24T17:44:12.418811"
+}

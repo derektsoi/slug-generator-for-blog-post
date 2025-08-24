@@ -60,6 +60,18 @@ class SlugGeneratorConfig:
             'MAX_CHARS': 90,     # V8's 70 + 20 for competitive terms + compound brands
             'CONFIDENCE_THRESHOLD': 0.75,  # High threshold for quality assurance
         },
+        'v11a': {
+            'MAX_WORDS': 5,      # V11a: Simple focused approach (3-5 words)
+            'MAX_CHARS': 60,     # Shorter constraint for direct slugs
+            'MIN_WORDS': 3,      # Minimum for V11a
+            'CONFIDENCE_THRESHOLD': 0.75,  # High threshold based on V8 success
+        },
+        'v11b': {
+            'MAX_WORDS': 12,     # V11b: Comprehensive approach (8-12 words)
+            'MAX_CHARS': 90,     # Extended constraint for detailed slugs
+            'MIN_WORDS': 8,      # Minimum for V11b
+            'CONFIDENCE_THRESHOLD': 0.75,  # High threshold for quality
+        },
         # Future versions can experiment within system bounds (1-20 words, 1-300 chars)
         'experimental': {
             'MAX_WORDS': 12,     # Example: More flexible for complex content

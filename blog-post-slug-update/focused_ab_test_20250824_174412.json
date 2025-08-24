@@ -1,0 +1,678 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-24T17:44:12.415014",
+    "test_type": "focused_difficult_cases",
+    "total_cases": 10,
+    "versions_tested": [
+      "v8",
+      "v10",
+      "v11a",
+      "v11b"
+    ],
+    "total_generations": 40
+  },
+  "authenticity_summary": {
+    "v8": {
+      "total_calls": 10,
+      "authentic_calls": 10,
+      "suspicious_calls": 0,
+      "authenticity_rate": 1.0,
+      "unique_responses": 10,
+      "issues_summary": {},
+      "traces": [
+        {
+          "timestamp": "2025-08-24T17:42:16.906033",
+          "request_hash": "dcaeaf6513d5c741",
+          "response_hash": "337bd275078d18a1",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"DR.WU\"],\n      \"normalized",
+          "response_time_ms": 4472,
+          "token_count": 1635,
+          "confidence_scores": [
+            0.88
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:42:40.766998",
+          "request_hash": "1dc158d920bcde6d",
+          "response_hash": "26cb9afd066a1c57",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"Musinsa\", \"地雷系\", \"量產型\"],\n ",
+          "response_time_ms": 4240,
+          "token_count": 1665,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:04.258771",
+          "request_hash": "0b3fd67d18e34bbd",
+          "response_hash": "253f456421f6febc",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"Ralph Lauren\"],\n      \"nor",
+          "response_time_ms": 3949,
+          "token_count": 1617,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:27.531854",
+          "request_hash": "753ce1979253488d",
+          "response_hash": "98e04e80c4f96ad9",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"一番賞\", \"海賊王\"],\n      \"norma",
+          "response_time_ms": 3657,
+          "token_count": 1644,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:52.068049",
+          "request_hash": "9c2f242296424bd8",
+          "response_hash": "46d563a7029c97ae",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"brand_normalization\": {\n      \"original_brands\": [\"順豐集運\", \"易達集運\", \"買買買\"],\n   ",
+          "response_time_ms": 4313,
+          "token_count": 1674,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        }
+      ]
+    },
+    "v10": {
+      "total_calls": 10,
+      "authentic_calls": 10,
+      "suspicious_calls": 0,
+      "authenticity_rate": 1.0,
+      "unique_responses": 10,
+      "issues_summary": {},
+      "traces": [
+        {
+          "timestamp": "2025-08-24T17:42:23.562295",
+          "request_hash": "87ccf18d2b61b3b6",
+          "response_hash": "2956c256efb9ce8b",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"DR.WU\"],\n    \"cultural_terms\": [\"代購\"],\n    \"product_categ",
+          "response_time_ms": 3888,
+          "token_count": 1750,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:42:47.640134",
+          "request_hash": "c03eb446786e4066",
+          "response_hash": "5de9e8d8b353e005",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Musinsa\"],\n    \"cultural_terms\": [\"jirai-kei\", \"ryousanga",
+          "response_time_ms": 3289,
+          "token_count": 1757,
+          "confidence_scores": [
+            0.95
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:11.177829",
+          "request_hash": "40f46c3e82d28e02",
+          "response_hash": "838d0f17a4751f4b",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [\"代購\"],\n    \"produc",
+          "response_time_ms": 2850,
+          "token_count": 1736,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:34.701872",
+          "request_hash": "2d9f83498413d59d",
+          "response_hash": "41ec99d99b95eccb",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [],\n    \"cultural_terms\": [\"ichiban-kuji\"],\n    \"product_ca",
+          "response_time_ms": 3188,
+          "token_count": 1753,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:59.410502",
+          "request_hash": "0b5139b310aa5550",
+          "response_hash": "f94e4b55d8b80073",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content. Your goal is creating cult",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"順豐集運\", \"易達集運\", \"買買買\"],\n    \"cultural_terms\": [\"集運\", \"代購\"]",
+          "response_time_ms": 3857,
+          "token_count": 1775,
+          "confidence_scores": [
+            0.92
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        }
+      ]
+    },
+    "v11a": {
+      "total_calls": 10,
+      "authentic_calls": 10,
+      "suspicious_calls": 0,
+      "authenticity_rate": 1.0,
+      "unique_responses": 10,
+      "issues_summary": {},
+      "traces": [
+        {
+          "timestamp": "2025-08-24T17:42:29.502784",
+          "request_hash": "d0ac7d27fa296183",
+          "response_hash": "8feab714d4a97593",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"DR.WU\"],\n    \"cultural_terms\": [],\n    \"approach\": \"direc",
+          "response_time_ms": 2766,
+          "token_count": 807,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:42:53.259578",
+          "request_hash": "b0c92eca993dd219",
+          "response_hash": "8d55caf59de56fb8",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Musinsa\"],\n    \"cultural_terms\": [\"jirai-kei\", \"ryousanga",
+          "response_time_ms": 2967,
+          "token_count": 830,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:17.118112",
+          "request_hash": "18033178e11ae6a5",
+          "response_hash": "09e539037978828a",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [],\n    \"approach\":",
+          "response_time_ms": 3092,
+          "token_count": 804,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:40.617510",
+          "request_hash": "7dca49e74f6f1f9f",
+          "response_hash": "73571feef0cb6d34",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"一番賞\"],\n    \"cultural_terms\": [\"ichiban-kuji\"],\n    \"appro",
+          "response_time_ms": 3224,
+          "token_count": 816,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:44:05.451752",
+          "request_hash": "0f01b15c9af33ff6",
+          "response_hash": "eb45c9acec933cc9",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"順豐集運\", \"易達集運\", \"買買買\"],\n    \"cultural_terms\": [],\n    \"app",
+          "response_time_ms": 2965,
+          "token_count": 830,
+          "confidence_scores": [
+            0.85
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        }
+      ]
+    },
+    "v11b": {
+      "total_calls": 10,
+      "authentic_calls": 10,
+      "suspicious_calls": 0,
+      "authenticity_rate": 1.0,
+      "unique_responses": 10,
+      "issues_summary": {},
+      "traces": [
+        {
+          "timestamp": "2025-08-24T17:42:34.518346",
+          "request_hash": "3cc52e73f45080a8",
+          "response_hash": "e0535a06a6fb8dca",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"DR.WU\"],\n    \"cultural_terms\": [],\n    \"approach\": \"compr",
+          "response_time_ms": 2969,
+          "token_count": 1048,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:42:58.378618",
+          "request_hash": "268eff7334f92bd9",
+          "response_hash": "313b7d6687e852e8",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Musinsa\"],\n    \"cultural_terms\": [\"jirai-kei\", \"ryousanga",
+          "response_time_ms": 2665,
+          "token_count": 1060,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:21.568086",
+          "request_hash": "129ec28a5ae273ee",
+          "response_hash": "de4946c3410ece1a",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [],\n    \"approach\":",
+          "response_time_ms": 2566,
+          "token_count": 1037,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:43:45.477343",
+          "request_hash": "41a0edd1e29cc76f",
+          "response_hash": "d7e1fd53dac9469f",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"一番賞\"],\n    \"cultural_terms\": [],\n    \"approach\": \"compreh",
+          "response_time_ms": 2555,
+          "token_count": 1047,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        },
+        {
+          "timestamp": "2025-08-24T17:44:10.059514",
+          "request_hash": "7359d722d648aab8",
+          "response_hash": "53278cca9ba94e55",
+          "model": "gpt-4o-mini",
+          "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+          "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"順豐集運\", \"易達集運\", \"買買買\"],\n    \"cultural_terms\": [],\n    \"app",
+          "response_time_ms": 2428,
+          "token_count": 1061,
+          "confidence_scores": [
+            0.9
+          ],
+          "reasoning_present": true,
+          "analysis_present": true
+        }
+      ]
+    }
+  },
+  "detailed_results": [
+    {
+      "case_info": {
+        "id": "difficult_01",
+        "category": "multi_brand_complex",
+        "title": "【2025年最新】日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！",
+        "content": "日韓台7大手機殼品牌推介，SKINNIYDIP/iface/犀牛盾iPhone16/Pro手機殼登場！完整購買教學與評價比較"
+      },
+      "generations": {
+        "v8": "skinnydip-iface-rhinoshield-phone-cases-guide",
+        "v10": "ultimate-skinnydip-iface-rhinoshield-phone-cases-guide",
+        "v11a": "skinnydip-iface-hongkong-phone-case",
+        "v11b": "complete-skinnydip-iface-rhinoshield-iphone16-case-shopping-guide"
+      },
+      "word_counts": {
+        "v8": 6,
+        "v10": 7,
+        "v11a": 5,
+        "v11b": 8
+      },
+      "timing": {
+        "v8": 9.870347023010254,
+        "v10": 9.31153917312622,
+        "v11a": 5.990927696228027,
+        "v11b": 5.397773027420044
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_02",
+        "category": "cultural_subculture",
+        "title": "一番賞Online購買教學，地雷系量產型手把手指南",
+        "content": "一番賞Online購買教學，地雷系量產型服飾購物完整指南，包含jirai-kei風格搭配"
+      },
+      "generations": {
+        "v8": "ichiban-kuji-jirai-kei-fashion-online-guide",
+        "v10": "ultimate-ichiban-kuji-jirai-kei-fashion-guide",
+        "v11a": null,
+        "v11b": "complete-ichiban-shou-jirai-kei-ryousangata-shopping-guide"
+      },
+      "word_counts": {
+        "v8": 7,
+        "v10": 7,
+        "v11a": 0,
+        "v11b": 8
+      },
+      "timing": {
+        "v8": 7.3574206829071045,
+        "v10": 6.663459062576294,
+        "v11a": 0,
+        "v11b": 4.865245819091797
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": false,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_03",
+        "category": "compound_brand_hierarchy",
+        "title": "JoJo Maman Bébé童裝減價！英國官網直送香港攻略",
+        "content": "JoJo Maman Bébé童裝減價促銷活動，英國官網直送香港完整購物攻略"
+      },
+      "generations": {
+        "v8": null,
+        "v10": "premium-jojo-maman-bebe-childrens-clothing-uk-hongkong-shopping",
+        "v11a": "jojo-maman-bebe-hongkong-shopping",
+        "v11b": "complete-jojo-maman-bebe-hong-kong-shopping-guide-sale"
+      },
+      "word_counts": {
+        "v8": 0,
+        "v10": 9,
+        "v11a": 5,
+        "v11b": 9
+      },
+      "timing": {
+        "v8": 0,
+        "v10": 6.973199129104614,
+        "v11a": 5.519374847412109,
+        "v11b": 4.729907989501953
+      },
+      "success": {
+        "v8": false,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_04",
+        "category": "platform_vs_service",
+        "title": "BuyandShip vs Rakuten vs Amazon集運服務大比較",
+        "content": "BuyandShip vs Rakuten vs Amazon集運代購服務詳細比較，運費、時效、服務範圍完整分析"
+      },
+      "generations": {
+        "v8": "rakuten-buyandship-amazon-shipping-comparison-guide",
+        "v10": "ultimate-buyandship-rakuten-amazon-shipping-comparison",
+        "v11a": "buyandship-rakuten-amazon-comparison",
+        "v11b": null
+      },
+      "word_counts": {
+        "v8": 6,
+        "v10": 6,
+        "v11a": 4,
+        "v11b": 0
+      },
+      "timing": {
+        "v8": 8.787282943725586,
+        "v10": 9.164931058883667,
+        "v11a": 4.318619251251221,
+        "v11b": 0
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": false
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_05",
+        "category": "cultural_complex_brands",
+        "title": "大國藥妝 vs @cosme store日本美妝代購平台比較",
+        "content": "大國藥妝 vs @cosme store日本美妝代購平台詳細比較，產品種類、價格、運送方式分析"
+      },
+      "generations": {
+        "v8": "daikoku-drugstore-cosme-store-beauty-proxy-shopping-comparison",
+        "v10": "ultimate-daikoku-drugstore-cosme-store-japan-comparison",
+        "v11a": "daigoku-cosme-japan-comparison",
+        "v11b": "detailed-daguo-pharmacy-at-cosme-store-comparison-shopping-guide"
+      },
+      "word_counts": {
+        "v8": 8,
+        "v10": 7,
+        "v11a": 4,
+        "v11b": 9
+      },
+      "timing": {
+        "v8": 7.500557899475098,
+        "v10": 6.100060939788818,
+        "v11a": 5.118609189987183,
+        "v11b": 5.358175992965698
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_06",
+        "category": "technical_product_specific",
+        "title": "DR.WU玻尿酸保濕精華液香港專櫃 vs 網購價格比較",
+        "content": "DR.WU玻尿酸保濕精華液香港專櫃價格與網購代購價格詳細比較分析"
+      },
+      "generations": {
+        "v8": null,
+        "v10": "ultimate-dr-wu-hyaluronic-serum-hongkong-price-comparison",
+        "v11a": "drwu-hongkong-price-comparison",
+        "v11b": "detailed-drwu-hyaluronic-acid-serum-hongkong-vs-online-price-comparison"
+      },
+      "word_counts": {
+        "v8": 0,
+        "v10": 8,
+        "v11a": 4,
+        "v11b": 10
+      },
+      "timing": {
+        "v8": 0,
+        "v10": 7.063390016555786,
+        "v11a": 4.812033176422119,
+        "v11b": 4.9773478507995605
+      },
+      "success": {
+        "v8": false,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_07",
+        "category": "fashion_subculture_brands",
+        "title": "Musinsa韓系服飾 vs 地雷系量產型風格穿搭指南",
+        "content": "Musinsa韓系服飾平台與地雷系量產型風格穿搭完整指南，包含品牌推薦和搭配技巧"
+      },
+      "generations": {
+        "v8": "musinsa-jirai-kei-fashion-guide-korea",
+        "v10": "ultimate-musinsa-jirai-kei-ryousangata-fashion-guide",
+        "v11a": "musinsa-hongkong-jirai-kei-ryousangata",
+        "v11b": "complete-musinsa-jirai-kei-ryousangata-fashion-guide-hong-kong"
+      },
+      "word_counts": {
+        "v8": 6,
+        "v10": 7,
+        "v11a": 5,
+        "v11b": 9
+      },
+      "timing": {
+        "v8": 7.8244709968566895,
+        "v10": 5.941152095794678,
+        "v11a": 5.421571254730225,
+        "v11b": 4.596256971359253
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_08",
+        "category": "luxury_discount_complex",
+        "title": "Ralph Lauren Polo衫香港代購攻略：官網vs代購平台價格分析",
+        "content": "Ralph Lauren Polo衫香港代購完整攻略，官網直購與代購平台價格比較"
+      },
+      "generations": {
+        "v8": "ralph-lauren-polo-shirt-hongkong-proxy-shopping-comparison",
+        "v10": "ultimate-ralph-lauren-polo-hong-kong-proxy-comparison",
+        "v11a": "ralph-lauren-hongkong-polo-price",
+        "v11b": "comprehensive-ralph-lauren-polo-shirt-hong-kong-buying-guide"
+      },
+      "word_counts": {
+        "v8": 8,
+        "v10": 8,
+        "v11a": 5,
+        "v11b": 9
+      },
+      "timing": {
+        "v8": 8.01636815071106,
+        "v10": 5.699803829193115,
+        "v11a": 4.975750923156738,
+        "v11b": 4.872506856918335
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_09",
+        "category": "anime_collectibles_cultural",
+        "title": "一番賞海賊王最新彈！香港購買攻略和中獎率分析",
+        "content": "一番賞海賊王最新彈完整購買攻略，香港購買地點推薦、中獎率統計分析"
+      },
+      "generations": {
+        "v8": "ichiban-kuji-one-piece-collectibles-hong-kong-guide",
+        "v10": "ultimate-ichiban-kuji-one-piece-hongkong-buying-guide",
+        "v11a": "ichiban-kuji-hongkong-buying-guide",
+        "v11b": "complete-ichiban-kuji-one-piece-hong-kong-buying-guide-analysis"
+      },
+      "word_counts": {
+        "v8": 8,
+        "v10": 8,
+        "v11a": 5,
+        "v11b": 10
+      },
+      "timing": {
+        "v8": 7.638383865356445,
+        "v10": 5.87983512878418,
+        "v11a": 5.528978109359741,
+        "v11b": 4.832459211349487
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": true,
+        "v11b": true
+      }
+    },
+    {
+      "case_info": {
+        "id": "difficult_10",
+        "category": "service_comparison_complex",
+        "title": "香港集運服務大比較：順豐集運vs易達集運vs買買買攻略",
+        "content": "香港集運服務詳細比較分析，順豐集運vs易達集運vs其他代購平台服務內容"
+      },
+      "generations": {
+        "v8": "sf-express-easy-reach-hongkong-shipping-comparison",
+        "v10": "ultimate-shipping-comparison-sf-express-easy-reach-buy-buy-hongkong",
+        "v11a": null,
+        "v11b": "comprehensive-hongkong-shipping-sf-vs-easybuy-vs-buybuybuy-guide"
+      },
+      "word_counts": {
+        "v8": 7,
+        "v10": 10,
+        "v11a": 0,
+        "v11b": 9
+      },
+      "timing": {
+        "v8": 7.798521995544434,
+        "v10": 6.9318437576293945,
+        "v11a": 0,
+        "v11b": 4.78387713432312
+      },
+      "success": {
+        "v8": true,
+        "v10": true,
+        "v11a": false,
+        "v11b": true
+      }
+    }
+  ]
+}

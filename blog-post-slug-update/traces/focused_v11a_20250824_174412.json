@@ -1,0 +1,167 @@
+{
+  "traces": [
+    {
+      "timestamp": "2025-08-24T17:40:25.253411",
+      "request_hash": "64f7ed8dbcec4694",
+      "response_hash": "fecefdc4daea94d1",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"SKINNIYDIP\", \"iface\", \"\u7280\u725b\u76fe\"],\n    \"cultural_terms\": [],\n ",
+      "response_time_ms": 3687,
+      "token_count": 857,
+      "confidence_scores": [
+        0.85
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:40:49.985552",
+      "request_hash": "682d7e7a08724c80",
+      "response_hash": "9da78fcff2494804",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u4e00\u756a\u8cde\"],\n    \"cultural_terms\": [\"ichiban-kuji\", \"jirai-kei\"",
+      "response_time_ms": 3009,
+      "token_count": 831,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:14.117637",
+      "request_hash": "ad8d9f89f3236c09",
+      "response_hash": "137b460414d9d992",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"JoJo Maman B\u00e9b\u00e9\"],\n    \"cultural_terms\": [],\n    \"approac",
+      "response_time_ms": 3148,
+      "token_count": 810,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:41:41.610943",
+      "request_hash": "918e93bdc6098d2b",
+      "response_hash": "f209489f4a025825",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"buyandship\", \"rakuten\", \"amazon\"],\n    \"cultural_terms\": ",
+      "response_time_ms": 2440,
+      "token_count": 810,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:05.028358",
+      "request_hash": "0d4fd9f22547813b",
+      "response_hash": "8edcb3f0891b5f11",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u5927\u570b\u85e5\u599d\", \"@cosme store\"],\n    \"cultural_terms\": [],\n    \"ap",
+      "response_time_ms": 3071,
+      "token_count": 829,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:29.502784",
+      "request_hash": "d0ac7d27fa296183",
+      "response_hash": "8feab714d4a97593",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"DR.WU\"],\n    \"cultural_terms\": [],\n    \"approach\": \"direc",
+      "response_time_ms": 2766,
+      "token_count": 807,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:42:53.259578",
+      "request_hash": "b0c92eca993dd219",
+      "response_hash": "8d55caf59de56fb8",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Musinsa\"],\n    \"cultural_terms\": [\"jirai-kei\", \"ryousanga",
+      "response_time_ms": 2967,
+      "token_count": 830,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:17.118112",
+      "request_hash": "18033178e11ae6a5",
+      "response_hash": "09e539037978828a",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"Ralph Lauren\"],\n    \"cultural_terms\": [],\n    \"approach\":",
+      "response_time_ms": 3092,
+      "token_count": 804,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:43:40.617510",
+      "request_hash": "7dca49e74f6f1f9f",
+      "response_hash": "73571feef0cb6d34",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u4e00\u756a\u8cde\"],\n    \"cultural_terms\": [\"ichiban-kuji\"],\n    \"appro",
+      "response_time_ms": 3224,
+      "token_count": 816,
+      "confidence_scores": [
+        0.9
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    },
+    {
+      "timestamp": "2025-08-24T17:44:05.451752",
+      "request_hash": "0f01b15c9af33ff6",
+      "response_hash": "eb45c9acec933cc9",
+      "model": "gpt-4o-mini",
+      "prompt_snippet": "You are an expert SEO slug generator for cross-border e-commerce content targeting Asian markets, pa",
+      "response_snippet": "{\n  \"analysis\": {\n    \"detected_brands\": [\"\u9806\u8c50\u96c6\u904b\", \"\u6613\u9054\u96c6\u904b\", \"\u8cb7\u8cb7\u8cb7\"],\n    \"cultural_terms\": [],\n    \"app",
+      "response_time_ms": 2965,
+      "token_count": 830,
+      "confidence_scores": [
+        0.85
+      ],
+      "reasoning_present": true,
+      "analysis_present": true
+    }
+  ],
+  "response_hashes": [
+    "8feab714d4a97593",
+    "eb45c9acec933cc9",
+    "8edcb3f0891b5f11",
+    "9da78fcff2494804",
+    "fecefdc4daea94d1",
+    "8d55caf59de56fb8",
+    "f209489f4a025825",
+    "73571feef0cb6d34",
+    "09e539037978828a",
+    "137b460414d9d992"
+  ],
+  "generated_at": "2025-08-24T17:44:12.419718"
+}
