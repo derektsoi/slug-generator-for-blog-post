@@ -3,6 +3,8 @@
 **Date**: August 24, 2025  
 **Status**: V11 Assessment Complete, V12 Direction Established
 
+> **📋 For complete V11 documentation and file navigation, see [V11_DEVELOPMENT_SUMMARY.md](../../V11_DEVELOPMENT_SUMMARY.md)**
+
 ---
 
 ## 🎯 **V11 Refined Assessment - Correcting the Analysis**
