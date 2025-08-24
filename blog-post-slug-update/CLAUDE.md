@@ -8,6 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Core Mission**: Generate SEO-optimized URL slugs for cross-border e-commerce blog content with cultural awareness for Asian markets.
 
+**🚨 CRITICAL STATUS UPDATE**: V11 fake analysis discovered - V8 is superior to V10. See [V11_CRITICAL_ANALYSIS_CORRECTION.md](V11_CRITICAL_ANALYSIS_CORRECTION.md)
+
 **🚀 BREAKTHROUGH: Phase 2+ Complete** - Revolutionary dual prompt system delivering both proven legacy stability and innovative template-driven development experience with 100% backward compatibility.
 
 ## Dual System Architecture
@@ -302,6 +304,27 @@ V10: ultimate-skinnydip-iface-rhinoshield-phone-cases-guide
 - ✅ Batch resume logic (checkpoint format alignment)
 
 **See `docs/development/DEBUGGING_PATTERNS.md` for complete debugging guide.**
+
+## 🚨 **ANTI-FAKE ANALYSIS SAFEGUARDS** (Critical)
+
+**V11 Disaster Prevention Protocol** - MANDATORY for all future development:
+
+### **Pre-Analysis Validation Checklist:**
+```markdown
+- [ ] Prompt version exists in src/config/settings.py VERSION_SETTINGS
+- [ ] SlugGenerator can instantiate the version without errors  
+- [ ] Real OpenAI API key configured (not simulation mode)
+- [ ] Basic functionality test passes with real LLM calls
+- [ ] All comparison versions validated as working
+```
+
+### **Forbidden Analysis Practices:**
+- ❌ **NEVER** analyze prompt versions not in system configuration
+- ❌ **NEVER** use simulation/mock for performance conclusions  
+- ❌ **NEVER** document achievements without real API validation
+- ❌ **NEVER** trust results that can't be independently reproduced
+
+**See parent [ANTI_FAKE_ANALYSIS_PRINCIPLES.md](../ANTI_FAKE_ANALYSIS_PRINCIPLES.md) for complete framework.**
 
 ## Environment Requirements
 
